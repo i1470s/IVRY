@@ -6,7 +6,7 @@ import sys
 
 client = commands.Bot(command_prefix='.')
 
-class Admin_Commands(commands.Cog):   
+class Admin(commands.Cog):   
     
         def __init__(self, client,):
                 self.client = client 
@@ -62,4 +62,4 @@ class Admin_Commands(commands.Cog):
                 sys.exit()
 
 def setup(client):
-    client.add_cog(Admin_Commands(client))
+    client.add_cog(Admin(client))

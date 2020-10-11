@@ -16,7 +16,7 @@ diff = datetime.datetime(now.year, 12, 25) - \
 
 client = commands.Bot(command_prefix='.')
 
-class Fun_Commands(commands.Cog):   
+class Fun(commands.Cog):   
     
         def __init__(self, client):
                 self.client = client   
@@ -204,4 +204,4 @@ class Fun_Commands(commands.Cog):
                 return
 
 def setup(client):
-    client.add_cog(Fun_Commands(client))
+    client.add_cog(Fun(client))

@@ -6,7 +6,7 @@ import platform
 
 client = commands.Bot(command_prefix='.')
 
-class General_Commands(commands.Cog):   
+class General(commands.Cog):   
     
         def __init__(self, client):
                 self.client = client
@@ -130,4 +130,4 @@ class General_Commands(commands.Cog):
                 return
 
 def setup(client):
-    client.add_cog(General_Commands(client))
+    client.add_cog(General(client))
