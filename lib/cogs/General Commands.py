@@ -120,20 +120,12 @@ class General_Commands(commands.Cog):
                 except Exception as e:
                         await ctx.send(f'{e}')
 
-        @commands.command(name='platform', description="Bots host platform")
+        @commands.command(name='platform', description="Bots platform")
         async def platform(self, ctx):
                 try:
                         await ctx.send("```" + str(platform.platform()) + "```")
                 except:
                         await ctx.send("")
-
-        @commands.command(name='hi', description="Hello :)")
-        async def hi(self, ctx):
-                await ctx.send(f'Hello :)')
-
-        @commands.command(name='fucku', description="Try it :p")
-        async def fucku(self, ctx):
-                await ctx.send(f'No Fuck You')
                 
                 return
 

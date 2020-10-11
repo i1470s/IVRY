@@ -81,7 +81,7 @@ class Fun_Commands(commands.Cog):
                                         else:
                                                 await ctx.send(f"The API seems down, says {response.status}")
 
-        @commands.command(name='xmas', discription='Xmas countdown')
+        @commands.command(name='xmas', description='Xmas countdown')
         async def xmas(self, ctx):
                 await ctx.send("**{0}** day(s) left until Christmas day! :christmas_tree:".format(str(diff.days)))
 
@@ -143,6 +143,14 @@ class Fun_Commands(commands.Cog):
                         '$69 Dollars',
                         '$1000000 Dollars',]
                 await ctx.send(f'You Got {random.choice(responses)}')
+
+        @commands.command(name='hi', description="Hello :)")
+        async def hi(self, ctx):
+                await ctx.send(f'Hello :)')
+
+        @commands.command(name='fucku', description="Try it :p")
+        async def fucku(self, ctx):
+                await ctx.send(f'No Fuck You')
         
         @commands.command(name='roll', description="Rolls a dice")
         async def roll(self, ctx):
