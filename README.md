@@ -1,2 +1,2 @@
 # IVRY
-My Discord bot
+My Discord.py bot made in python 3.8
