@@ -8,6 +8,11 @@ from discord.ext.commands import cooldown
 import aiohttp
 from aiohttp import request
 import pyfiglet
+import datetime
+now = datetime.datetime.now()
+diff = datetime.datetime(now.year, 12, 25) - \
+    datetime.datetime.today()  # Days until Christmas
+
 
 client = commands.Bot(command_prefix='.')
 
@@ -75,6 +80,10 @@ class Fun_Commands(commands.Cog):
 
                                         else:
                                                 await ctx.send(f"The API seems down, says {response.status}")
+
+        @commands.command(name='xmas', discription='Xmas countdown')
+        async def xmas(self, ctx):
+                await ctx.send("**{0}** day(s) left until Christmas day! :christmas_tree:".format(str(diff.days)))
 
         @commands.command(name='girlfriend', description="Take your shot")
         async def girlfriend(self, ctx):

@@ -54,7 +54,7 @@ class Admin_Commands(commands.Cog):
                 await member.remove_roles(muted_role)
 
                 await ctx.send(member.mention + " has been unmuted")
-        
+
         @commands.command(name='restart', description="Restart the bot")
         @commands.is_owner()
         async def restart(self, ctx):  

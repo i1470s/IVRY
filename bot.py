@@ -5,6 +5,9 @@ import random
 import asyncio
 from asyncio import sleep
 import requests
+import json
+import data 
+from data import config
 
 client = commands.Bot(command_prefix='.')
 client.remove_command('help')
@@ -35,4 +38,4 @@ async def on_member_join(member):
 async def on_command_error(ctx, error):
     await ctx.send(f'Unknown Command Try .help') 
 
-client.run('Token')
+client.run(config.token)

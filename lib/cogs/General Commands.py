@@ -2,6 +2,7 @@ import cogs
 import random
 import discord
 from discord.ext import commands
+import platform
 
 client = commands.Bot(command_prefix='.')
 
@@ -31,7 +32,7 @@ class General_Commands(commands.Cog):
                         embed.add_field(name='Known issues', value=f'.mute and member welcomes dont work on other servers this will work in (V.1.1)', inline=False)
 
                         embed.set_footer(
-                        text=f"Version (V.1.0.7)")
+                        text=f"Version (V.1.0.9)")
 
                         await ctx.send(embed=embed)
                 except Exception as e:
@@ -46,7 +47,7 @@ class General_Commands(commands.Cog):
                                 colour = 0x9B59B6
                         )
                         embed.add_field(name=':keyboard: Developers', value=f'[i1470s#0396](https://ivry.tk)')
-                        embed.add_field(name=':open_hands: Contributors:', value=f'[asianmin#2060](https://www.youtube.com/channel/UCWe_MB0vTXLjoXpp7D86ybA)')
+                        embed.add_field(name=':open_hands: Contributors', value=f'[asianmin#2060](https://www.youtube.com/channel/UCWe_MB0vTXLjoXpp7D86ybA)')
                         embed.add_field(name=':books: Libraries', value=f'[Discord.py](https://github.com/Rapptz/discord.py)\n[Youtube_dl](https://github.com/ytdl-org/youtube-dl/)')
                         embed.add_field(name=':tools: Miscellaneous', value=f'[MIT(License)](https://opensource.guide/legal/)', inline=False)
 
@@ -118,6 +119,13 @@ class General_Commands(commands.Cog):
                         await ctx.send(embed=embed)
                 except Exception as e:
                         await ctx.send(f'{e}')
+
+        @commands.command(name='platform', description="Bots host platform")
+        async def platform(self, ctx):
+                try:
+                        await ctx.send("```" + str(platform.platform()) + "```")
+                except:
+                        await ctx.send("")
 
         @commands.command(name='hi', description="Hello :)")
         async def hi(self, ctx):
