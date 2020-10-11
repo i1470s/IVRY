@@ -1,5 +1,7 @@
 import cogs
 import random
+from random import choice, randint
+from typing import Optional
 import discord
 from discord.ext import commands
 from discord.ext.commands import cooldown
@@ -31,7 +33,7 @@ class Fun_Commands(commands.Cog):
                 await ctx.send(f'Question: {question}\nAnswer: {random.choice(responses)}')
         
         @commands.command(name='djoke', description="Dark jokes")
-        async def djoke(self, ctx,):
+        async def djoke(self, ctx):
                 responses = ['america is so bad at chess they lost two towers in one move',
                         'i was digging the ground and i found gold, so i went to go tell my son, then i realized why i was digging',
                         'I have a fish that can breakdance! Only for 20 seconds though, and only once.',
