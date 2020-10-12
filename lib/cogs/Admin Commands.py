@@ -3,6 +3,7 @@ import random
 import discord
 from discord.ext import commands
 import sys
+import math
 
 client = commands.Bot(command_prefix='.')
 
@@ -54,6 +55,11 @@ class Admin(commands.Cog):
                 await member.remove_roles(muted_role)
 
                 await ctx.send(member.mention + " has been unmuted")
+
+        @commands.command(name='clear', description="Delete messages")
+        @commands.has_permissions(ban_members = True)
+        async def clear(self, ctx, ammount=100):
+                await ctx.channel.purge(limit=ammount)
 
         @commands.command(name='restart', description="Restart the bot")
         @commands.is_owner()

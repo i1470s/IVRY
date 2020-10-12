@@ -3,6 +3,8 @@ import random
 import discord
 from discord.ext import commands
 import platform
+import time
+import math 
 
 client = commands.Bot(command_prefix='.')
 
@@ -28,8 +30,6 @@ class General(commands.Cog):
                         embed.add_field(name='Website', value=f'[Click Me](https://ivry.tk)', inline=False)
 
                         embed.add_field(name='Discord Server', value=f'[Click Me](https://discord.gg/ppn2U99)', inline=False)
-
-                        embed.add_field(name='Known issues', value=f'.mute and member welcomes dont work on other servers this will work in (V.1.1)', inline=False)
 
                         embed.set_footer(
                         text=f"Version (V.1.0.9)")
@@ -63,7 +63,7 @@ class General(commands.Cog):
                                 title = f'IVRY Donations',
                                 colour = 0x9B59B6
                         )
-                        embed.add_field(name=f'Donations keep us alive!:', value=f'[Click Me](https://discord.gg)')
+                        embed.add_field(name=f'Donations help keep us alive!', value=f'[Click Me](https://discord.gg)')
 
 
                         await ctx.send(embed=embed)
@@ -120,14 +120,16 @@ class General(commands.Cog):
                 except Exception as e:
                         await ctx.send(f'{e}')
 
-        @commands.command(name='platform', description="Bots platform")
+        @commands.command(name='platform', description="Bot platform")
         async def platform(self, ctx):
                 try:
                         await ctx.send("```" + str(platform.platform()) + "```")
                 except:
                         await ctx.send("")
-                
-                return
+
+        @commands.command(name='ping', description="Bot latency")
+        async def ping(self, ctx):
+                await ctx.send(f"Pong {round(client.latency * 1000)}ms")
 
 def setup(client):
     client.add_cog(General(client))
