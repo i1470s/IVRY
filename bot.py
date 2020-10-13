@@ -31,10 +31,6 @@ async def on_ready():
 client.loop.create_task(status())
 
 @client.event
-async def on_member_join(member):
-   await client.get_channel(762226729116499998).send(f"{member.name} has joined {member.guild.name}")
-
-@client.event
 async def on_command_error(ctx, error):
     await ctx.send(f'Unknown Command Try .help') 
 

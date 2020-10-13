@@ -1,9 +1,17 @@
 import asyncio
 import functools
 import itertools
-import math
 import random
-
+import requests
+import typing
+import aiohttp
+import math
+import discord
+import requests
+from bs4 import BeautifulSoup as bs
+from discord.ext import commands
+import urllib
+from urllib.request import urlopen
 import discord
 import youtube_dl
 from async_timeout import timeout
@@ -12,10 +20,8 @@ from discord.ext import commands
 client = commands.Bot(command_prefix='.')  
 
 class Music(commands.Cog):   
-    
-        def __init__(self, client):
-                self.client = client   
-
+    def __init__(self, client):
+        self.client = client  
 
 youtube_dl.utils.bug_reports_message = lambda: ''
 
@@ -263,7 +269,6 @@ class VoiceState:
             await self.voice.disconnect()
             self.voice = None
 
-
 class Music(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
@@ -436,6 +441,62 @@ class Music(commands.Cog):
         if ctx.voice_client:
             if ctx.voice_client.channel != ctx.author.voice.channel:
                 raise commands.CommandError('Bot is already in a voice channel.')
+
+        self.lyric_messages = []
+        self.lyric_pages = {}
+        self.page_index = {}
+
+        self.def_embed = {}           
+
+    @commands.command(name='lyrics',description="Search song lyrics")
+    async def lyrics(self, ctx, song: str, author: typing.Optional[str]):
+        """
+        Search for lyrics for a song
+        """
+        async with ctx.typing():
+            try:
+                if not author:
+                    author = ""
+                song = song.replace(" ", "+")
+                author = author.replace(" ", "+")
+                query = f"{song} {author}"
+
+                base_url = f"http://www.songlyrics.com/index.php"
+                payload = {"section": "search", "searchW": query, "submit": "Search"}
+
+                async with aiohttp.ClientSession() as session:
+                    async with session.get(base_url, params=payload) as r:
+                        content = await r.content.read()
+                        soup = bs(content, 'html.parser')
+
+                        search_results = soup.find_all("div", class_="serpresult")
+                        top_result = search_results[0]
+
+                        link_elm = top_result.find_all("a")[0]
+                        song_link = link_elm['href']
+
+                        s_r = requests.get(song_link, timeout=1)
+                        s_content = s_r.content
+                        s_soup = bs(s_content, 'html.parser')
+
+                        lyrics = s_soup.find_all(id="songLyricsDiv")[0].get_text()
+                        page_title_div = s_soup.find_all("div", class_="pagetitle")[0]
+                        page_title = page_title_div.find_all("h1")[0].get_text()
+
+                        max_chars = 50000
+                        lyric_pages = [(lyrics[i:i+max_chars]) for i in range(0, len(lyrics), max_chars)]
+                        page_info = f'\n\n**Page:** 1/{len(lyric_pages)}'
+
+                        embed = discord.Embed(title=page_title, url=s_r.url, color=0x9B59B6)
+                        embed.description = f'{lyrics[:max_chars]} {page_info if len(lyric_pages)>1 else ""}'
+                        embed.set_footer(text="Lyrics from SongLyrics.com")
+
+                        msg = await ctx.send(embed=embed)
+
+            except IndexError or requests.exceptions.ConnectTimeout or requests.exceptions.ReadTimeout:
+                await ctx.send("No search results found!")
+            except Exception as e:
+                await ctx.send(f"An error occurred!\n`{e}`")
 
 def setup(client):
     client.add_cog(Music(client))
