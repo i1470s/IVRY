@@ -63,29 +63,43 @@ class General(commands.Cog):
                                 title = f'IVRY Donations',
                                 colour = 0x9B59B6
                         )
-                        embed.add_field(name=f'Donations help keep us alive!', value=f'[Click Me](https://discord.gg)')
+                        embed.set_thumbnail(url=ctx.bot.user.avatar_url)
+                        
+                        embed.add_field(name=f'Donations help keep us alive!', value=f'[N/A](https://google.com)')
 
 
                         await ctx.send(embed=embed)
                 except Exception as e:
                         await ctx.send(f'{e}')
 
-        @commands.command(name="userinfo", description="User info search")
-        async def userinfo(self, ctx, member: discord.Member = None):
-                if not member:  
-                        member = ctx.message.author  
-                embed = discord.Embed(colour=discord.Colour.purple(), timestamp=ctx.message.created_at,
-                                        title=f"User Info - {member}")
-                embed.set_thumbnail(url=member.avatar_url)
+        @commands.command(name='invite', description="Invite the bot")
+        async def invite(self, ctx):
+                try:
+                         
+                        embed = discord.Embed(
+                                title = f'IVRY Invite',
+                                colour = 0x9B59B6
+                        )
+                        embed.set_thumbnail(url=ctx.bot.user.avatar_url)
+                        
+                        embed.add_field(name=f'Invite IVRY to your server!', value=f'[N/A](https://google.com)')
 
-                embed.add_field(name="ID", value=member.id, inline=False)
-                embed.add_field(name="Display Name", value=member.display_name, inline=False)
+                        await ctx.send(embed=embed)
+                except Exception as e:
+                        await ctx.send(f'{e}')
 
-                embed.add_field(name="Created Account On", value=member.created_at.strftime("%a, %#d %B %Y, %I:%M %p UTC"))
+        @commands.command(name='platform', description="Bot platform")
+        async def platform(self, ctx):
+                try:
+                        await ctx.send("```" + str(platform.platform()) + "```")
+                except:
+                        await ctx.send("")
 
-                await ctx.send(embed=embed)
+        @commands.command(name='ping', description="Bot latency")
+        async def ping(self, ctx):
+                await ctx.send(f"Pong {round(client.latency * 1000)}ms")
 
-        @commands.command(name='serverinfo', description="Info about the server")
+        @commands.command(name='serverinfo', description="Shows server info")
         async def serverinfo(self, ctx):
                 try:
                         count = 0
@@ -120,16 +134,20 @@ class General(commands.Cog):
                 except Exception as e:
                         await ctx.send(f'{e}')
 
-        @commands.command(name='platform', description="Bot platform")
-        async def platform(self, ctx):
-                try:
-                        await ctx.send("```" + str(platform.platform()) + "```")
-                except:
-                        await ctx.send("")
+        @commands.command(name="userinfo", description="Shows user info ")
+        async def userinfo(self, ctx, member: discord.Member = None):
+                if not member:  
+                        member = ctx.message.author  
+                embed = discord.Embed(colour=discord.Colour.purple(), timestamp=ctx.message.created_at,
+                                        title=f"User Info - {member}")
+                embed.set_thumbnail(url=member.avatar_url)
 
-        @commands.command(name='ping', description="Bot latency")
-        async def ping(self, ctx):
-                await ctx.send(f"Pong {round(client.latency * 1000)}ms")
+                embed.add_field(name="ID", value=member.id, inline=False)
+                embed.add_field(name="Display Name", value=member.display_name, inline=False)
+
+                embed.add_field(name="Created Account On", value=member.created_at.strftime("%a, %#d %B %Y, %I:%M %p UTC"))
+
+                await ctx.send(embed=embed)
 
 def setup(client):
     client.add_cog(General(client))
