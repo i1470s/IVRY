@@ -65,7 +65,7 @@ class General(commands.Cog):
                         )
                         embed.set_thumbnail(url=ctx.bot.user.avatar_url)
                         
-                        embed.add_field(name=f'Donations help keep us alive!', value=f'[Click Me](https://patreon.com/)')
+                        embed.add_field(name=f'Donations help keep us alive!', value=f'[Click Me](https://paypal.me/BigFlop)')
 
 
                         await ctx.send(embed=embed)
