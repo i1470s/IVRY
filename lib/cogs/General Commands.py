@@ -32,7 +32,7 @@ class General(commands.Cog):
                         embed.add_field(name='Discord Server', value=f'[Click Me](https://discord.gg/ppn2U99)', inline=False)
 
                         embed.set_footer(
-                        text=f"Version (V.1.1.0)")
+                        text=f"Version (V.1.2.0)")
 
                         await ctx.send(embed=embed)
                 except Exception as e:
@@ -65,7 +65,7 @@ class General(commands.Cog):
                         )
                         embed.set_thumbnail(url=ctx.bot.user.avatar_url)
                         
-                        embed.add_field(name=f'Donations help keep us alive!', value=f'[N/A](https://google.com)')
+                        embed.add_field(name=f'Donations help keep us alive!', value=f'[Click Me](https://patreon.com/)')
 
 
                         await ctx.send(embed=embed)
@@ -82,7 +82,7 @@ class General(commands.Cog):
                         )
                         embed.set_thumbnail(url=ctx.bot.user.avatar_url)
                         
-                        embed.add_field(name=f'Invite IVRY to your server!', value=f'[N/A](https://google.com)')
+                        embed.add_field(name=f'Invite IVRY to your server!', value=f'[CLick Me](https://discord.com/api/oauth2/authorize?client_id=764424676256514081&permissions=8&scope=bot)')
 
                         await ctx.send(embed=embed)
                 except Exception as e:
