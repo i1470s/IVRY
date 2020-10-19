@@ -37,6 +37,29 @@ class Fun(commands.Cog):
                         'very doubtful']
                 await ctx.send(f'Question: {question}\nAnswer: {random.choice(responses)}')
         
+        @commands.command(name='joke', description="Tells you a joke")
+        async def joke(self, ctx):
+                responses = ['The machine at the coin factory just suddenly stopped working, with no explanation. It doesnt make any cents!',
+                        'I was going to make myself a belt made out of watches, but then I realized it would be a waist of time.',
+                        'Yesterday, a clown held the door open for me. It was such a nice jester!',
+                        'Did you hear about the man who was accidentally buried alive?  It was a grave mistake.',
+                        'A Canadian psychologist is selling a video that teaches you how to test your dogs IQ. Here’s how it works: If you spend $12.99 for the video, your dog is smarter than you. Jay Leno',
+                        'What’s the tallest building in the world? The library, cause it has the most stories.',
+                        'How do trees get online? They log in.',
+                        'What do you call a bear with no teeth? A gummy bear.',
+                        'What’s the difference between snowmen and snow women? Snowballs.',
+                        'Why did the picture go to jail? Because it was framed',
+                        'How do you tease fruit? Banananananananana!',
+                        'Why did Goofy put a clock under his desk? Because he wanted to work over-time!',
+                        'Why did Tommy throw the clock out of the window? Because he wanted to see time fly!',
+                        'How does a moulded fruit-flavoured dessert answer the phone? Jell-o!',
+                        'When do you stop at green and go at red? When you’re eating a watermelon!',
+                        'What’s the difference between a cat and a complex sentence?A cat has claws at the end of its paws. A complex sentence has a pause at the end of its clause.',
+                        'How do you repair a broken tomato? Tomato Paste!',
+                        'there’s a plane heading straight for the ground which there was no guarantee of surviving there was a cowboy, an asian, and a canadian on board the cowboy threw out his cowboy hat saying i have too many of these in my country. the asian threw out his textbook saying i have too many of these in my country. the canadian threw the asian out saying i have too many of these in my country',]
+
+                await ctx.send(f'{random.choice(responses)}')
+
         @commands.command(name='djoke', description="Dark jokes")
         async def djoke(self, ctx):
                 responses = ['america is so bad at chess they lost two towers in one move',
@@ -81,14 +104,6 @@ class Fun(commands.Cog):
                                         else:
                                                 await ctx.send(f"The API seems down, says {response.status}")
 
-        @commands.command(name='xmas', description='Xmas countdown')
-        async def xmas(self, ctx):
-                await ctx.send("**{0}** day(s) left until Christmas day! :christmas_tree:".format(str(diff.days)))
-
-        @commands.command(name='girlfriend', description="Take your shot")
-        async def girlfriend(self, ctx):
-                await ctx.send(f'Lol you wish')
-
         @commands.command(name='measure', description="Measures your cock")
         async def measure(self, ctx):
                 responses = ['1 inches',
@@ -104,29 +119,6 @@ class Fun(commands.Cog):
                         '11 inches',
                         '12 inches',]
                 await ctx.send(f'Whoa You Got {random.choice(responses)}')
-        
-        @commands.command(name='joke', description="Tells you a joke")
-        async def joke(self, ctx):
-                responses = ['The machine at the coin factory just suddenly stopped working, with no explanation. It doesnt make any cents!',
-                        'I was going to make myself a belt made out of watches, but then I realized it would be a waist of time.',
-                        'Yesterday, a clown held the door open for me. It was such a nice jester!',
-                        'Did you hear about the man who was accidentally buried alive?  It was a grave mistake.',
-                        'A Canadian psychologist is selling a video that teaches you how to test your dogs IQ. Here’s how it works: If you spend $12.99 for the video, your dog is smarter than you. Jay Leno',
-                        'What’s the tallest building in the world? The library, cause it has the most stories.',
-                        'How do trees get online? They log in.',
-                        'What do you call a bear with no teeth? A gummy bear.',
-                        'What’s the difference between snowmen and snow women? Snowballs.',
-                        'Why did the picture go to jail? Because it was framed',
-                        'How do you tease fruit? Banananananananana!',
-                        'Why did Goofy put a clock under his desk? Because he wanted to work over-time!',
-                        'Why did Tommy throw the clock out of the window? Because he wanted to see time fly!',
-                        'How does a moulded fruit-flavoured dessert answer the phone? Jell-o!',
-                        'When do you stop at green and go at red? When you’re eating a watermelon!',
-                        'What’s the difference between a cat and a complex sentence?A cat has claws at the end of its paws. A complex sentence has a pause at the end of its clause.',
-                        'How do you repair a broken tomato? Tomato Paste!',
-                        'there’s a plane heading straight for the ground which there was no guarantee of surviving there was a cowboy, an asian, and a canadian on board the cowboy threw out his cowboy hat saying i have too many of these in my country. the asian threw out his textbook saying i have too many of these in my country. the canadian threw the asian out saying i have too many of these in my country',]
-
-                await ctx.send(f'{random.choice(responses)}')
 
         @commands.command(name='fortune', description="Checks your fortune")
         async def fortune(self, ctx):
@@ -144,14 +136,6 @@ class Fun(commands.Cog):
                         '$1000000 Dollars',]
                 await ctx.send(f'You Got {random.choice(responses)}')
 
-        @commands.command(name='hi', description="Hello :)")
-        async def hi(self, ctx):
-                await ctx.send(f'Hello :)')
-
-        @commands.command(name='fucku', description="Try it :p")
-        async def fucku(self, ctx):
-                await ctx.send(f'No Fuck You')
-        
         @commands.command(name='roll', description="Rolls a dice")
         async def roll(self, ctx):
                 responses = ['1',
@@ -201,6 +185,22 @@ class Fun(commands.Cog):
                 except Exception as e:
                                 await ctx.send(f'{e}')
 
+        @commands.command(name='hi', description="Hello :)")
+        async def hi(self, ctx):
+                await ctx.send(f'Hello :)')
+
+        @commands.command(name='fucku', description="Try it :p")
+        async def fucku(self, ctx):
+                await ctx.send(f'No Fuck You')
+        
+        @commands.command(name='xmas', description='Xmas countdown')
+        async def xmas(self, ctx):
+                await ctx.send("**{0}** day(s) left until Christmas day! :christmas_tree:".format(str(diff.days)))
+
+        @commands.command(name='girlfriend', description="Take your shot")
+        async def girlfriend(self, ctx):
+                await ctx.send(f'Lol you wish')
+                
                 return
 
 def setup(client):

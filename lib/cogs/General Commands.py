@@ -4,7 +4,7 @@ import discord
 from discord.ext import commands
 import platform
 import time
-import math 
+import math
 
 client = commands.Bot(command_prefix='.')
 
@@ -32,7 +32,7 @@ class General(commands.Cog):
                         embed.add_field(name='Discord Server', value=f'[Click Me](https://discord.gg/ppn2U99)', inline=False)
 
                         embed.set_footer(
-                        text=f"Version (V.1.2.0)")
+                        text=f"Version (V.1.2.1)")
 
                         await ctx.send(embed=embed)
                 except Exception as e:
