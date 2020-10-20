@@ -65,7 +65,7 @@ class Fun(commands.Cog):
                 responses = ['america is so bad at chess they lost two towers in one move',
                         'i was digging the ground and i found gold, so i went to go tell my son, then i realized why i was digging',
                         'I have a fish that can breakdance! Only for 20 seconds though, and only once.',
-                        'i was working and this kid came up to me saying his parents were gone. Damn orphans in telling you',
+                        'i was working and this kid came up to me saying his parents were gone. Damn orphans im telling you',
                         'BLM lol jk',
                         'I just read that someone in London gets stabbed every 52 seconds. Poor guy.',
                         'Whats red and bad for your teeth? A brick.',
