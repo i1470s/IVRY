@@ -200,6 +200,10 @@ class Fun(commands.Cog):
         @commands.command(name='girlfriend', description="Take your shot")
         async def girlfriend(self, ctx):
                 await ctx.send(f'Lol you wish')
+
+        @commands.command(name='repeat', description="Repeats you")
+        async def repeat(self, ctx, *, message):
+                await ctx.send(message)           
                 
                 return
 

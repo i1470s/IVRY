@@ -61,11 +61,11 @@ class Admin(commands.Cog):
         async def clear(self, ctx, ammount=100):
                 await ctx.channel.purge(limit=ammount)
 
-        @commands.command(name='restart', description="Restart the bot")
+        @commands.command(hidden=True)
         @commands.is_owner()
         async def restart(self, ctx):  
                 await ctx.send(f'Restarting...')
                 sys.exit()
-
+         
 def setup(client):
     client.add_cog(Admin(client))

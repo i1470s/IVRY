@@ -1,7 +1,6 @@
 import cogs
 import random
 import discord
-import time
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from discord.ext import commands
 
@@ -16,7 +15,6 @@ class Events(commands.Cog):
         async def on_ready(self):
                 print("Connecting To The Internet")
                 print("Checking DB")
-                time.sleep(2)
                 print("Loaded Files, The Bot Is Running Normally")
                 print("DONE! (Loaded)")
 

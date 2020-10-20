@@ -99,6 +99,15 @@ class General(commands.Cog):
         async def ping(self, ctx):
                 await ctx.send(f"Pong {round(client.latency * 1000)}ms")
 
+        @commands.command(name='servers', description="List of bot servers")
+        async def servers(self, ctx):
+                msg = '```js\n'
+                msg += '{!s:19s} | {!s:>5s} | {}\n'.format('ID', 'Member', 'Name')
+                for guild in self.client.guilds:
+                        msg += '{!s:19s} |{!s:>5s}   | {}\n'.format(guild.id, guild.member_count, guild.name)
+                msg += '```'
+                await ctx.send(msg)
+
         @commands.command(name='serverinfo', description="Shows server info")
         async def serverinfo(self, ctx):
                 try:
