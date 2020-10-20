@@ -32,7 +32,7 @@ class General(commands.Cog):
                         embed.add_field(name='Discord Server', value=f'[Click Me](https://discord.gg/ppn2U99)', inline=False)
 
                         embed.set_footer(
-                        text=f"Version (V.1.3.1)")
+                        text=f"Version (V.1.4)")
 
                         await ctx.send(embed=embed)
                 except Exception as e:

@@ -26,7 +26,7 @@ class Help(commands.Cog):
                 cogs = [c for c in self.client.cogs.keys()]  
 
 
-                totalPages = math.ceil(len(cogs)/5) 
+                totalPages = math.ceil(len(cogs)/6) 
 
                 cog = int(cog)
                 if cog > totalPages or cog < 1:
@@ -34,8 +34,8 @@ class Help(commands.Cog):
                     return
 
                 neededCogs = []
-                for i in range(5):
-                    x = i + (int(cog) - 1) * 5
+                for i in range(6):
+                    x = i + (int(cog) - 1) * 6
                     try:
                         neededCogs.append(cogs[x])
                     except IndexError:

@@ -14,7 +14,6 @@ client.remove_command('help')
 client.load_extension("lib.cogs.Help")
 client.load_extension("lib.cogs.General")
 client.load_extension("lib.cogs.Fun")
-client.load_extension("lib.cogs.Games")
 client.load_extension("lib.cogs.NSFW")
 client.load_extension("lib.cogs.Music")
 client.load_extension("lib.cogs.Admin")
@@ -34,6 +33,6 @@ client.loop.create_task(status())
 
 @client.event
 async def on_command_error(ctx, error):
-    await ctx.send(f'Unknown Command Try .help') 
+    await ctx.send(f'Unknown Command/Error Check .help') 
 
 client.run(config.token)
