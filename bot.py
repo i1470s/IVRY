@@ -12,10 +12,12 @@ from data import config
 client = commands.Bot(command_prefix='.')
 client.remove_command('help')
 client.load_extension("lib.cogs.Help")
-client.load_extension("lib.cogs.General Commands")
-client.load_extension("lib.cogs.Fun Commands")
+client.load_extension("lib.cogs.General")
+client.load_extension("lib.cogs.Fun")
+client.load_extension("lib.cogs.Games")
+client.load_extension("lib.cogs.NSFW")
 client.load_extension("lib.cogs.Music")
-client.load_extension("lib.cogs.Admin Commands")
+client.load_extension("lib.cogs.Admin")
 client.load_extension("lib.cogs.Events")
 
 async def status():
