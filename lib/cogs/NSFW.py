@@ -1,7 +1,6 @@
 from discord.ext import commands
 import aiohttp
 import discord
-import config as c
 
 client = commands.Bot(command_prefix='.')
 
