@@ -17,7 +17,8 @@ class NSFW(commands.Cog):
         async with self.session.get("https://nekos.life/api/v2/img/anal") as resp:
             nekos = await resp.json()
 
-        embed = discord.Embed(colour=discord.Colour.purple())
+        
+        embed = discord.Embed(title = f'Anal', colour=discord.Colour.purple())
         embed.set_image(url=nekos['url'])
         await ctx.send(embed=embed)
 
@@ -28,7 +29,7 @@ class NSFW(commands.Cog):
         async with self.session.get("https://nekos.life/api/v2/img/lewd") as resp:
             nekos = await resp.json()
 
-        embed = discord.Embed(colour=discord.Colour.purple())
+        embed = discord.Embed(title = f'Boobs', colour=discord.Colour.purple())
         embed.set_image(url=nekos['url'])
         await ctx.send(embed=embed)
 
@@ -39,7 +40,7 @@ class NSFW(commands.Cog):
         async with self.session.get("https://nekos.life/api/v2/img/classic") as resp:
             nekos = await resp.json()
 
-        embed = discord.Embed(colour=discord.Colour.purple())
+        embed = discord.Embed(title = f'Hentaigif', colour=discord.Colour.purple())
         embed.set_image(url=nekos['url'])
         await ctx.send(embed=embed)
 
@@ -50,7 +51,7 @@ class NSFW(commands.Cog):
         async with self.session.get("https://nekos.life/api/v2/img/hentai") as resp:
             nekos = await resp.json()
 
-        embed = discord.Embed(colour=discord.Colour.purple())
+        embed = discord.Embed(title = f'Hentai', colour=discord.Colour.purple())
         embed.set_image(url=nekos['url'])
         await ctx.send(embed=embed)
 
@@ -61,7 +62,7 @@ class NSFW(commands.Cog):
         async with self.session.get("https://nekos.life/api/v2/img/lewd") as resp:
             nekos = await resp.json()
 
-        embed = discord.Embed(colour=discord.Colour.purple())
+        embed = discord.Embed(title = f'Lewd', colour=discord.Colour.purple())
         embed.set_image(url=nekos['url'])
         await ctx.send(embed=embed)
 
@@ -69,10 +70,10 @@ class NSFW(commands.Cog):
     @commands.is_nsfw()
     async def pussy(self, ctx):
         
-        async with self.session.get("https://nekos.life/api/v2/img/lewd") as resp:
+        async with self.session.get("https://nekos.life/api/v2/img/pussy") as resp:
             nekos = await resp.json()
 
-        embed = discord.Embed(colour=discord.Colour.purple())
+        embed = discord.Embed(title = f'Pussy', colour=discord.Colour.purple())
         embed.set_image(url=nekos['url'])
         await ctx.send(embed=embed)
 
@@ -83,7 +84,7 @@ class NSFW(commands.Cog):
         async with self.session.get("https://nekos.life/api/v2/img/trap") as resp:
             nekos = await resp.json()
 
-        embed = discord.Embed(colour=discord.Colour.purple())
+        embed = discord.Embed(title = f'Trap', colour=discord.Colour.purple())
         embed.set_image(url=nekos['url'])
         await ctx.send(embed=embed)
 
