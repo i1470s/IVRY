@@ -66,6 +66,21 @@ class Admin(commands.Cog):
         async def restart(self, ctx):  
                 await ctx.send(f'Restarting...')
                 sys.exit()
+
+        @commands.command(hidden=True)
+        @commands.is_owner()
+        async def leaveserver(self, ctx, guildid: str):
+                if guildid == 'this':
+                        await ctx.guild.leave()
+                
+                else:
+                        guild = self.client.get_guild(guildid)
+                if guild:
+                        await guild.leave()
+                        msg = f':ok: I have left {guild.name} server!'
+                else:
+                        msg = ':x: Could not find that servers id!'
+                await ctx.send(msg)
          
 def setup(client):
     client.add_cog(Admin(client))

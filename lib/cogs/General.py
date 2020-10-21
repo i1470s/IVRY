@@ -97,7 +97,11 @@ class General(commands.Cog):
 
         @commands.command(name='ping', description="Bot latency")
         async def ping(self, ctx):
-                await ctx.send(f"Pong {round(client.latency * 1000)}ms")
+                before = time.monotonic()
+                before_ws = int(round(self.client.latency * 1000, 1))
+                message = await ctx.send("🏓 Pong")
+                ping = (time.monotonic() - before) * 1000
+                await message.edit(content=f"🏓 WS: {before_ws}ms  |  REST: {int(ping)}ms")
 
         @commands.command(name='servers', description="List of bot servers")
         async def servers(self, ctx):
