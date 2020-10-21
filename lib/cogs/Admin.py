@@ -13,18 +13,21 @@ class Admin(commands.Cog):
                 self.client = client 
 
         @commands.command(name='ban', description="Ban members")
+        @commands.guild_only()
         @commands.has_permissions(ban_members = True)
         async def ban(self,ctx,member : discord.Member,*,reason="No reason provided"):
                 await ctx.send(member.name+ " has been banned from the server!")
                 await member.ban(reason=reason)
 
         @commands.command(name='kick', description="Kick members")
+        @commands.guild_only()
         @commands.has_permissions(ban_members = True)
         async def kick(self,ctx,member : discord.Member,*,reason="No reason provided"):
                 await ctx.send(member.name+ " has been kicked from the server!")
                 await member.kick(reason=reason)
 
         @commands.command(name='mute', description="Mute members")
+        @commands.guild_only()
         @commands.has_permissions(ban_members = True)
         async def mute(self,ctx,member : discord.Member):
                 muted_role = ctx.guild.get_role(761473223140573184)
@@ -34,6 +37,7 @@ class Admin(commands.Cog):
                 await ctx.send(member.mention + " has been muted") 
 
         @commands.command(name='unban', description="Unban members")
+        @commands.guild_only()
         @commands.has_permissions(ban_members = True)
         async def unban(self,ctx,*,member):
                 banned_users = await ctx.guild.bans()
@@ -48,6 +52,7 @@ class Admin(commands.Cog):
                                 await ctx.send(member_name +" has been unbanned")
 
         @commands.command(name='unmute', description="Unmute members")
+        @commands.guild_only()
         @commands.has_permissions(ban_members = True)
         async def unmute(self,ctx,member : discord.Member):
                 muted_role = ctx.guild.get_role(761473223140573184)
@@ -57,6 +62,7 @@ class Admin(commands.Cog):
                 await ctx.send(member.mention + " has been unmuted")
 
         @commands.command(name='clear', description="Delete messages")
+        @commands.guild_only()
         @commands.has_permissions(ban_members = True)
         async def clear(self, ctx, ammount=100):
                 await ctx.channel.purge(limit=ammount)

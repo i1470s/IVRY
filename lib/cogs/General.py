@@ -31,6 +31,8 @@ class General(commands.Cog):
 
                         embed.add_field(name='Discord Server', value=f'[Click Me](https://discord.gg/ppn2U99)', inline=False)
 
+                        embed.add_field(name='Announcements', value=f'Hey! we are currently adding games and more NSFW commands were also fixing minor bug issues, stay tuned!', inline=False)
+
                         embed.set_footer(
                         text=f"Version (V.1.4)")
 
@@ -88,13 +90,6 @@ class General(commands.Cog):
                 except Exception as e:
                         await ctx.send(f'{e}')
 
-        @commands.command(name='platform', description="Bots host")
-        async def platform(self, ctx):
-                try:
-                        await ctx.send("```" + str(platform.system()) + "```")
-                except:
-                        await ctx.send("")
-
         @commands.command(name='ping', description="Bot latency")
         async def ping(self, ctx):
                 before = time.monotonic()
@@ -113,6 +108,7 @@ class General(commands.Cog):
                 await ctx.send(msg)
 
         @commands.command(name='serverinfo', description="Shows server info")
+        @commands.guild_only()
         async def serverinfo(self, ctx):
                 try:
                         count = 0
@@ -148,6 +144,7 @@ class General(commands.Cog):
                         await ctx.send(f'{e}')
 
         @commands.command(name="userinfo", description="Shows user info ")
+        @commands.guild_only()    
         async def userinfo(self, ctx, member: discord.Member = None):
                 if not member:  
                         member = ctx.message.author  
