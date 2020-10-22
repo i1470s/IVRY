@@ -10,6 +10,7 @@ import data
 from data import config
 
 client = commands.Bot(command_prefix='.')
+
 client.remove_command('help')
 client.load_extension("lib.cogs.Help")
 client.load_extension("lib.cogs.General")
@@ -30,9 +31,5 @@ async def status():
 async def on_ready():
     print(f'{client.user} has Awoken!')
 client.loop.create_task(status())
-
-@client.event
-async def on_command_error(ctx, error):
-    await ctx.send(f'Unknown Command/Error Check .help') 
 
 client.run(config.token)

@@ -85,8 +85,8 @@ class Admin(commands.Cog):
                         await guild.leave()
                         msg = f':ok: I have left {guild.name} server!'
                 else:
-                        msg = ':x: Could not find that servers id!'
+                        msg = ':x: Could not find that server id!'
                 await ctx.send(msg)
-         
+
 def setup(client):
     client.add_cog(Admin(client))
