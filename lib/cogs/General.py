@@ -6,8 +6,6 @@ import platform
 import time
 import math
 
-client = commands.Bot(command_prefix='.')
-
 class General(commands.Cog):   
     
         def __init__(self, client):
@@ -34,7 +32,7 @@ class General(commands.Cog):
                         embed.add_field(name='Announcements', value=f'Hey! we are currently adding games and more NSFW commands were also fixing minor bug issues, stay tuned!', inline=False)
 
                         embed.set_footer(
-                        text=f"Version (V.1.4)")
+                        text=f"Version (V.1.4) | Shards 1")
 
                         await ctx.send(embed=embed)
                 except Exception as e:
@@ -97,6 +95,7 @@ class General(commands.Cog):
                 message = await ctx.send("🏓 Pong")
                 ping = (time.monotonic() - before) * 1000
                 await message.edit(content=f"🏓 WS: {before_ws}ms  |  REST: {int(ping)}ms")
+
 
         @commands.command(name='servers', description="List of bot servers")
         async def servers(self, ctx):

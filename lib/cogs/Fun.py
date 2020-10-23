@@ -13,15 +13,12 @@ now = datetime.datetime.now()
 diff = datetime.datetime(now.year, 12, 25) - \
     datetime.datetime.today()  # Days until Christmas
 
-
-client = commands.Bot(command_prefix='.')
-
 class Fun(commands.Cog):   
     
         def __init__(self, client):
                 self.client = client   
 
-        @commands.command(name='8Ball', aliases=["8ball"], description="Awnsers your questions")
+        @commands.command(name='8Ball', description="Awnsers your questions")
         async def _8ball(self, ctx, *, question):
                 responses = ['It is certain',
                         'It is decidedly so',

@@ -5,8 +5,6 @@ from discord.ext import commands
 import sys
 import math
 
-client = commands.Bot(command_prefix='.')
-
 class Admin(commands.Cog):   
     
         def __init__(self, client,):
@@ -30,7 +28,7 @@ class Admin(commands.Cog):
         @commands.guild_only()
         @commands.has_permissions(ban_members = True)
         async def mute(self,ctx,member : discord.Member):
-                muted_role = ctx.guild.get_role(761473223140573184)
+                muted_role = discord.utils.get(ctx.guild.roles, name="Muted")
 
                 await member.add_roles(muted_role) 
 
@@ -55,7 +53,7 @@ class Admin(commands.Cog):
         @commands.guild_only()
         @commands.has_permissions(ban_members = True)
         async def unmute(self,ctx,member : discord.Member):
-                muted_role = ctx.guild.get_role(761473223140573184)
+                muted_role = discord.utils.get(ctx.guild.roles, name="Muted")
 
                 await member.remove_roles(muted_role)
 

@@ -6,8 +6,6 @@ import traceback
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from discord.ext import commands
 
-client = commands.Bot(command_prefix='.')
-
 class Events(commands.Cog):   
     
         def __init__(self, client):

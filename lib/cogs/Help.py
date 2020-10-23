@@ -5,8 +5,6 @@ import re
 import math
 from discord.ext import commands
 
-client = commands.Bot(command_prefix='.')
-
 class Help(commands.Cog):   
     
         def __init__(self, client):
@@ -19,9 +17,11 @@ class Help(commands.Cog):
         async def help(self, ctx, cog="1"): 
                 helpEmbed = discord.Embed(
                     title='IVRY Commands',
+                    description="Prefixes `.` `!` `?` `/` `~` `#` `%` ",
                     color=discord.Color.purple() 
         )
                 helpEmbed.set_thumbnail(url=ctx.bot.user.avatar_url)
+                helpEmbed.set_footer(text=f"Version (V.1.4) | Shards 1")
                 
                 cogs = [c for c in self.client.cogs.keys()]  
 
