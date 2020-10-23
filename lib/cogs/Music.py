@@ -17,6 +17,8 @@ import youtube_dl
 from async_timeout import timeout
 from discord.ext import commands
 
+client = commands.Bot(command_prefix='.')  
+
 class Music(commands.Cog):   
     def __init__(self, client):
         self.client = client  
@@ -36,7 +38,7 @@ class YTDLSource(discord.PCMVolumeTransformer):
     YTDL_OPTIONS = {
         'format': 'bestaudio/best',
         'extractaudio': True,
-        'audioformat': 'mp3',
+        'audioformat': 'mp4',
         'outtmpl': '%(extractor)s-%(id)s-%(title)s.%(ext)s',
         'restrictfilenames': True,
         'noplaylist': False,

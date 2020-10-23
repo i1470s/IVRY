@@ -11,7 +11,11 @@ import pyfiglet
 import datetime
 now = datetime.datetime.now()
 diff = datetime.datetime(now.year, 12, 25) - \
-    datetime.datetime.today()  # Days until Christmas
+    datetime.datetime.today() 
+diff2 = datetime.datetime(now.year, 10, 31) - \
+    datetime.datetime.today() 
+diff3 = datetime.datetime(now.year, 2, 14) - \
+    datetime.datetime.today() 
 
 class Fun(commands.Cog):   
     
@@ -193,6 +197,14 @@ class Fun(commands.Cog):
         @commands.command(name='xmas', description='Xmas countdown')
         async def xmas(self, ctx):
                 await ctx.send("**{0}** day(s) left until Christmas day! :christmas_tree:".format(str(diff.days)))
+
+        @commands.command(name='hallow', description='Halloween countdown')
+        async def boo(self, ctx):
+                await ctx.send("**{0}** day(s) left until Halloween! :candy:".format(str(diff2.days)))
+        
+        @commands.command(name='vday', description='Valentines countdown')
+        async def vday(self, ctx):
+                await ctx.send("**{0}** day(s) left until Valentines day! :heart:".format(str(diff3.days)))
 
         @commands.command(name='girlfriend', description="Take your shot")
         async def girlfriend(self, ctx):
