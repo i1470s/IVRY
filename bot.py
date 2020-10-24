@@ -13,13 +13,13 @@ from data import config
 client = commands.AutoShardedBot(command_prefix=[".", "!", "?", "/", "~", "#", "%"], shard_count=1, case_insensitive=True)
 
 client.remove_command('help')
-client.load_extension("lib.cogs.General")
-client.load_extension("lib.cogs.Fun")
-client.load_extension("lib.cogs.NSFW")
-client.load_extension("lib.cogs.Music")
-client.load_extension("lib.cogs.Admin")
-client.load_extension("lib.cogs.Help")
-client.load_extension("lib.cogs.Events")
+client.load_extension("lib.cogs.general")
+client.load_extension("lib.cogs.fun")
+client.load_extension("lib.cogs.nsfw")
+client.load_extension("lib.cogs.music")
+client.load_extension("lib.cogs.admin")
+client.load_extension("lib.cogs.help")
+client.load_extension("lib.cogs.events")
 
 async def status():
     while True:
