@@ -30,7 +30,7 @@ class Admin(commands.Cog):
 
         @commands.command(name='mute', description="Mute members")
         @commands.guild_only()
-        @commands.has_permissions(manage_server = True)
+        @commands.has_permissions(manage_guild = True)
         async def mute(self,ctx,member : discord.Member):
                 muted_role = discord.utils.get(ctx.guild.roles, name="Muted")
 
@@ -55,7 +55,7 @@ class Admin(commands.Cog):
 
         @commands.command(name='unmute', description="Unmute members")
         @commands.guild_only()
-        @commands.has_permissions(manage_server = True)
+        @commands.has_permissions(manage_guild = True)
         async def unmute(self,ctx,member : discord.Member):
                 muted_role = discord.utils.get(ctx.guild.roles, name="Muted")
 
@@ -65,7 +65,7 @@ class Admin(commands.Cog):
 
         @commands.command(name='clear', description="Delete messages")
         @commands.guild_only()
-        @commands.has_permissions(manage_server = True)
+        @commands.has_permissions(manage_guild = True)
         async def clear(self, ctx, ammount=100):
                 await ctx.channel.purge(limit=ammount)
 
