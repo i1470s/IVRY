@@ -23,14 +23,14 @@ class Admin(commands.Cog):
 
         @commands.command(name='kick', description="Kick members")
         @commands.guild_only()
-        @commands.has_permissions(ban_members = True)
+        @commands.has_permissions(kick_members = True)
         async def kick(self,ctx,member : discord.Member,*,reason="No reason provided"):
                 await ctx.send(member.name+ " has been kicked from the server!")
                 await member.kick(reason=reason)
 
         @commands.command(name='mute', description="Mute members")
         @commands.guild_only()
-        @commands.has_permissions(ban_members = True)
+        @commands.has_permissions(manage_server = True)
         async def mute(self,ctx,member : discord.Member):
                 muted_role = discord.utils.get(ctx.guild.roles, name="Muted")
 
@@ -55,7 +55,7 @@ class Admin(commands.Cog):
 
         @commands.command(name='unmute', description="Unmute members")
         @commands.guild_only()
-        @commands.has_permissions(ban_members = True)
+        @commands.has_permissions(manage_server = True)
         async def unmute(self,ctx,member : discord.Member):
                 muted_role = discord.utils.get(ctx.guild.roles, name="Muted")
 
@@ -65,7 +65,7 @@ class Admin(commands.Cog):
 
         @commands.command(name='clear', description="Delete messages")
         @commands.guild_only()
-        @commands.has_permissions(ban_members = True)
+        @commands.has_permissions(manage_server = True)
         async def clear(self, ctx, ammount=100):
                 await ctx.channel.purge(limit=ammount)
 
