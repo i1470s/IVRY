@@ -8,7 +8,7 @@ import json
 import data 
 from data import config
 
-#WORK ON THE GAMES WITH ECHO THEN UPLOAD V.1.5!
+#WORK ON THE GAMES WITH ECHO THEN UPLOAD V.1.6!
 
 client = commands.AutoShardedBot(command_prefix=[".", "!", "?", "/", "~", "#", "%"], shard_count=1, case_insensitive=True)
 
@@ -17,6 +17,7 @@ client.load_extension("lib.cogs.general")
 client.load_extension("lib.cogs.fun")
 client.load_extension("lib.cogs.nsfw")
 client.load_extension("lib.cogs.music")
+client.load_extension("lib.cogs.games")
 client.load_extension("lib.cogs.admin")
 client.load_extension("lib.cogs.help")
 client.load_extension("lib.cogs.events")

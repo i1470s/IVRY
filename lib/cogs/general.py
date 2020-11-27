@@ -29,10 +29,10 @@ class General(commands.Cog):
 
                         embed.add_field(name='Discord Server', value=f'[Click Me](https://discord.gg/ppn2U99)', inline=False)
 
-                        embed.add_field(name='Announcements', value=f'Hey! we are currently adding games and trying to fix issues with our music player!', inline=False)
+                        embed.add_field(name='Announcements', value=f'Hey! we are currently adding games!!', inline=False)
 
                         embed.set_footer(
-                        text=f"Version (V.1.5) | shards 1")
+                        text=f"Version (V.1.5) | Shards 1")
 
                         await ctx.send(embed=embed)
                 except Exception as e:
@@ -65,7 +65,7 @@ class General(commands.Cog):
                         )
                         embed.set_thumbnail(url=ctx.bot.user.avatar_url)
                         
-                        embed.add_field(name=f'Donations help keep us alive!', value=f'[Click Me](https://paypal.me/BigFlop)')
+                        embed.add_field(name=f'Donations help keep us alive!', value=f'[Click Me](https://www.paypal.com/donate/?hosted_button_id=QWT56W6DFV8H4)')
 
 
                         await ctx.send(embed=embed)
