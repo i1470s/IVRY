@@ -21,7 +21,7 @@ class Help(commands.Cog):
                     color=discord.Color.purple() 
         )
                 helpEmbed.set_thumbnail(url=ctx.bot.user.avatar_url)
-                helpEmbed.set_footer(text=f"Version (V.1.5) | Shards 1")
+                helpEmbed.set_footer(text=f"Version (V.1.6) | Shards 1")
                 
                 cogs = [c for c in self.client.cogs.keys()]  
 

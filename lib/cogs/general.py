@@ -29,10 +29,10 @@ class General(commands.Cog):
 
                         embed.add_field(name='Discord Server', value=f'[Click Me](https://discord.gg/ppn2U99)', inline=False)
 
-                        embed.add_field(name='Announcements', value=f'Hey! we are currently adding games!!', inline=False)
+                        embed.add_field(name='Announcements', value=f'Join Our Discord!!!!', inline=False)
 
                         embed.set_footer(
-                        text=f"Version (V.1.5) | Shards 1")
+                        text=f"Version (V.1.6) | Shards 1")
 
                         await ctx.send(embed=embed)
                 except Exception as e:

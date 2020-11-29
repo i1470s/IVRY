@@ -76,6 +76,7 @@ class Admin(commands.Cog):
                 sys.exit()
 
         @commands.command(hidden=True)
+        @commands.is_owner()
         async def reload(self, ctx, cog=None):
                 if not cog:
                         async with ctx.typing():

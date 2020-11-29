@@ -1,5 +1,4 @@
 import discord
-import discord, json
 from discord.ext import commands
 from discord.ext.commands import AutoShardedBot
 import asyncio
@@ -8,8 +7,6 @@ import json
 import data 
 from data import config
 
-#WORK ON THE GAMES WITH ECHO THEN UPLOAD V.1.6!
-
 client = commands.AutoShardedBot(command_prefix=[".", "!", "?", "/", "~", "#", "%"], shard_count=1, case_insensitive=True)
 
 client.remove_command('help')
@@ -17,7 +14,6 @@ client.load_extension("lib.cogs.general")
 client.load_extension("lib.cogs.fun")
 client.load_extension("lib.cogs.nsfw")
 client.load_extension("lib.cogs.music")
-client.load_extension("lib.cogs.games")
 client.load_extension("lib.cogs.admin")
 client.load_extension("lib.cogs.help")
 client.load_extension("lib.cogs.events")

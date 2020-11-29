@@ -212,7 +212,7 @@ class Fun(commands.Cog):
 
         @commands.command(name='repeat', description="Repeats you")
         async def repeat(self, ctx, *, message):
-                await ctx.send(message)           
+                await ctx.send(message)  
                 
                 return
 
