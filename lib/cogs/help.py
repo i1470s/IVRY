@@ -4,6 +4,7 @@ import discord
 import re
 import math
 from discord.ext import commands
+from data import config
 
 class Help(commands.Cog):   
     
@@ -21,7 +22,7 @@ class Help(commands.Cog):
                     color=discord.Color.purple() 
         )
                 helpEmbed.set_thumbnail(url=ctx.bot.user.avatar_url)
-                helpEmbed.set_footer(text=f"Version (V.1.6) | Shards 1")
+                helpEmbed.set_footer(text=f"{config.version} | {config.shards}")
                 
                 cogs = [c for c in self.client.cogs.keys()]  
 

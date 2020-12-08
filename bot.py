@@ -4,7 +4,6 @@ from discord.ext.commands import AutoShardedBot
 import asyncio
 from asyncio import sleep
 import json
-import data 
 from data import config
 
 client = commands.AutoShardedBot(command_prefix=[".", "!", "?", "/", "~", "#", "%"], shard_count=1, case_insensitive=True)

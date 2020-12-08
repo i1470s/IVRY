@@ -5,6 +5,7 @@ from discord.ext import commands
 import platform
 import time
 import math
+from data import config
 
 class General(commands.Cog):   
     
@@ -32,7 +33,7 @@ class General(commands.Cog):
                         embed.add_field(name='Announcements', value=f'Join Our Discord!!!!', inline=False)
 
                         embed.set_footer(
-                        text=f"Version (V.1.6) | Shards 1")
+                        text=f"{config.version} | {config.shards}")
 
                         await ctx.send(embed=embed)
                 except Exception as e:
