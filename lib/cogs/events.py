@@ -16,11 +16,10 @@ class Events(commands.Cog):
 
         @commands.Cog.listener()
         async def on_ready(self):
-                print("Connecting To The Internet")
-                print("Checking DB")
-                print("Loaded Files, The Bot Is Running Normally")
-                print("DONE! (Loaded)")
+                print("DONE! (Loaded Cogs)")
 
+
+        #WELCOME MESSAGE (NOT WORKING!)
 
         @commands.Cog.listener()
         async def on_member_join(self, member):
@@ -37,6 +36,10 @@ class Events(commands.Cog):
 
                 await channel.send(embed=embed)
 
+    
+        #AUTO MOD (COMING SOON)
+        
+        
         #ERROR MESSAGES 
         
         @commands.Cog.listener() 
@@ -59,6 +62,9 @@ class Events(commands.Cog):
 
                 if isinstance(error, commands.MissingPermissions):
                         await ctx.send(f':x: You dont have permissions to use .{ctx.command} ')
+                
+                if isinstance(error, commands.BotMissingPermissions):
+                        await ctx.send(f':x: I dont have permissions to use .{ctx.command} please give me admin permissions.')
 
                 elif isinstance(error, commands.NoPrivateMessage):
                         try:
@@ -73,5 +79,6 @@ class Events(commands.Cog):
                         print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)
                         traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
 
+                
 def setup(client):
     client.add_cog(Events(client))

@@ -3,10 +3,10 @@ from discord.ext import commands
 from discord.ext.commands import AutoShardedBot
 import asyncio
 from asyncio import sleep
-import json
 from data import config
 
 client = commands.AutoShardedBot(command_prefix=[".", "!", "?", "/", "~", "#", "%"], shard_count=1, case_insensitive=True)
+intents=discord.Intents.all
 
 client.remove_command('help')
 client.load_extension("lib.cogs.general")
@@ -20,13 +20,15 @@ client.load_extension("lib.cogs.events")
 async def status():
     while True:
         await client.wait_until_ready()
-        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='for .Help'))
+        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f'for .Help'))
         await sleep(10)
         await client.change_presence(activity=discord.Game(name=f'on {len(client.guilds)} servers | .Help'))
         await sleep(10)
+        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f'{config.shards}'))
+        await sleep(10)
 @client.event
 async def on_ready():
-    print(f'{client.user} has Awoken!')
+    print(f'IVRYs running on {config.version}')
 client.loop.create_task(status())
 
 client.run(config.token)

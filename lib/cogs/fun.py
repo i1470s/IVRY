@@ -1,5 +1,6 @@
 import cogs
 import random
+import math
 from random import choice, randint
 from typing import Optional
 import discord

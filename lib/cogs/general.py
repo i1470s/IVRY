@@ -83,7 +83,7 @@ class General(commands.Cog):
                         )
                         embed.set_thumbnail(url=ctx.bot.user.avatar_url)
                         
-                        embed.add_field(name=f'Invite IVRY to your server!', value=f'[CLick Me](https://discord.com/api/oauth2/authorize?client_id=764424676256514081&permissions=8&scope=bot)')
+                        embed.add_field(name=f'Invite IVRY to your server!', value=f'[Click Me](https://discord.com/api/oauth2/authorize?client_id=764424676256514081&permissions=8&scope=bot)')
 
                         await ctx.send(embed=embed)
                 except Exception as e:
