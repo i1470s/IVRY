@@ -24,7 +24,7 @@ async def status():
         await sleep(10)
         await client.change_presence(activity=discord.Game(name=f'on {len(client.guilds)} servers | .Help'))
         await sleep(10)
-        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f'{config.shards}'))
+        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f'{config.shards} | .Help'))
         await sleep(10)
 @client.event
 async def on_ready():
