@@ -28,7 +28,7 @@ async def status():
         await sleep(10)
 @client.event
 async def on_ready():
-    print(f'IVRYs running on {config.version}')
+    print(f'Starting IVRY on {config.version}')
 client.loop.create_task(status())
 
 client.run(config.token)
