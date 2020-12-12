@@ -146,7 +146,7 @@ class Admin(commands.Cog):
                         guild = self.client.get_guild(guildid)
                 if guild:
                         await guild.leave()
-                        msg = f':ok: I have left {guild.name} server!'
+                        msg = f':ok: I have left the {guild.name} server!'
                 else:
                         msg = ':x: Could not find that server id!'
                 await ctx.send(msg)

@@ -201,7 +201,15 @@ class Fun(commands.Cog):
 
         @commands.command(name='girlfriend', description="Take your shot")
         async def girlfriend(self, ctx):
-                await ctx.send(f'Lol you wish')
+                await ctx.send(f'Lol your dreaming you disrespecful trash!!!')
+
+        @commands.command(name='boyfriend', description="Take your shot")
+        async def girlfriend(self, ctx):
+                await ctx.send(f'Lol you think someone would want you????')
+
+        @commands.command(name='gay', description="Take the test")
+        async def gay(self, ctx, member: discord.Member = None):        
+                await ctx.send(f'Lemme check... ohhh its u lol, dumbass')
 
         @commands.command(name='repeat', description="Repeats you")
         async def repeat(self, ctx, *, message):

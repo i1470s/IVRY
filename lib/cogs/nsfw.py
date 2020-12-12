@@ -87,7 +87,7 @@ class NSFW(commands.Cog):
             sub = r.subreddit('lesbians')
         await ctx.send(sub.random().url)
 
-    @commands.command(name='teen', description="Sends some teen pussy")
+    @commands.command(name='teen', description="Sends some teen porn")
     @commands.is_nsfw()
     async def teen(self, ctx):
 
@@ -100,7 +100,7 @@ class NSFW(commands.Cog):
             sub = r.subreddit('LegalTeens')
         await ctx.send(sub.random().url)
 
-    @commands.command(name='random', description="Sends some random nsfw")
+    @commands.command(name='random', description="Sends some random nsfw porn")
     @commands.is_nsfw()
     async def random(self, ctx):
 
