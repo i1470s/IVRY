@@ -86,7 +86,7 @@ run_bot() {
         echo "Upgrading requirements"
         if python3 -m pip install --user --upgrade -r requirements.txt; then
             echo "Starting bot..."
-            python3 loopself.py
+            python3 bot.py
             ret=$?
             if [ $ret == "15" ]; then
                 min_updater
@@ -113,7 +113,7 @@ run_bot() {
         echo "Upgrading requirements"
         if python -m pip install --user -r requirements.txt; then
             echo "Starting bot..."
-            python loopself.py
+            python bot.py
             ret=$?
             if [ $ret == "15" ]; then
                 min_updater
