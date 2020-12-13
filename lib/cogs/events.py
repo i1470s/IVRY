@@ -1,4 +1,3 @@
-import cogs
 import random
 import discord
 import datetime
@@ -12,21 +11,23 @@ class Events(commands.Cog):
         def __init__(self, client):
                 self.client = client   
 
-        #INIT
-
         @commands.Cog.listener()
         async def on_ready(self):
                 print("DONE! (Loaded Cogs)")
 
+        #WELCOME
 
-        #WELCOME MESSAGE (NOT WORKING!)
+        @commands.Cog.listener()
+        async def on_member_join(self, member):
+                role= discord.utils.get(member.guild.roles, name="Member")
+                await client.add_roles(member,role)
 
         @commands.Cog.listener()
         async def on_member_join(self, member):
                 channel = discord.utils.get(member.guild.text_channels, name="welcome")
                 if channel:
                         embed = discord.Embed(
-                                description="Welcome to our server check #rules for info!",
+                                description=f"```Welcome to our server {member.name} make sure to check our rules, and have a great stay!```",
                                 color=0x9B59B6,
                         )
                 embed.set_thumbnail(url=member.avatar_url)
@@ -36,11 +37,11 @@ class Events(commands.Cog):
 
                 await channel.send(embed=embed)
 
-    
+
         #AUTO MOD (COMING SOON)
         
-        
-        #ERROR MESSAGES 
+
+        #USER ERROR MESSAGES 
         
         @commands.Cog.listener() 
         async def on_command_error(self, ctx, error):
@@ -79,6 +80,5 @@ class Events(commands.Cog):
                         print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)
                         traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
 
-                
 def setup(client):
     client.add_cog(Events(client))

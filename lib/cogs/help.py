@@ -1,4 +1,3 @@
-import cogs
 import random
 import discord
 import re

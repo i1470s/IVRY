@@ -1,4 +1,3 @@
-import cogs
 import random
 import math
 from random import choice, randint
@@ -204,7 +203,7 @@ class Fun(commands.Cog):
                 await ctx.send(f'Lol your dreaming you disrespecful trash!!!')
 
         @commands.command(name='boyfriend', description="Take your shot")
-        async def girlfriend(self, ctx):
+        async def boyfriend(self, ctx):
                 await ctx.send(f'Lol you think someone would want you????')
 
         @commands.command(name='gay', description="Take the test")

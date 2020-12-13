@@ -1,4 +1,3 @@
-import cogs
 import random
 import discord
 from discord.ext import commands
@@ -30,7 +29,7 @@ class General(commands.Cog):
 
                         embed.add_field(name='Discord Server', value=f'[Click Me](https://discord.gg/ppn2U99)', inline=False)
 
-                        embed.add_field(name='Announcements', value=f'Join Our Discord!!!!', inline=False)
+                        embed.add_field(name='Announcements', value=f'{config.announcements}', inline=False)
 
                         embed.set_footer(
                         text=f"{config.version} | {config.shards}")

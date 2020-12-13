@@ -4,9 +4,11 @@ from discord.ext.commands import AutoShardedBot
 import asyncio
 from asyncio import sleep
 from data import config
+import traceback
+import datetime
 
-client = commands.AutoShardedBot(command_prefix=[".", "!", "?", "/", "~", "#", "%"], shard_count=1, case_insensitive=True)
-intents=discord.Intents.all
+intents=discord.Intents.all()
+client = commands.AutoShardedBot(command_prefix=[".", "!", "?", "/", "~", "#", "%"], shard_count=1, case_insensitive=True, intents=intents)
 
 client.remove_command('help')
 client.load_extension("lib.cogs.general")
@@ -30,5 +32,4 @@ async def status():
 async def on_ready():
     print(f'Starting IVRY on {config.version}')
 client.loop.create_task(status())
-
 client.run(config.token)
