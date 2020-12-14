@@ -40,7 +40,7 @@ class Help(commands.Cog):
             embed.set_thumbnail(url=ctx.bot.user.avatar_url)
             embed.set_footer(text=f"{config.version} | {config.shards}")
 
-            embed.add_field(name = "Fun :ribbon:", value = "Fun Commands List \n\n `8ball`- Guesses your fortune \n `joke`- Sends a joke \n `djoke`- Sends a dark joke \n `meme`- Sends a meme \n `measure`- Measures your cock \n `fortune`- Guesses your fortune \n `roll`- Roles a random number \n `useless`- Sends a useless website /n `hi`- Hey /n `fucku`- Try it /n `xmas`- Christmas countdown /n `hallow`- Halloween countdown /n `vday`- Valintines day countdown/n `girlfriend`- Shoot your shot /n `boyfriend`- Shoot your shot /n `gay`- Try it /n `repeat`- Repeats what you say", inline=False)
+            embed.add_field(name = "Fun :ribbon:", value = "Fun Commands List \n\n `8ball`- Guesses your fortune \n `joke`- Sends a joke \n `djoke`- Sends a dark joke \n `meme`- Sends a meme \n `measure`- Measures your cock \n `fortune`- Guesses your fortune \n `roll`- Roles a random number \n `useless`- Sends a useless website \n `hi`- Hey \n `fucku`- Try it \n `xmas`- Christmas countdown \n `hallow`- Halloween countdown \n `vday`- Valintines day countdown \n `girlfriend`- Shoot your shot \n `boyfriend`- Shoot your shot \n `gay`- Try it \n `repeat`- Repeats what you say", inline=False)
 
             await ctx.send(embed = embed)
 
