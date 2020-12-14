@@ -4,8 +4,6 @@ from discord.ext.commands import AutoShardedBot
 import asyncio
 from asyncio import sleep
 from data import config
-import traceback
-import datetime
 
 intents=discord.Intents.all()
 client = commands.AutoShardedBot(command_prefix=[".", "!", "?", "/", "~", "#", "%"], shard_count=1, case_insensitive=True, intents=intents)

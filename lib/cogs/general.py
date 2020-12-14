@@ -1,7 +1,6 @@
 import random
 import discord
 from discord.ext import commands
-import platform
 import time
 import math
 from data import config
@@ -16,12 +15,12 @@ class General(commands.Cog):
                 try:
                          
                         embed = discord.Embed(
-                                title = f'IVRY info',
+                                title = f'IVRY Info',
                                 colour = 0x9B59B6
                         )
                         embed.set_thumbnail(url=ctx.bot.user.avatar_url)
 
-                        embed.add_field(name='Created by', value=f'I1470s#0396', inline=False)
+                        embed.add_field(name='Created by', value=f'[i1470s#0396](https://github.com/i1470s)', inline=False)
 
                         embed.add_field(name='Status', value=f'Online 🟢', inline=False)
 
