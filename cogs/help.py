@@ -8,7 +8,6 @@ class Help(commands.Cog):
     
         def __init__(self, client):
                 self.client = client        
-        
 
         @commands.group(invoke_without_command=True)
         async def help(self, ctx):
@@ -22,7 +21,7 @@ class Help(commands.Cog):
             embed.add_field(name = "NSFW :x:", value="`9` NSFW Commands", inline=False)
             embed.add_field(name = "Music :musical_note:", value="`10` Music Player Commands", inline=False)
             embed.add_field(name = "Admin :hammer:", value="`6` Admin Commands", inline=False)
-            embed.add_field(name = "Additional Resources", value=":video_game: [IVRY Server](https://discord.gg/ppn2u99)\n:computer: [Website](https://ivry.tk)", inline=False)
+            embed.add_field(name = "Additional Resources", value=":video_game: [IVRY Server](https://discord.gg/ppn2u99)\n:iphone: [Website](https://ivry.tk)", inline=False)
 
             await ctx.send(embed = embed)
 
