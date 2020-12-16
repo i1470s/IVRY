@@ -20,7 +20,7 @@ class Events(commands.Cog):
 
         @commands.Cog.listener()
         async def on_guild_join(self, guild):
-                channel = discord.utils.get(guild.system_channel)
+                channel = discord.utils.get(guild.text_channels, name="general")
                 if channel:
                         embed = discord.Embed(title = f"Prefix {config.prefix}", description=f"Thanks for inviting me :smile::clap:! Im happy to be apart of `{guild.name}` :tada::smile:. Make use {config.prefix}help for a list of my commands!",color=0x9B59B6,)
 
@@ -33,7 +33,7 @@ class Events(commands.Cog):
 
         #GUILD MEMBER WELCOME
 
-        @commands.Cog.listener() #NOT WORKING
+        @commands.Cog.listener()
         async def on_member_join(self, member):
                 role= discord.utils.get(member.guild.roles, name="Member")
                 await member.add_roles(member, role)
@@ -53,7 +53,11 @@ class Events(commands.Cog):
 
                 await channel.send(embed=embed)
 
-        #ADD A BOT PING MESSAGE (IMPORTANT)
+        #BOT MESSAGES (FINISH -LATER)
+
+        @commands.Cog.listener()
+        async def on_message(self, message):
+                return
 
         #ERROR MESSAGES 
         
@@ -76,19 +80,19 @@ class Events(commands.Cog):
                         return
 
                 if isinstance(error, commands.MissingPermissions):
-                        await ctx.send(f':x: You dont have permissions to use .{ctx.command} ')
+                        await ctx.send(f':x: You dont have permissions to use {config.prefix}{ctx.command} ')
                 
                 if isinstance(error, commands.BotMissingPermissions):
-                        await ctx.send(f':x: I dont have permissions to use .{ctx.command} please give me admin permissions.')
+                        await ctx.send(f':x: I dont have permissions to use {config.prefix}{ctx.command} please give me admin permissions.')
 
                 elif isinstance(error, commands.NoPrivateMessage):
                         try:
-                                await ctx.author.send(f':x: .{ctx.command} Can not be used in Private Messages.')
+                                await ctx.author.send(f':x: {config.prefix}{ctx.command} Can not be used in Private Messages.')
                         except discord.HTTPException:
                                 pass
 
                 elif isinstance(error, commands.NSFWChannelRequired):
-                        await ctx.send(f':x: .{ctx.command} Can only be used in a NSFW chat or Private Messages.')
+                        await ctx.send(f':x: {config.prefix}{ctx.command} Can only be used in a NSFW chat or Private Messages.')
 
                 else:
                         print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)
