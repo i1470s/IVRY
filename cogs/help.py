@@ -17,7 +17,7 @@ class Help(commands.Cog):
             embed.set_author(name="IVRY Help", icon_url=ctx.bot.user.avatar_url)
 
             embed.add_field(name = "General :gear:", value = "`8` General Commands", inline=False)
-            embed.add_field(name = "Fun :ribbon:", value="`17` Fun Commands", inline=False)
+            embed.add_field(name = "Fun :tada:", value="`17` Fun Commands", inline=False)
             embed.add_field(name = "NSFW :x:", value="`9` NSFW Commands", inline=False)
             embed.add_field(name = "Music :musical_note:", value="`10` Music Player Commands", inline=False)
             embed.add_field(name = "Admin :hammer:", value="`6` Admin Commands", inline=False)
@@ -37,7 +37,7 @@ class Help(commands.Cog):
 
         @help.command()
         async def fun(self, ctx):
-            embed = discord.Embed(title = "IVRY Help - Fun :ribbon:", description = f"Prefixes {config.prefix}", colour = 0x9B59B6)
+            embed = discord.Embed(title = "IVRY Help - Fun :tada:", description = f"Prefixes {config.prefix}", colour = 0x9B59B6)
             embed.set_thumbnail(url=ctx.bot.user.avatar_url)
             embed.set_footer(text=f"{config.version} | {config.shards}")
 
