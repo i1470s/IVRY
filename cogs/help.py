@@ -71,7 +71,7 @@ class Help(commands.Cog):
             embed.set_thumbnail(url=ctx.bot.user.avatar_url)
             embed.set_footer(text=f"{config.version} | {config.shards}")
             
-            embed.add_field(name = "Commands", value = "Admin Commands List \n\n `ban`- Ban members \n `kick`- Kick members \n `mute`- Mute members \n `unban`- Unban members \n `unmute`- Unmute members \n `clear`- Clear messages", inline=False)
+            embed.add_field(name = "Commands", value = "\n `ban`- Ban members \n `kick`- Kick members \n `mute`- Mute members \n `unban`- Unban members \n `unmute`- Unmute members \n `clear`- Clear messages", inline=False)
 
             await ctx.send(embed = embed)
 
