@@ -14,7 +14,7 @@ class General(commands.Cog):
         async def about(self, ctx):
                 try:
                          
-                        embed = discord.Embed(
+                        embed = discord.Embed(title = f"Prefix {config.prefix}",
                                 colour = 0x9B59B6
                         )
                         embed.set_thumbnail(url=ctx.bot.user.avatar_url)
@@ -23,10 +23,10 @@ class General(commands.Cog):
                         embed.add_field(name='Created by', value=f'[i1470s#0396](https://github.com/i1470s)', inline=False)
 
                         embed.add_field(name='Status', value=f'Online 🟢', inline=False)
-
-                        embed.add_field(name='Website', value=f'[Click Me](https://ivry.tk)', inline=False)
-
+                        
                         embed.add_field(name='Discord Server', value=f'[Click Me](https://discord.gg/ppn2U99)', inline=False)
+                        
+                        embed.add_field(name='Website', value=f'[Click Me](https://ivry.tk)', inline=False)
 
                         embed.add_field(name='Announcements', value=f'{config.announcements}', inline=False)
                         embed.set_footer(

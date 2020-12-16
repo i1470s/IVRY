@@ -19,22 +19,24 @@ class Events(commands.Cog):
         #NEW SERVER
 
         @commands.Cog.listener()
-        async def on_guild_join(self, ctx, guild, member):
-                channel = discord.utils.get(member.guild.text_channels, name="general")
+        async def on_guild_join(self, guild):
+                channel = discord.utils.get(guild.system_channel)
                 if channel:
-                        embed = discord.Embed(title=f"IVRY",description=f"Thanks for inviting me to {ctx.guild.id} use {config.prefix}help for a list of my commands!",color=0x9B59B6,)
+                        embed = discord.Embed(title = f"Prefix {config.prefix}", description=f"Thanks for inviting me :smile::clap:! Im happy to be apart of `{guild.name}` :tada::smile:. Make use {config.prefix}help for a list of my commands!",color=0x9B59B6,)
 
-                embed.set_thumbnail(url=ctx.bot.user.avatar_url)
+                embed.set_author(name="IVRY Info", icon_url=guild.me.avatar_url)
+                embed.set_thumbnail(url=guild.me.avatar_url)
                 embed.set_footer(text=f"{config.version} | {config.shards}")
+                embed.add_field(name = "Additional Resources", value=":video_game: [IVRY Server](https://discord.gg/ppn2u99)\n:iphone: [Website](https://ivry.tk)", inline=False)
 
-                await ctx.send(embed=embed)
+                await channel.send(embed=embed)
 
         #GUILD MEMBER WELCOME
 
-        @commands.Cog.listener()
+        @commands.Cog.listener() #NOT WORKING
         async def on_member_join(self, member):
                 role= discord.utils.get(member.guild.roles, name="Member")
-                await client.add_roles(member, role)
+                await member.add_roles(member, role)
 
         @commands.Cog.listener()
         async def on_member_join(self, member):
@@ -50,6 +52,8 @@ class Events(commands.Cog):
                 embed.timestamp = datetime.datetime.utcnow()
 
                 await channel.send(embed=embed)
+
+        #ADD A BOT PING MESSAGE (IMPORTANT)
 
         #ERROR MESSAGES 
         
