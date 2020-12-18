@@ -16,13 +16,13 @@ class Events(commands.Cog):
         async def on_ready(self):
                 print("DONE! (Loaded Cogs)")
 
-        #NEW SERVER
+        #NEW GUILD
 
         @commands.Cog.listener()
         async def on_guild_join(self, guild):
                 channel = discord.utils.get(guild.text_channels, name="general")
                 if channel:
-                        embed = discord.Embed(title = f"Prefix {config.prefix}", description=f"Thanks for inviting me :smile::clap:! Im happy to be apart of `{guild.name}` :tada::smile:. Make use {config.prefix}help for a list of my commands!",color=0x9B59B6,)
+                        embed = discord.Embed(title = f"Prefix {config.prefix}", description=f"Thanks for inviting me :smile::clap:! Im happy to be apart of `{guild.name}` :tada::smile:. Make use {config.prefix}Help for a list of my commands!",color=0x9B59B6,)
 
                 embed.set_author(name="IVRY Info", icon_url=guild.me.avatar_url)
                 embed.set_thumbnail(url=guild.me.avatar_url)
@@ -53,6 +53,14 @@ class Events(commands.Cog):
 
                 await channel.send(embed=embed)
 
+        #GUILD MEMBER LEAVE
+
+        @commands.Cog.listener()
+        async def on_member_leave(self, member):
+                channel = discord.utils.get(member.guild.text_channels, name="welcome")
+                if channel:
+                        await channel.send(f"{member.mention} Has left '{member.guild}' we've been betrayed :cry:")
+
         #BOT MESSAGES
 
         @commands.Cog.listener()
@@ -60,8 +68,8 @@ class Events(commands.Cog):
                 if self.client.user.mentioned_in(message):
                         embed = discord.Embed(title = f"Prefix {config.prefix}", description=f"Hey! my name is {self.client.user} im a [Discord Bot](https://support.discord.com/hc/en-us/articles/212889058-Discord-s-Official-API) you can check my commands list with {config.prefix}Help at anytime!",color=0x9B59B6,)
 
-                embed.set_thumbnail(url=self.client.user.avatar_url)
                 embed.set_author(name="IVRY Info", icon_url=self.client.user.avatar_url)
+                embed.set_thumbnail(url=self.client.user.avatar_url)
                 embed.set_footer(text=f"{config.version} | {config.shards}")
                 embed.add_field(name = "Additional Resources", value=":video_game: [IVRY Server](https://discord.gg/ppn2u99)\n:iphone: [Website](https://ivry.tk)", inline=False)
 

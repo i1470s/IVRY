@@ -4,7 +4,6 @@ from discord.ext.commands import AutoShardedBot
 import asyncio
 from asyncio import sleep
 from data import config
-import json
 
 intents=discord.Intents.all()
 client = commands.AutoShardedBot(command_prefix=config.default_prefix, shard_count=1, case_insensitive=True, intents=intents)
@@ -16,6 +15,7 @@ client.load_extension("cogs.nsfw")
 client.load_extension("cogs.music")
 client.load_extension("cogs.admin")
 client.load_extension("cogs.help")
+client.load_extension("cogs.xp")
 client.load_extension("cogs.events")
 
 async def status():
