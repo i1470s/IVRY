@@ -15,7 +15,7 @@ class xp(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-        with open(r".\data\users.json", "r") as f:
+        with open(r"./data/users.json", "r") as f:
             self.users = json.load(f)
 
         self.client.loop.create_task(self.save_users())
@@ -23,7 +23,7 @@ class xp(commands.Cog):
     async def save_users(self):
         await self.client.wait_until_ready()
         while not self.client.is_closed():
-            with open(r".\data\users.json", "w") as f:
+            with open(r"./data/users.json", "w") as f:
                 json.dump(self.users, f, indent=4)
 
             await asyncio.sleep(5)
@@ -63,7 +63,7 @@ class xp(commands.Cog):
         if not member_id in self.users:
             await ctx.send(f"{member} doesn't have a level")
         else:
-            embed = discord.Embed(title=f"{member} Stats",color=member.color, timestamp=ctx.message.created_at)
+            embed = discord.Embed(title=f"{member} Stats",color=0x9B59B6, timestamp=ctx.message.created_at)
 
             embed.set_author(name=f"IVRY Levels", icon_url=self.client.user.avatar_url)
 
