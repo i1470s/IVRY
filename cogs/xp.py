@@ -15,7 +15,7 @@ class xp(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-        with open(r"./data/users.json", "r") as f:
+        with open(r"./data/users-xp.json", "r") as f:
             self.users = json.load(f)
 
         self.client.loop.create_task(self.save_users())
@@ -23,7 +23,7 @@ class xp(commands.Cog):
     async def save_users(self):
         await self.client.wait_until_ready()
         while not self.client.is_closed():
-            with open(r"./data/users.json", "w") as f:
+            with open(r"./data/users-xp.json", "w") as f:
                 json.dump(self.users, f, indent=4)
 
             await asyncio.sleep(5)
