@@ -2,8 +2,15 @@ import discord
 from discord.ext import commands
 from discord.ext.commands import AutoShardedBot
 import asyncio
+import logging
 from asyncio import sleep
 from data import config
+
+logger = logging.getLogger('discord')
+logger.setLevel(logging.DEBUG)
+handler = logging.FileHandler(filename='./data/log.json', encoding='utf-8', mode='w')
+handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
+logger.addHandler(handler)
 
 intents=discord.Intents.all()
 client = commands.AutoShardedBot(command_prefix=config.default_prefix, shard_count=1, case_insensitive=True, intents=intents)

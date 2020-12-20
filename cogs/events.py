@@ -76,7 +76,7 @@ class Events(commands.Cog):
 
                 await message.channel.send(embed=embed)
 
-        #ERROR MESSAGES 
+        #USER ERROR MESSAGES 
         
         @commands.Cog.listener() 
         async def on_command_error(self, ctx, error):

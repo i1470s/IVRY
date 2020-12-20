@@ -16,7 +16,7 @@ class Help(commands.Cog):
             embed.set_footer(text=f"{config.version} | {config.shards}")
             embed.set_author(name="IVRY Help", icon_url=ctx.bot.user.avatar_url)
 
-            embed.add_field(name = "General :gear:", value = "`8` General Commands", inline=False)
+            embed.add_field(name = "General :gear:", value = "`9` General Commands", inline=False)
             embed.add_field(name = "Fun :tada:", value="`17` Fun Commands", inline=False)
             embed.add_field(name = "NSFW :x:", value="`9` NSFW Commands", inline=False)
             embed.add_field(name = "Music :musical_note:", value="`10` Music Player Commands", inline=False)
