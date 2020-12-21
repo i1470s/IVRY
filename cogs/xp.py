@@ -55,7 +55,7 @@ class xp(commands.Cog):
         if self.lvl_up(author_id):
             await message.channel.send(f"{message.author.mention} is now level {self.users[author_id]['level']}")
 
-    @commands.command(brief="Displays the user's level and experience.")
+    @commands.group(invoke_without_command=True)
     async def level(self, ctx, member: discord.Member = None):
         member = ctx.author if not member else member
         member_id = str(member.id)
@@ -72,6 +72,25 @@ class xp(commands.Cog):
             embed.add_field(name="XP", value=self.users[member_id]["exp"])
 
             await ctx.send(embed=embed)
+    
+    @level.command()
+    async def top(self, ctx, member: discord.Member = None):
+        member = ctx.author if not member else member
+        member_id = str(member.id)
+
+        try:
+            embed = discord.Embed(title=f"Level Top",color=0x9B59B6, timestamp=ctx.message.created_at)
+
+            embed.set_author(name=f"Top 10", icon_url=self.client.user.avatar_url)
+
+            embed.set_thumbnail(url=self.client.user.avatar_url)
+            embed.add_field(name="Coming Soon", value="This just shows your stats for now i am currently working on this!")
+            embed.add_field(name="Level", value=self.users[member_id]["level"])
+            embed.add_field(name="XP", value=self.users[member_id]["exp"])
+
+            await ctx.send(embed=embed)
+        except Exception as e:
+            await ctx.send(f'{e}')
 
 def setup(client):
     client.add_cog(xp(client))

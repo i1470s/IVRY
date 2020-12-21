@@ -27,17 +27,17 @@ class Help(commands.Cog):
 
         @help.command()
         async def general(self, ctx):
-            embed = discord.Embed(title = "IVRY Help - General :gear:", description = f"Prefixes {config.prefix}", colour = 0x9B59B6)
+            embed = discord.Embed(title = "IVRY Help - General :gear:", description = f"Prefix {config.prefix}", colour = 0x9B59B6)
             embed.set_thumbnail(url=ctx.bot.user.avatar_url)
             embed.set_footer(text=f"{config.version} | {config.shards}")
 
-            embed.add_field(name = "Commands", value = "\n `about`- Bot info \n `credits`- Bot credits \n `donate`- Bot donations \n `invite`- Bot invite link \n `ping`- Bot ping \n `servers`- Bot server list \n `serverinfo`- Current serverinfo \n `userinfo`- Get user info \n `level`- Check your XP level", inline=False)
+            embed.add_field(name = "Commands", value = "\n `about`- Bot info \n `credits`- Bot credits \n `donate`- Bot donations \n `invite`- Bot invite link \n `ping`- Bot ping \n `servers`- Bot server list \n `serverinfo`- Current serverinfo \n `userinfo`- Get user info \n `level`- Check your XP level \n `level top`- Top 10", inline=False)
 
             await ctx.send(embed = embed)
 
         @help.command()
         async def fun(self, ctx):
-            embed = discord.Embed(title = "IVRY Help - Fun :tada:", description = f"Prefixes {config.prefix}", colour = 0x9B59B6)
+            embed = discord.Embed(title = "IVRY Help - Fun :tada:", description = f"Prefix {config.prefix}", colour = 0x9B59B6)
             embed.set_thumbnail(url=ctx.bot.user.avatar_url)
             embed.set_footer(text=f"{config.version} | {config.shards}")
 
@@ -47,7 +47,7 @@ class Help(commands.Cog):
 
         @help.command()
         async def nsfw(self, ctx):
-            embed = discord.Embed(title = "IVRY Help - NSFW :x:", description = f"Prefixes {config.prefix}", colour = 0x9B59B6)
+            embed = discord.Embed(title = "IVRY Help - NSFW :x:", description = f"Prefix {config.prefix}", colour = 0x9B59B6)
             embed.set_thumbnail(url=ctx.bot.user.avatar_url)
             embed.set_footer(text=f"{config.version} | {config.shards}")
 
@@ -57,7 +57,7 @@ class Help(commands.Cog):
 
         @help.command()
         async def music(self, ctx):
-            embed = discord.Embed(title = "IVRY Help - Music :musical_note:", description = f"Prefixes {config.prefix}", colour = 0x9B59B6)
+            embed = discord.Embed(title = "IVRY Help - Music :musical_note:", description = f"Prefix {config.prefix}", colour = 0x9B59B6)
             embed.set_thumbnail(url=ctx.bot.user.avatar_url)
             embed.set_footer(text=f"{config.version} | {config.shards}")
 
@@ -67,7 +67,7 @@ class Help(commands.Cog):
 
         @help.command()
         async def admin(self, ctx):
-            embed = discord.Embed(title = "IVRY Help - Admin :hammer:", description = f"Prefixes {config.prefix}", colour = 0x9B59B6)
+            embed = discord.Embed(title = "IVRY Help - Admin :hammer:", description = f"Prefix {config.prefix}", colour = 0x9B59B6)
             embed.set_thumbnail(url=ctx.bot.user.avatar_url)
             embed.set_footer(text=f"{config.version} | {config.shards}")
             

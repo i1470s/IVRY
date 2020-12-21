@@ -17,7 +17,7 @@ class Events(commands.Cog):
         async def on_ready(self):
                 print("DONE! (Loaded Cogs)")
 
-        #NEW GUILD
+        #ON NEW GUILD JOIN
 
         @commands.Cog.listener()
         async def on_guild_join(self, guild):
@@ -44,7 +44,7 @@ class Events(commands.Cog):
                 channel = discord.utils.get(member.guild.text_channels, name="welcome")
                 if channel:
                         embed = discord.Embed(
-                                description=f"Welcome to our server {member.mention} make sure to check out the server rules, and have a great stay!",
+                                description=f"Welcome to `{member.guild}` {member.mention} make sure to check out the server rules, and have a great stay!",
                                 color=0x9B59B6,
                         )
                 embed.set_thumbnail(url=member.avatar_url)
@@ -62,7 +62,7 @@ class Events(commands.Cog):
                 if channel:
                         await channel.send(f"{member.mention} Has left '{member.guild}' we've been betrayed :cry:")
 
-        #BOT MESSAGES
+        #BOT MENTION
 
         @commands.Cog.listener()
         async def on_message(self, message):
@@ -95,6 +95,9 @@ class Events(commands.Cog):
 
                 if isinstance(error, ignored):
                         return
+
+                if isinstance(error, commands.CommandNotFound):
+                        await ctx.send(f':x: {config.prefix}{ctx.command} Is an unknown command.')
 
                 if isinstance(error, commands.MissingPermissions):
                         await ctx.send(f':x: You dont have permissions to use {config.prefix}{ctx.command} ')
