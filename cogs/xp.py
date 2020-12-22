@@ -79,9 +79,9 @@ class xp(commands.Cog):
         member_id = str(member.id)
 
         try:
-            embed = discord.Embed(title=f"Level Top",color=0x9B59B6, timestamp=ctx.message.created_at)
+            embed = discord.Embed(title=f"Top 10 users",color=0x9B59B6, timestamp=ctx.message.created_at)
 
-            embed.set_author(name=f"Top 10", icon_url=self.client.user.avatar_url)
+            embed.set_author(name=f"IVRY Levels", icon_url=self.client.user.avatar_url)
 
             embed.set_thumbnail(url=self.client.user.avatar_url)
             embed.add_field(name="Coming Soon", value="This just shows your stats for now i am currently working on this!")

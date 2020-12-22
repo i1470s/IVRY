@@ -69,12 +69,12 @@ class Events(commands.Cog):
                 if self.client.user.mentioned_in(message):
                         embed = discord.Embed(title = f"Prefix {config.prefix}", description=f"Hey! my name is {self.client.user} im a [Discord Bot](https://support.discord.com/hc/en-us/articles/212889058-Discord-s-Official-API) you can check my commands list with {config.prefix}Help at anytime!",color=0x9B59B6,)
 
-                embed.set_author(name="IVRY Info", icon_url=self.client.user.avatar_url)
-                embed.set_thumbnail(url=self.client.user.avatar_url)
-                embed.set_footer(text=f"{config.version} | {config.shards}")
-                embed.add_field(name = "Additional Resources", value=":video_game: [IVRY Server](https://discord.gg/ppn2u99)\n:iphone: [Website](https://ivry.tk)", inline=False)
+                        embed.set_author(name="IVRY Info", icon_url=self.client.user.avatar_url)
+                        embed.set_thumbnail(url=self.client.user.avatar_url)
+                        embed.set_footer(text=f"{config.version} | {config.shards}")
+                        embed.add_field(name = "Additional Resources", value=":video_game: [IVRY Server](https://discord.gg/ppn2u99)\n:iphone: [Website](https://ivry.tk)", inline=False)
 
-                await message.channel.send(embed=embed)
+                        await message.channel.send(embed=embed)
 
         #USER ERROR MESSAGES 
         

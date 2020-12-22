@@ -45,7 +45,7 @@ class General(commands.Cog):
                         )
                         embed.set_author(name="IVRY Credits", icon_url=ctx.bot.user.avatar_url)
                         embed.add_field(name=':keyboard: Developers', value=f'[i1470s#0396](https://github.com/i1470s)')
-                        embed.add_field(name=':open_hands: Contributors', value=f'[asianmin#2060](https://www.youtube.com/channel/UCWe_MB0vTXLjoXpp7D86ybA)')
+                        embed.add_field(name=':open_hands: Contributors', value=f'[asianmin#2060](https://www.youtube.com/channel/UCWe_MB0vTXLjoXpp7D86ybA) \n [Grace_einstein#9092](https://www.instagram.com/grace_einstein/) ')
                         embed.add_field(name=':books: Libraries', value=f'[Discord.py](https://github.com/Rapptz/discord.py)\n[Youtube_dl](https://github.com/ytdl-org/youtube-dl/)')
                         embed.add_field(name=':tools: Miscellaneous', value=f'[GNU(License)](http://www.gnu.org/licenses/)', inline=False)
 
