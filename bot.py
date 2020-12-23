@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 from discord.ext.commands import AutoShardedBot
-import asyncio
 from asyncio import sleep
 from extras import logging
 from data import config
