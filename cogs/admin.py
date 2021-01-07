@@ -135,6 +135,12 @@ class Admin(commands.Cog):
                                                 )
                                 await ctx.send(embed=embed)
 
+        #FINISH ME FOR V.2.5
+
+        @commands.command(hidden=True)
+        @commands.is_owner()
+        async def eval(self, ctx):
+                return
 
         @commands.command(hidden=True)
         @commands.is_owner()

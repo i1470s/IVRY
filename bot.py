@@ -5,8 +5,7 @@ from asyncio import sleep
 from extras import logging
 from data import config
 
-intents=discord.Intents.all()
-client = commands.AutoShardedBot(command_prefix=config.default_prefix, shard_count=1, case_insensitive=True, intents=intents)
+client = commands.AutoShardedBot(command_prefix=config.default_prefix, shard_count=1, case_insensitive=True, intents=discord.Intents.all())
 
 client.remove_command('help')
 client.load_extension("cogs.general")
