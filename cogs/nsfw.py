@@ -125,5 +125,18 @@ class NSFW(commands.Cog):
             sub = r.subreddit('pussy')
         await ctx.send(sub.random().url)
 
+    @commands.command(name='video', description="Sends some random porn video")
+    @commands.is_nsfw()
+    async def video(self, ctx):
+
+        if hasattr(ctx.message.channel, "nsfw"):
+            channel_nsfw = ctx.message.channel.nsfw
+        else:
+            channel_nsfw = str(ctx.message.channel.type) == "private"
+
+        if channel_nsfw:
+            sub = r.subreddit('porn')
+        await ctx.send(sub.random().url)
+
 def setup(client):
     client.add_cog(NSFW(client))

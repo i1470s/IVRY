@@ -1,4 +1,8 @@
 import ast
+import discord
+
+from discord.ext import commands
+
 
 def insert_returns(body):
     # insert return stmt if the last expression is a expression statement
@@ -15,49 +19,51 @@ def insert_returns(body):
     if isinstance(body[-1], ast.With):
         insert_returns(body[-1].body)
 
-    # for with blocks, again we insert returns into the body
-    if isinstance(body[-1], ast.AsyncWith):
-        insert_returns(body[-1].body)
 
-
-async def eval_stmts(stmts, env=None):
-    """
-    Evaluates input.
+@commands.command()
+async def eval(ctx, *, cmd):
+    """Evaluates input.
+    Input is interpreted as newline seperated statements.
     If the last statement is an expression, that is the return value.
-    >>> from asyncio import run
-    >>> run(eval_stmts("1+1"))
-    2
-    >>> ctx = {}
-    >>> run(eval_stmts("ctx['foo'] = 1", {"ctx": ctx}))
-    >>> ctx['foo']
-    1
-    >>> run(eval_stmts('''
-    ... async def f():
-    ...    return 42
-    ...
-    ... await f()'''))
-    42
+    Usable globals:
+      - `bot`: the bot instance
+      - `discord`: the discord module
+      - `commands`: the discord.ext.commands module
+      - `ctx`: the invokation context
+      - `__import__`: the builtin `__import__` function
+    Such that `>eval 1 + 1` gives `2` as the result.
+    The following invokation will cause the bot to send the text '9'
+    to the channel of invokation and return '3' as the result of evaluating
+    >eval ```
+    a = 1 + 2
+    b = a * 2
+    await ctx.send(a + b)
+    a
+    ```
     """
-
-    parsed_stmts = ast.parse(stmts)
-
     fn_name = "_eval_expr"
 
-    fn = f"async def {fn_name}(): pass"
-    parsed_fn = ast.parse(fn)
+    cmd = cmd.strip("` ")
 
-    for node in parsed_stmts.body:
-        ast.increment_lineno(node)
+    # add a layer of indentation
+    cmd = "\n".join(f"    {i}" for i in cmd.splitlines())
 
-    insert_returns(parsed_stmts.body)
+    # wrap in async def body
+    body = f"async def {fn_name}():\n{cmd}"
 
-    parsed_fn.body[0].body = parsed_stmts.body
-    exec(compile(parsed_fn, filename="<ast>", mode="exec"), env)
+    parsed = ast.parse(body)
+    body = parsed.body[0].body
 
-    return await eval(f"{fn_name}()", env)
+    insert_returns(body)
 
+    env = {
+        'bot': ctx.bot,
+        'discord': discord,
+        'commands': commands,
+        'ctx': ctx,
+        '__import__': __import__
+    }
+    exec(compile(parsed, filename="<ast>", mode="exec"), env)
 
-if __name__ == "__main__":
-    import doctest
-
-    doctest.testmod()
+    result = (await eval(f"{fn_name}()", env))
+    await ctx.send(result)
