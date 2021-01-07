@@ -17,7 +17,7 @@ class Help(commands.Cog):
             embed.set_author(name="IVRY Help", icon_url=ctx.bot.user.avatar_url)
 
             embed.add_field(name = "General :gear:", value = "`10` General Commands", inline=False)
-            embed.add_field(name = "Fun :tada:", value="`17` Fun Commands", inline=False)
+            embed.add_field(name = "Fun :tada:", value="`19` Fun Commands", inline=False)
             embed.add_field(name = "NSFW :x:", value="`10` NSFW Commands", inline=False)
             embed.add_field(name = "Music :musical_note:", value="`10` Music Player Commands", inline=False)
             embed.add_field(name = "Admin :hammer:", value="`10` Admin Commands", inline=False)
@@ -41,7 +41,7 @@ class Help(commands.Cog):
             embed.set_thumbnail(url=ctx.bot.user.avatar_url)
             embed.set_footer(text=f"{config.version} | {config.shards}")
 
-            embed.add_field(name = "Commands", value = "\n `8ball`- Guesses your fortune \n `joke`- Sends a joke \n `djoke`- Sends a dark joke \n `meme`- Sends a meme \n `measure`- Measures your cock \n `fortune`- Guesses your fortune \n `roll`- Roles a random number \n `useless`- Sends a useless website \n `hi`- Hey \n `fucku`- Try it \n `xmas`- Christmas countdown \n `hallow`- Halloween countdown \n `vday`- Valintines day countdown \n `girlfriend`- Shoot your shot \n `boyfriend`- Shoot your shot \n `gay`- Try it \n `repeat`- Repeats what you say", inline=False)
+            embed.add_field(name = "Commands", value = "\n `8ball`- Guesses your fortune \n `joke`- Sends a joke \n `djoke`- Sends a dark joke \n `meme`- Sends a meme \n `measure`- Measures your cock \n `yrn`- Yes or no \n `fortune`- Guesses your fortune \n `roll`- Roles a random number \n `useless`- Sends a useless website \n `hi`- Hey \n `fucku`- Try it \n `xmas`- Christmas countdown \n `hallow`- Halloween countdown \n `vday`- Valintines day countdown \n `ivry`- IVRYs birthday countdown \n `girlfriend`- Shoot your shot \n `boyfriend`- Shoot your shot \n `gay`- Try it \n `repeat`- Repeats what you say", inline=False)
 
             await ctx.send(embed = embed)
 

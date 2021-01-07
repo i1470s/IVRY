@@ -16,6 +16,8 @@ diff2 = datetime.datetime(now.year, 10, 31) - \
     datetime.datetime.today() 
 diff3 = datetime.datetime(now.year, 2, 14) - \
     datetime.datetime.today() 
+diff4 = datetime.datetime(now.year, 7, 13) - \
+    datetime.datetime.today() 
 
 class Fun(commands.Cog):   
     
@@ -145,6 +147,12 @@ class Fun(commands.Cog):
                         '12',]
                 await ctx.send(f'You Got {random.choice(responses)}')
 
+        @commands.command(name='yrn', description="Yes or no")
+        async def yrn(self, ctx):
+                responses = ['Yes',
+                        'No',]
+                await ctx.send(f'The awnser is {random.choice(responses)}')
+
         @commands.command(name='useless', description="Links useless websites")
         async def useless(self, ctx):
                 responses = ['http://chihuahuaspin.com/',
@@ -197,6 +205,10 @@ class Fun(commands.Cog):
         @commands.command(name='vday', description='Valentines countdown')
         async def vday(self, ctx):
                 await ctx.send("**{0}** day(s) left until Valentines day! :heart:".format(str(diff3.days)))
+
+        @commands.command(name='IVRY', description='ivry bday countdown')
+        async def ivry(self, ctx):
+                await ctx.send("**{0}** day(s) left until ivrys bday! :tada:".format(str(diff4.days)))
 
         @commands.command(name='girlfriend', description="Take your shot")
         async def girlfriend(self, ctx):
