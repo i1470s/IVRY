@@ -13,7 +13,7 @@ class NSFW(commands.Cog):
     @commands.is_nsfw()
     async def ass(self, ctx):
 
-        async with self.session.get("https://www.reddit.com/r/buttplug/top.json?count=1") as resp:
+        async with self.session.get("https://www.reddit.com/r/buttplug/top.json?limit=25") as resp:
             lesibans = await resp.json()
 
         embed = discord.Embed(title = f'Heres Your Ass', colour=discord.Colour.purple())
@@ -24,7 +24,7 @@ class NSFW(commands.Cog):
     @commands.is_nsfw()
     async def boobs(self, ctx):
 
-        async with self.session.get("https://www.reddit.com/r/boobs/top.json?count=1") as resp:
+        async with self.session.get("https://www.reddit.com/r/boobs/top.json?limit=25") as resp:
             lesibans = await resp.json()
 
         embed = discord.Embed(title = f'Heres Your Boobs', colour=discord.Colour.purple())
@@ -35,7 +35,7 @@ class NSFW(commands.Cog):
     @commands.is_nsfw()
     async def red(self, ctx):
 
-        async with self.session.get("https://www.reddit.com/r/ginger/top.json?count=1") as resp:
+        async with self.session.get("https://www.reddit.com/r/ginger/top.json?limit=25") as resp:
             lesibans = await resp.json()
 
         embed = discord.Embed(title = f'Heres Your Red Heads', colour=discord.Colour.purple())
@@ -69,7 +69,7 @@ class NSFW(commands.Cog):
     @commands.is_nsfw()
     async def lesbians(self, ctx):
 
-        async with self.session.get("https://www.reddit.com/r/lesbians/top.json?count=1") as resp:
+        async with self.session.get("https://www.reddit.com/r/lesbians/top.json?limit=25") as resp:
             lesibans = await resp.json()
 
         embed = discord.Embed(title = f'Heres Your Lesbians', colour=discord.Colour.purple())
@@ -80,7 +80,7 @@ class NSFW(commands.Cog):
     @commands.is_nsfw()
     async def teen(self, ctx):
 
-        async with self.session.get("https://www.reddit.com/r/legalteens/top.json?count=1") as resp:
+        async with self.session.get("https://www.reddit.com/r/legalteens/top.json?limit=25") as resp:
             lesibans = await resp.json()
 
         embed = discord.Embed(title = f'Heres Your Teens', colour=discord.Colour.purple())
@@ -91,7 +91,7 @@ class NSFW(commands.Cog):
     @commands.is_nsfw()
     async def random(self, ctx):
 
-        async with self.session.get("https://www.reddit.com/r/nsfw/top.json?count=1") as resp:
+        async with self.session.get("https://www.reddit.com/r/nsfw/top.json?limit=25") as resp:
             lesibans = await resp.json()
 
         embed = discord.Embed(title = f'Heres Your NSFW', colour=discord.Colour.purple())
@@ -102,7 +102,7 @@ class NSFW(commands.Cog):
     @commands.is_nsfw()
     async def pussy(self, ctx):
 
-        async with self.session.get("https://www.reddit.com/r/pussy/top.json?count=1") as resp:
+        async with self.session.get("https://www.reddit.com/r/pussy/top.json?limit=25") as resp:
             lesibans = await resp.json()
 
         embed = discord.Embed(title = f'Heres Your Pussy', colour=discord.Colour.purple())
@@ -113,7 +113,7 @@ class NSFW(commands.Cog):
     @commands.is_nsfw()
     async def video(self, ctx):
 
-        async with self.session.get("https://www.reddit.com/r/porn/top.json?count=1") as resp:
+        async with self.session.get("https://www.reddit.com/r/porn/top.json?limit=25") as resp:
             lesibans = await resp.json()
 
         embed = discord.Embed(title = f'Heres Your Porn Video', colour=discord.Colour.purple())

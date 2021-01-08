@@ -7,7 +7,7 @@ import traceback
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from discord.ext import commands
 import json
-from data import config
+from data import config, wordlist
 
 class Events(commands.Cog):   
     
@@ -68,6 +68,31 @@ class Events(commands.Cog):
 
                         await message.channel.send(embed=embed)
 
+        #ANTISWEAR AND ANTIFILE
+
+        @commands.Cog.listener()
+        async def on_message(self, message):
+                word_list = (wordlist.words)
+
+                if message.author == self.client.user:
+                        return
+
+                messageContent = message.content
+                if len(messageContent) > 0:
+                        for word in word_list:
+                                if word in messageContent:
+                                        await message.delete()
+                                        await message.channel.send(f'`{message.content}` Is in our banned words list, Please refrain from using it!')
+                        
+                messageattachments = message.attachments
+                if len(messageattachments) > 0:
+                        for attachment in messageattachments:
+                                if attachment.filename.endswith(".dll"):
+                                        await message.delete()
+                                        await message.channel.send("This file type is not allowed in this server.")
+                        else: 
+                                return
+
         #USER ERROR MESSAGES 
         
         @commands.Cog.listener() 
@@ -90,12 +115,12 @@ class Events(commands.Cog):
 
                 elif isinstance(error, commands.NoPrivateMessage):
                         try:
-                                await ctx.author.send(f':x: {config.prefix}{ctx.command} Can not be used in Private Messages.')
+                                await ctx.author.send(f':x: {config.prefix}`{ctx.command}` Can not be used in Private Messages.')
                         except discord.HTTPException:
                                 pass
 
                 elif isinstance(error, commands.NSFWChannelRequired):
-                        await ctx.send(f':x: {config.prefix}{ctx.command} Can only be used in a NSFW chat or Private Messages.')
+                        await ctx.send(f':x: {config.prefix}`{ctx.command}` Can only be used in a NSFW chat or Private Messages.')
 
                 else:
                         print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)
