@@ -1,8 +1,6 @@
+import discord
 from discord.ext import commands
 import aiohttp
-import discord
-import praw
-r = praw.Reddit(client_id="7oE7yB5GJJua2Q", client_secret="ooidPB-ETJxbRflpja6a65KX03g", user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36', username="PhantomVipermon")
 from aiohttp import request
 
 class NSFW(commands.Cog):   
@@ -15,40 +13,34 @@ class NSFW(commands.Cog):
     @commands.is_nsfw()
     async def ass(self, ctx):
 
-        if hasattr(ctx.message.channel, "nsfw"):
-            channel_nsfw = ctx.message.channel.nsfw
-        else:
-            channel_nsfw = str(ctx.message.channel.type) == "private"
+        async with self.session.get("https://www.reddit.com/r/buttplug/top.json?count=1") as resp:
+            lesibans = await resp.json()
 
-        if channel_nsfw:
-            sub = r.subreddit('buttplug')
-            await ctx.send(sub.random().url)
+        embed = discord.Embed(title = f'Heres Your Ass', colour=discord.Colour.purple())
+        embed.set_image(url=lesibans['data']['children'][0]['data']['url'])
+        await ctx.send(embed=embed)
 
     @commands.command(name='boobs', description="Sends some boobs")
     @commands.is_nsfw()
     async def boobs(self, ctx):
 
-        if hasattr(ctx.message.channel, "nsfw"):
-            channel_nsfw = ctx.message.channel.nsfw
-        else:
-            channel_nsfw = str(ctx.message.channel.type) == "private"
+        async with self.session.get("https://www.reddit.com/r/boobs/top.json?count=1") as resp:
+            lesibans = await resp.json()
 
-        if channel_nsfw:
-            sub = r.subreddit('boobs')
-            await ctx.send(sub.random().url)
+        embed = discord.Embed(title = f'Heres Your Boobs', colour=discord.Colour.purple())
+        embed.set_image(url=lesibans['data']['children'][0]['data']['url'])
+        await ctx.send(embed=embed)
 
     @commands.command(name='red', description="Sends some redheads")
     @commands.is_nsfw()
     async def red(self, ctx):
 
-        if hasattr(ctx.message.channel, "nsfw"):
-            channel_nsfw = ctx.message.channel.nsfw
-        else:
-            channel_nsfw = str(ctx.message.channel.type) == "private"
+        async with self.session.get("https://www.reddit.com/r/ginger/top.json?count=1") as resp:
+            lesibans = await resp.json()
 
-        if channel_nsfw:
-            sub = r.subreddit('ginger')
-            await ctx.send(sub.random().url)
+        embed = discord.Embed(title = f'Heres Your Red Heads', colour=discord.Colour.purple())
+        embed.set_image(url=lesibans['data']['children'][0]['data']['url'])
+        await ctx.send(embed=embed)
 
     @commands.command(name='hentai', description="Sends some hentai")
     @commands.is_nsfw()
@@ -77,66 +69,56 @@ class NSFW(commands.Cog):
     @commands.is_nsfw()
     async def lesbians(self, ctx):
 
-        if hasattr(ctx.message.channel, "nsfw"):
-            channel_nsfw = ctx.message.channel.nsfw
-        else:
-            channel_nsfw = str(ctx.message.channel.type) == "private"
+        async with self.session.get("https://www.reddit.com/r/lesbians/top.json?count=1") as resp:
+            lesibans = await resp.json()
 
-        if channel_nsfw:
-            sub = r.subreddit('lesbians')
-        await ctx.send(sub.random().url)
+        embed = discord.Embed(title = f'Heres Your Lesbians', colour=discord.Colour.purple())
+        embed.set_image(url=lesibans['data']['children'][0]['data']['url'])
+        await ctx.send(embed=embed)
 
     @commands.command(name='teen', description="Sends some teen porn")
     @commands.is_nsfw()
     async def teen(self, ctx):
 
-        if hasattr(ctx.message.channel, "nsfw"):
-            channel_nsfw = ctx.message.channel.nsfw
-        else:
-            channel_nsfw = str(ctx.message.channel.type) == "private"
+        async with self.session.get("https://www.reddit.com/r/legalteens/top.json?count=1") as resp:
+            lesibans = await resp.json()
 
-        if channel_nsfw:
-            sub = r.subreddit('LegalTeens')
-        await ctx.send(sub.random().url)
+        embed = discord.Embed(title = f'Heres Your Teens', colour=discord.Colour.purple())
+        embed.set_image(url=lesibans['data']['children'][0]['data']['url'])
+        await ctx.send(embed=embed)
 
     @commands.command(name='random', description="Sends some random nsfw porn")
     @commands.is_nsfw()
     async def random(self, ctx):
 
-        if hasattr(ctx.message.channel, "nsfw"):
-            channel_nsfw = ctx.message.channel.nsfw
-        else:
-            channel_nsfw = str(ctx.message.channel.type) == "private"
+        async with self.session.get("https://www.reddit.com/r/nsfw/top.json?count=1") as resp:
+            lesibans = await resp.json()
 
-        if channel_nsfw:
-            sub = r.subreddit('nsfw')
-        await ctx.send(sub.random().url)
+        embed = discord.Embed(title = f'Heres Your NSFW', colour=discord.Colour.purple())
+        embed.set_image(url=lesibans['data']['children'][0]['data']['url'])
+        await ctx.send(embed=embed)
 
     @commands.command(name='pussy', description="Sends some pussy")
     @commands.is_nsfw()
     async def pussy(self, ctx):
 
-        if hasattr(ctx.message.channel, "nsfw"):
-            channel_nsfw = ctx.message.channel.nsfw
-        else:
-            channel_nsfw = str(ctx.message.channel.type) == "private"
+        async with self.session.get("https://www.reddit.com/r/pussy/top.json?count=1") as resp:
+            lesibans = await resp.json()
 
-        if channel_nsfw:
-            sub = r.subreddit('pussy')
-        await ctx.send(sub.random().url)
+        embed = discord.Embed(title = f'Heres Your Pussy', colour=discord.Colour.purple())
+        embed.set_image(url=lesibans['data']['children'][0]['data']['url'])
+        await ctx.send(embed=embed)
 
     @commands.command(name='video', description="Sends some random porn video")
     @commands.is_nsfw()
     async def video(self, ctx):
 
-        if hasattr(ctx.message.channel, "nsfw"):
-            channel_nsfw = ctx.message.channel.nsfw
-        else:
-            channel_nsfw = str(ctx.message.channel.type) == "private"
+        async with self.session.get("https://www.reddit.com/r/porn/top.json?count=1") as resp:
+            lesibans = await resp.json()
 
-        if channel_nsfw:
-            sub = r.subreddit('porn')
-        await ctx.send(sub.random().url)
+        embed = discord.Embed(title = f'Heres Your Porn Video', colour=discord.Colour.purple())
+        embed.set_image(url=lesibans['data']['children'][0]['data']['url'])
+        await ctx.send(embed=embed)
 
 def setup(client):
     client.add_cog(NSFW(client))

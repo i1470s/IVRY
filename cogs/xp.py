@@ -73,7 +73,7 @@ class xp(commands.Cog):
 
             await ctx.send(embed=embed)
     
-    @level.command()
+    @level.command()#FIX ME BY V.3.0
     async def top(self, ctx, member: discord.Member = None):
         member = ctx.author if not member else member
         member_id = str(member.id)

@@ -31,11 +31,6 @@ class Events(commands.Cog):
 
         #GUILD MEMBER WELCOME
 
-        @commands.Cog.listener()#NOT WORKING FIX ME BY V.2.5
-        async def on_member_join(self, member):
-                role = discord.utils.get(member.guild.roles, name="Member")
-                await member.add_roles(member, role)
-
         @commands.Cog.listener()
         async def on_member_join(self, member):
                 channel = discord.utils.get(member.guild.text_channels, name="welcome")
