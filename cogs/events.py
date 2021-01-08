@@ -1,4 +1,5 @@
 import random
+import os
 import discord
 import datetime
 import sys
@@ -11,11 +12,7 @@ from data import config
 class Events(commands.Cog):   
     
         def __init__(self, client):
-                self.client = client   
-
-        @commands.Cog.listener()
-        async def on_ready(self):
-                print("DONE! (Loaded Cogs)")
+                self.client = client
 
         #ON NEW GUILD JOIN
 
@@ -36,7 +33,7 @@ class Events(commands.Cog):
 
         @commands.Cog.listener()#NOT WORKING FIX ME BY V.2.5
         async def on_member_join(self, member):
-                role= discord.utils.get(member.guild.roles, name="Member")
+                role = discord.utils.get(member.guild.roles, name="Member")
                 await member.add_roles(member, role)
 
         @commands.Cog.listener()
@@ -95,15 +92,6 @@ class Events(commands.Cog):
 
                 if isinstance(error, ignored):
                         return
-
-                if isinstance(error, commands.CommandNotFound):
-                        await ctx.send(f':x: {config.prefix}{ctx.command} Is an unknown command.')
-
-                if isinstance(error, commands.MissingPermissions):
-                        await ctx.send(f':x: You dont have permissions to use {config.prefix}{ctx.command} ')
-                
-                if isinstance(error, commands.BotMissingPermissions):
-                        await ctx.send(f':x: I dont have permissions to use {config.prefix}{ctx.command} please give me admin permissions.')
 
                 elif isinstance(error, commands.NoPrivateMessage):
                         try:

@@ -140,7 +140,7 @@ class Admin(commands.Cog):
         async def eval(self, ctx, *, cmd=None):
                 try:
                         eval(cmd)
-                        await ctx.send(f'Command succsessful --> `{cmd}`')
+                        await ctx.send(f'Command exectued succsessfuly --> `{cmd}`')
                 except:
                         print(f'`{cmd}` is an invalid command')
                         await ctx.send(f'Could not execute an invalid command --> `{cmd}`')

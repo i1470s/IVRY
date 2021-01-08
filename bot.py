@@ -1,3 +1,4 @@
+import os
 import discord
 from discord.ext import commands
 from discord.ext.commands import AutoShardedBot
@@ -6,16 +7,11 @@ from extras import logging
 from data import config
 
 client = commands.AutoShardedBot(command_prefix=config.default_prefix, shard_count=1, case_insensitive=True, intents=discord.Intents.all())
-
 client.remove_command('help')
-client.load_extension("cogs.general")
-client.load_extension("cogs.fun")
-client.load_extension("cogs.nsfw")
-client.load_extension("cogs.music")
-client.load_extension("cogs.admin")
-client.load_extension("cogs.help")
-client.load_extension("cogs.xp")
-client.load_extension("cogs.events")
+for ext in os.listdir("./cogs/"):
+    if ext.endswith(".py") and not ext.startswith("_"):
+        try: client.load_extension(f"cogs.{ext[:-3]}") 
+        except Exception as e: print(f'ERROR LOADING COGS')
 
 async def status():
     while True:
