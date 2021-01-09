@@ -12,7 +12,9 @@ class General(commands.Cog):
     
         def __init__(self, client):
                 self.client = client
-                
+
+        #ABOUT
+
         @commands.command(name='about', description="About the bot")
         async def about(self, ctx):
                 try:
@@ -39,6 +41,8 @@ class General(commands.Cog):
                 except Exception as e:
                         await ctx.send(f'{e}')
 
+        #CREDITS
+
         @commands.command(name='credits', description="Bot credits")
         async def credits(self, ctx):
                 try:
@@ -56,6 +60,8 @@ class General(commands.Cog):
                 except Exception as e:
                         await ctx.send(f'{e}')
 
+        #DONATE
+
         @commands.command(name='donate', description="Donate to the bot")
         async def donate(self, ctx):
                 try:
@@ -72,6 +78,8 @@ class General(commands.Cog):
                 except Exception as e:
                         await ctx.send(f'{e}')
 
+        #INVITE
+
         @commands.command(name='invite', description="Invite the bot")
         async def invite(self, ctx):
                 try:
@@ -87,6 +95,8 @@ class General(commands.Cog):
                 except Exception as e:
                         await ctx.send(f'{e}')
 
+        #PING
+
         @commands.command(name='ping', description="Bot latency")
         async def ping(self, ctx):
                 before = time.monotonic()
@@ -95,6 +105,7 @@ class General(commands.Cog):
                 ping = (time.monotonic() - before) * 1000
                 await message.edit(content=f"🏓 WS: {before_ws}ms  |  REST: {int(ping)}ms")
 
+        #SERVERS
 
         @commands.command(name='servers', description="List of bot servers")
         async def servers(self, ctx):
@@ -104,6 +115,8 @@ class General(commands.Cog):
                         msg += '{!s:19s} |{!s:>5s}   | {}\n'.format(guild.id, guild.member_count, guild.name)
                 msg += '```'
                 await ctx.send(msg)
+
+        #SERVERINFO
 
         @commands.command(name='serverinfo', description="Shows server info")
         @commands.guild_only()
@@ -140,6 +153,8 @@ class General(commands.Cog):
                         await ctx.send(embed=embed)
                 except Exception as e:
                         await ctx.send(f'{e}')
+
+        #USERINFO
 
         @commands.command(name="userinfo", description="Shows user info ")
         @commands.guild_only()    

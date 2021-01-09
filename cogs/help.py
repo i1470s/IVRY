@@ -12,6 +12,8 @@ class Help(commands.Cog):
         def __init__(self, client):
                 self.client = client        
 
+        #HELP COMMAND
+
         @commands.group(invoke_without_command=True)
         async def help(self, ctx):
             embed = discord.Embed(title = f"Prefix {config.prefix}", description = f"Use {config.default_prefix}help <catagory> for a list of commands", colour = 0x9B59B6)
@@ -28,6 +30,8 @@ class Help(commands.Cog):
 
             await ctx.send(embed = embed)
 
+        #GENERAL SUB COMMAND
+
         @help.command()
         async def general(self, ctx):
             embed = discord.Embed(title = "IVRY Help - General :gear:", description = f"Prefix {config.prefix}", colour = 0x9B59B6)
@@ -38,6 +42,8 @@ class Help(commands.Cog):
 
             await ctx.send(embed = embed)
 
+        #FUN SUB COMMAND
+                
         @help.command()
         async def fun(self, ctx):
             embed = discord.Embed(title = "IVRY Help - Fun :tada:", description = f"Prefix {config.prefix}", colour = 0x9B59B6)
@@ -47,6 +53,8 @@ class Help(commands.Cog):
             embed.add_field(name = "Commands", value = "\n `8ball`- Guesses your fortune \n `joke`- Sends a joke \n `djoke`- Sends a dark joke \n `meme`- Sends a meme \n `measure`- Measures your cock \n `yrn`- Yes or no \n `fortune`- Guesses your fortune \n `roll`- Roles a random number \n `useless`- Sends a useless website \n `hi`- Hey \n `fucku`- Try it \n `xmas`- Christmas countdown \n `hallow`- Halloween countdown \n `vday`- Valintines day countdown \n `ivry`- IVRYs birthday countdown \n `girlfriend`- Shoot your shot \n `boyfriend`- Shoot your shot \n `gay`- Try it \n `repeat`- Repeats what you say", inline=False)
 
             await ctx.send(embed = embed)
+
+        #NSFW SUB COMMAND
 
         @help.command()
         async def nsfw(self, ctx):
@@ -58,6 +66,8 @@ class Help(commands.Cog):
 
             await ctx.send(embed = embed)
 
+        #MUSIC SUB COMMAND
+
         @help.command()
         async def music(self, ctx):
             embed = discord.Embed(title = "IVRY Help - Music :musical_note:", description = f"Prefix {config.prefix}", colour = 0x9B59B6)
@@ -67,6 +77,8 @@ class Help(commands.Cog):
             embed.add_field(name = "Commands", value = "\n`join`- Join VC \n `leave`- Leave VC \n `play`- Play a song \n `skip`- Skip a song \n `queue`- Current song queue \n `shuffle`- Shuffle queue \n `remove`- Remove from queue \n `loop`- Loop song \n `now`- Currently playing \n `lyrics`- Search lyrics", inline=False)
 
             await ctx.send(embed = embed)
+
+        #ADMIN SUB COMMAND
 
         @help.command()
         async def admin(self, ctx):

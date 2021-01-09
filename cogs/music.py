@@ -299,6 +299,8 @@ class Music(commands.Cog):
     async def cog_command_error(self, ctx: commands.Context, error: commands.CommandError):
         await ctx.send('An error occurred: {}'.format(str(error)))
 
+    #JOIN
+
     @commands.command(name='join', invoke_without_subcommand=True,description="Joins voice")
     async def _join(self, ctx: commands.Context):
         """Joins a voice channel."""
@@ -309,6 +311,8 @@ class Music(commands.Cog):
             return
 
         ctx.voice_state.voice = await destination.connect()
+
+    #LEAVE
 
     @commands.command(name='leave', aliases=['disconnect'],description="Leave voice")
     @commands.has_permissions(manage_guild=True)
@@ -321,11 +325,15 @@ class Music(commands.Cog):
         await ctx.voice_state.stop()
         del self.voice_states[ctx.guild.id]
 
+    #NOW
+
     @commands.command(name='now', aliases=['current', 'playing'],description="Current song")
     async def _now(self, ctx: commands.Context):
         """Displays the currently playing song."""
 
         await ctx.send(embed=ctx.voice_state.current.create_embed())
+
+    #SKIP
 
     @commands.command(name='skip',description="Skip a song",aliases=['s'])
     async def _skip(self, ctx: commands.Context):
@@ -354,6 +362,8 @@ class Music(commands.Cog):
         else:
             await ctx.send('You have already voted to skip this song.')
 
+    #QUEUE
+
     @commands.command(name='queue',description="View the queue",aliases=['q'])
     async def _queue(self, ctx: commands.Context, *, page: int = 1):
         """Shows the player's queue.
@@ -377,6 +387,8 @@ class Music(commands.Cog):
                  .set_footer(text='Viewing page {}/{}'.format(page, pages)))
         await ctx.send(embed=embed)
 
+    #SHUFFLE
+
     @commands.command(name='shuffle',description="Shuffle the queue")
     async def _shuffle(self, ctx: commands.Context):
         """Shuffles the queue."""
@@ -387,6 +399,8 @@ class Music(commands.Cog):
         ctx.voice_state.songs.shuffle()
         await ctx.message.add_reaction('✅')
 
+    #REMOVE
+
     @commands.command(name='remove',description="Remove a queued song")
     async def _remove(self, ctx: commands.Context, index: int):
         """Removes a song from the queue at a given index."""
@@ -396,6 +410,8 @@ class Music(commands.Cog):
 
         ctx.voice_state.songs.remove(index - 1)
         await ctx.message.add_reaction('✅')
+
+    #LOOP
 
     @commands.command(name='loop',description="Loop a song")
     async def _loop(self, ctx: commands.Context):
@@ -409,6 +425,8 @@ class Music(commands.Cog):
         # Inverse boolean value to loop and unloop.
         ctx.voice_state.loop = not ctx.voice_state.loop
         await ctx.message.add_reaction('✅')
+
+    #PLAY
 
     @commands.command(name='play',description="Play a song",aliases=['p'])
     async def _play(self, ctx: commands.Context, *, search: str):
@@ -448,6 +466,8 @@ class Music(commands.Cog):
         self.page_index = {}
 
         self.def_embed = {}           
+
+    #LYRICS
 
     @commands.command(name='lyrics',description="Search song lyrics")
     async def lyrics(self, ctx, song: str, author: typing.Optional[str]):

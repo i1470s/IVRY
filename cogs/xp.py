@@ -13,12 +13,14 @@ bot = logging.getLogger(__name__)
 epoch = datetime.datetime.utcfromtimestamp(0)
 time_diff = round((datetime.datetime.utcnow() - epoch).total_seconds())
 
+#CREATES NEW USER DATA + ADDS XP 
+
 class xp(commands.Cog):
 
     def __init__(self, client):
         self.client = client
 
-        with open(r"./data/users-xp.json", "r") as f:
+        with open(r"./data/dbs/users-xp.json", "r") as f:
             self.users = json.load(f)
 
         self.client.loop.create_task(self.save_users())
@@ -26,7 +28,7 @@ class xp(commands.Cog):
     async def save_users(self):
         await self.client.wait_until_ready()
         while not self.client.is_closed():
-            with open(r"./data/users-xp.json", "w") as f:
+            with open(r"./data/dbs/users-xp.json", "w") as f:
                 json.dump(self.users, f, indent=4)
 
             await asyncio.sleep(5)
@@ -57,6 +59,8 @@ class xp(commands.Cog):
 
         if self.lvl_up(author_id):
             await message.channel.send(f"{message.author.mention} is now level {self.users[author_id]['level']}")
+    
+    #LEVEL
 
     @commands.group(invoke_without_command=True)
     async def level(self, ctx, member: discord.Member = None):
@@ -76,7 +80,9 @@ class xp(commands.Cog):
 
             await ctx.send(embed=embed)
     
-    @level.command()#FIX ME BY V.3.0
+    #TOP - FIX ME BY V.3.0
+
+    @level.command()
     async def top(self, ctx, member: discord.Member = None):
         member = ctx.author if not member else member
         member_id = str(member.id)

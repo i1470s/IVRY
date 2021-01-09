@@ -26,6 +26,8 @@ class Fun(commands.Cog):
     
         def __init__(self, client):
                 self.client = client   
+        
+        #8BALL
 
         @commands.command(name='8Ball', description="Awnsers your questions")
         async def _8ball(self, ctx, *, question):
@@ -43,6 +45,8 @@ class Fun(commands.Cog):
                         'very doubtful']
                 await ctx.send(f'Question: {question}\nAnswer: {random.choice(responses)}')
         
+        #JOKE
+
         @commands.command(name='joke', description="Tells you a joke")
         async def joke(self, ctx):
 
@@ -59,6 +63,8 @@ class Fun(commands.Cog):
                         else:
                                 await ctx.send(f"The API seems down, says {response.status}")
 
+        #DJOKE
+
         @commands.command(name='djoke', description="Dark jokes")
         async def djoke(self, ctx):
 
@@ -74,6 +80,8 @@ class Fun(commands.Cog):
 
                         else:
                                 await ctx.send(f"The API seems down, says {response.status}")
+
+        #MEME
 
         @commands.command(name='meme', description="Sends a meme")
         async def meme(self, ctx):
@@ -102,6 +110,8 @@ class Fun(commands.Cog):
                                         else:
                                                 await ctx.send(f"The API seems down, says {response.status}")
 
+        #MEASURE
+
         @commands.command(name='measure', description="Measures your cock")
         async def measure(self, ctx):
                 responses = ['1 inches',
@@ -117,6 +127,8 @@ class Fun(commands.Cog):
                         '11 inches',
                         '12 inches',]
                 await ctx.send(f'Whoa You Got {random.choice(responses)}')
+
+        #FORTUNE
 
         @commands.command(name='fortune', description="Checks your fortune")
         async def fortune(self, ctx):
@@ -134,6 +146,8 @@ class Fun(commands.Cog):
                         '$1000000 Dollars',]
                 await ctx.send(f'You Got {random.choice(responses)}')
 
+        #ROLL
+
         @commands.command(name='roll', description="Rolls a dice")
         async def roll(self, ctx):
                 responses = ['1',
@@ -150,11 +164,15 @@ class Fun(commands.Cog):
                         '12',]
                 await ctx.send(f'You Got {random.choice(responses)}')
 
+        #YRN
+
         @commands.command(name='yrn', description="Yes or no")
         async def yrn(self, ctx):
                 responses = ['Yes',
                         'No',]
                 await ctx.send(f'The awnser is {random.choice(responses)}')
+
+        #USELESS
 
         @commands.command(name='useless', description="Links useless websites")
         async def useless(self, ctx):
@@ -188,42 +206,61 @@ class Fun(commands.Cog):
                         await ctx.send(embed=embed)
                 except Exception as e:
                                 await ctx.send(f'{e}')
+        #HI
 
         @commands.command(name='hi', description="Hello :)")
         async def hi(self, ctx):
                 await ctx.send(f'Hello :)')
 
+        #FUCKU
+
         @commands.command(name='fucku', description="Try it :p")
         async def fucku(self, ctx):
                 await ctx.send(f'No Fuck You')
         
+        #XMAS
+
         @commands.command(name='xmas', description='Xmas countdown')
         async def xmas(self, ctx):
                 await ctx.send("**{0}** day(s) left until Christmas day! :christmas_tree:".format(str(diff.days)))
+
+        #HALLOW
 
         @commands.command(name='hallow', description='Halloween countdown')
         async def boo(self, ctx):
                 await ctx.send("**{0}** day(s) left until Halloween! :candy:".format(str(diff2.days)))
         
+        #VDAY
+
         @commands.command(name='vday', description='Valentines countdown')
         async def vday(self, ctx):
                 await ctx.send("**{0}** day(s) left until Valentines day! :heart:".format(str(diff3.days)))
+
+        #IVRY
 
         @commands.command(name='IVRY', description='ivry bday countdown')
         async def ivry(self, ctx):
                 await ctx.send("**{0}** day(s) left until ivrys bday! :tada:".format(str(diff4.days)))
 
+        #GIRLFRIEND
+
         @commands.command(name='girlfriend', description="Take your shot")
         async def girlfriend(self, ctx):
                 await ctx.send(f'Lol your dreaming you disrespecful trash!!!')
+
+        #BOYFRIEND
 
         @commands.command(name='boyfriend', description="Take your shot")
         async def boyfriend(self, ctx):
                 await ctx.send(f'Lol you think someone would want you????')
 
+        #GAY
+
         @commands.command(name='gay', description="Take the test")
         async def gay(self, ctx, member: discord.Member = None):        
                 await ctx.send(f'Lemme check... ohhh its u lol, dumbass')
+
+        #REPEAT
 
         @commands.command(name='repeat', description="Repeats you")
         async def repeat(self, ctx, *, message):

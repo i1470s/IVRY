@@ -12,6 +12,10 @@ class NSFW(commands.Cog):
         self.client = client
         self.session = aiohttp.ClientSession(loop=self.client.loop)
 
+#FINISH FOR V.3.0
+
+    #ASS
+
     @commands.command(name='ass', description="Sends some ass")
     @commands.is_nsfw()
     async def ass(self, ctx):
@@ -22,6 +26,8 @@ class NSFW(commands.Cog):
         embed = discord.Embed(title = f'Heres Your Ass', colour=discord.Colour.purple())
         embed.set_image(url=lesibans['data']['children'][0]['data']['url'])
         await ctx.send(embed=embed)
+
+    #BOOBS
 
     @commands.command(name='boobs', description="Sends some boobs")
     @commands.is_nsfw()
@@ -34,6 +40,8 @@ class NSFW(commands.Cog):
         embed.set_image(url=lesibans['data']['children'][0]['data']['url'])
         await ctx.send(embed=embed)
 
+    #RED
+
     @commands.command(name='red', description="Sends some redheads")
     @commands.is_nsfw()
     async def red(self, ctx):
@@ -44,6 +52,8 @@ class NSFW(commands.Cog):
         embed = discord.Embed(title = f'Heres Your Red Heads', colour=discord.Colour.purple())
         embed.set_image(url=lesibans['data']['children'][0]['data']['url'])
         await ctx.send(embed=embed)
+
+    #HENTAI
 
     @commands.command(name='hentai', description="Sends some hentai")
     @commands.is_nsfw()
@@ -56,6 +66,8 @@ class NSFW(commands.Cog):
         embed.set_image(url=nekos['url'])
         await ctx.send(embed=embed)
 
+    #LEWD
+
     @commands.command(name='lewd', description="Sends some lewds")
     @commands.is_nsfw()
     async def lewd(self, ctx):
@@ -67,6 +79,7 @@ class NSFW(commands.Cog):
         embed.set_image(url=nekos['url'])
         await ctx.send(embed=embed)
 
+    #LESBIANS
 
     @commands.command(name='lesbians', description="Sends some lesbians")
     @commands.is_nsfw()
@@ -79,6 +92,8 @@ class NSFW(commands.Cog):
         embed.set_image(url=lesibans['data']['children'][0]['data']['url'])
         await ctx.send(embed=embed)
 
+    #TEEN
+
     @commands.command(name='teen', description="Sends some teen porn")
     @commands.is_nsfw()
     async def teen(self, ctx):
@@ -89,6 +104,8 @@ class NSFW(commands.Cog):
         embed = discord.Embed(title = f'Heres Your Teens', colour=discord.Colour.purple())
         embed.set_image(url=lesibans['data']['children'][0]['data']['url'])
         await ctx.send(embed=embed)
+
+    #RANDOM
 
     @commands.command(name='random', description="Sends some random nsfw porn")
     @commands.is_nsfw()
@@ -101,6 +118,8 @@ class NSFW(commands.Cog):
         embed.set_image(url=lesibans['data']['children'][0]['data']['url'])
         await ctx.send(embed=embed)
 
+    #PUSSY
+
     @commands.command(name='pussy', description="Sends some pussy")
     @commands.is_nsfw()
     async def pussy(self, ctx):
@@ -111,6 +130,8 @@ class NSFW(commands.Cog):
         embed = discord.Embed(title = f'Heres Your Pussy', colour=discord.Colour.purple())
         embed.set_image(url=lesibans['data']['children'][0]['data']['url'])
         await ctx.send(embed=embed)
+
+    #VIDEO
 
     @commands.command(name='video', description="Sends some random porn video")
     @commands.is_nsfw()
