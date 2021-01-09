@@ -93,6 +93,8 @@ class Events(commands.Cog):
 
                 if isinstance(error, ignored):
                         return
+                
+                #USER ERROR MESSAGES
 
                 elif isinstance(error, commands.NoPrivateMessage):
                         try:
@@ -102,6 +104,48 @@ class Events(commands.Cog):
 
                 elif isinstance(error, commands.NSFWChannelRequired):
                         await ctx.send(f':x: {config.prefix}`{ctx.command}` Can only be used in a NSFW chat or Private Messages.')
+
+                #BOT ERROR MESSAGES
+
+                elif isinstance(error, commands.CommandError):
+                        await ctx.send(f'**[WARNING]** A Fatal internal `Command Error` occured in execution of `{ctx.command}`')
+                        print(f'[WARNING] A Fatal internal `Command Error` occured in execution of `{ctx.command}`')
+
+                elif isinstance(error, commands.ConversionError):
+                        await ctx.send(f'**[WARNING]** A Fatal internal `Conversion Error` occured in execution of `{ctx.command}`')
+                        print(f'[WARNING] A Fatal internal `Conversion Error` occured in execution of `{ctx.command}`')
+
+                elif isinstance(error, commands.CheckFailure):
+                        await ctx.send(f'**[WARNING]** A Fatal internal `Check Failure Error` occured in execution of `{ctx.command}`')
+                        print(f'[WARNING] A Fatal internal `Check Failure Error` occured in execution of `{ctx.command}`')
+
+                elif isinstance(error, commands.CheckAnyFailure):
+                        await ctx.send(f'**[WARNING]** A Fatal internal `Check Any Failure Error` occured in execution of `{ctx.command}`')
+                        print(f'[WARNING] A Fatal internal `Check Any Failure Error` occured in execution of `{ctx.command}`')
+
+                elif isinstance(error, commands.BadBoolArgument):
+                        await ctx.send(f'**[WARNING]** A Fatal internal `Bad Bool Arg Error` occured in execution of `{ctx.command}`')
+                        print(f'[WARNING] A Fatal internal `Bad Bool Arg Error` occured in execution of `{ctx.command}`')
+
+                elif isinstance(error, commands.ExtensionAlreadyLoaded):
+                        await ctx.send(f'**[WARNING]** A Fatal internal `Extension Already Loaded Error` occured in execution of `{ctx.command}`')
+                        print(f'[WARNING] A Fatal internal `Extension Already Loaded Error` occured in execution of `{ctx.command}`')
+
+                elif isinstance(error, commands.ExtensionNotLoaded):
+                        await ctx.send(f'**[WARNING]** A Fatal internal `Extension Not Loaded Error` occured in execution of `{ctx.command}`')
+                        print(f'[WARNING] A Fatal internal `Extension Not Loaded Error` occured in execution of `{ctx.command}`')
+
+                elif isinstance(error, commands.NoEntryPointError):
+                        await ctx.send(f'**[WARNING]** A Fatal internal `No Entrypoint Error` occured in execution of `{ctx.command}`')
+                        print(f'[WARNING] A Fatal internal `No Entrypoint Error` occured in execution of `{ctx.command}`')
+
+                elif isinstance(error, commands.ExtensionFailed):
+                        await ctx.send(f'**[WARNING]** A Fatal internal `Extension Failed Error` occured in execution of `{ctx.command}`')
+                        print(f'[WARNING] A Fatal internal `Extension Failed Error` occured in execution of `{ctx.command}`')
+
+                elif isinstance(error, commands.CommandRegistrationError):
+                        await ctx.send(f'**[WARNING]** A Fatal internal `Command Registration Error` occured in execution of `{ctx.command}`')
+                        print(f'[WARNING] A Fatal internal `Command Registration Error` occured in execution of `{ctx.command}`')
 
                 else:
                         print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)
