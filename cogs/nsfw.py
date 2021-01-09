@@ -2,6 +2,9 @@ import discord
 from discord.ext import commands
 import aiohttp
 from aiohttp import request
+import logging
+
+bot = logging.getLogger(__name__)
 
 class NSFW(commands.Cog):   
     

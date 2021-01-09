@@ -7,7 +7,10 @@ import traceback
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from discord.ext import commands
 import json
-from data import config, wordlist
+from data import config
+import logging
+
+bot = logging.getLogger(__name__)
 
 class Events(commands.Cog):   
     
@@ -22,29 +25,32 @@ class Events(commands.Cog):
                 if channel:
                         embed = discord.Embed(title = f"Prefix {config.prefix}", description=f"Thanks for inviting me :smile::clap:! Im happy to be apart of `{guild.name}` :tada::smile:. Make use {config.prefix}Help for a list of my commands!",color=0x9B59B6,)
 
-                embed.set_author(name="IVRY Info", icon_url=guild.me.avatar_url)
-                embed.set_thumbnail(url=guild.me.avatar_url)
-                embed.set_footer(text=f"{config.version} | {config.shards}")
-                embed.add_field(name = "Additional Resources", value=":video_game: [IVRY Server](https://discord.gg/ppn2u99)\n:iphone: [Website](https://ivry.tk)", inline=False)
+                        embed.set_author(name="IVRY Info", icon_url=guild.me.avatar_url)
+                        embed.set_thumbnail(url=guild.me.avatar_url)
+                        embed.set_footer(text=f"{config.version} | {config.shards}")
+                        embed.add_field(name = "Additional Resources", value=":video_game: [IVRY Server](https://discord.gg/ppn2u99)\n:iphone: [Website](https://ivry.tk)", inline=False)
 
-                await channel.send(embed=embed)
+                        await channel.send(embed=embed)
 
-        #GUILD MEMBER WELCOME
+        #GUILD MEMBER JOIN
 
         @commands.Cog.listener()
         async def on_member_join(self, member):
+                join_role = discord.utils.get(member.guild.roles, name="Member")
                 channel = discord.utils.get(member.guild.text_channels, name="welcome")
                 if channel:
                         embed = discord.Embed(
                                 description=f"Welcome to `{member.guild}` {member.mention} make sure to check out the server rules, and have a great stay!",
                                 color=0x9B59B6,
                         )
-                embed.set_thumbnail(url=member.avatar_url)
-                embed.set_author(name=member.name, icon_url=member.avatar_url)
-                embed.set_footer(text=member.guild, icon_url=member.guild.icon_url)
-                embed.timestamp = datetime.datetime.utcnow()
+                        embed.set_thumbnail(url=member.avatar_url)
+                        embed.set_author(name=member.name, icon_url=member.avatar_url)
+                        embed.set_footer(text=member.guild, icon_url=member.guild.icon_url)
+                        embed.timestamp = datetime.datetime.utcnow()
 
-                await channel.send(embed=embed)
+                        await member.add_roles(join_role)
+
+                        await channel.send(embed=embed)
 
         #GUILD MEMBER LEAVE
 
@@ -68,31 +74,6 @@ class Events(commands.Cog):
 
                         await message.channel.send(embed=embed)
 
-        #ANTISWEAR AND ANTIFILE
-
-        @commands.Cog.listener()
-        async def on_message(self, message):
-                word_list = (wordlist.words)
-
-                if message.author == self.client.user:
-                        return
-
-                messageContent = message.content
-                if len(messageContent) > 0:
-                        for word in word_list:
-                                if word in messageContent:
-                                        await message.delete()
-                                        await message.channel.send(f'`{message.content}` Is in our banned words list, Please refrain from using it!')
-                        
-                messageattachments = message.attachments
-                if len(messageattachments) > 0:
-                        for attachment in messageattachments:
-                                if attachment.filename.endswith(".dll"):
-                                        await message.delete()
-                                        await message.channel.send("This file type is not allowed in this server.")
-                        else: 
-                                return
-
         #USER ERROR MESSAGES 
         
         @commands.Cog.listener() 
@@ -106,7 +87,7 @@ class Events(commands.Cog):
                         if cog._get_overridden_method(cog.cog_command_error) is not None:
                                 return
 
-                ignored = (commands.CommandNotFound, )
+                ignored = (commands.CommandNotFound)
 
                 error = getattr(error, 'original', error)
 

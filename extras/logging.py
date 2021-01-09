@@ -1,9 +1,21 @@
 import discord
 import logging
+from cogs import admin, music, general, fun, help, events, xp, nsfw
 
-logger = logging.getLogger('discord')
-logger.setLevel(logging.DEBUG)
-handler = logging.FileHandler(filename='./data/log.json', encoding='utf-8', mode='w')
+#FINISH FOR V.3.0
+
+#LOGGER - DISCORD API
+
+discord = logging.getLogger('discord')
+discord.setLevel(logging.DEBUG)
+handler = logging.FileHandler(filename='./data/logs/discord.json', encoding='utf-8', mode='w')
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
-logger.addHandler(handler)
+discord.addHandler(handler)
 
+#LOGGER - BOT
+
+bot = logging.getLogger('bot')
+bot.setLevel(logging.DEBUG)
+handler = logging.FileHandler(filename='./data/logs/bot.json', encoding='utf-8', mode='w')
+handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
+bot.addHandler(handler)

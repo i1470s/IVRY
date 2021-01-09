@@ -16,8 +16,9 @@ import discord
 import youtube_dl
 from async_timeout import timeout
 from discord.ext import commands
+import logging
 
-client = commands.Bot(command_prefix='.')  
+bot = logging.getLogger(__name__)
 
 class Music(commands.Cog):   
     def __init__(self, client):

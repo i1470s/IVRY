@@ -18,6 +18,9 @@ diff3 = datetime.datetime(now.year, 2, 14) - \
     datetime.datetime.today() 
 diff4 = datetime.datetime(now.year, 7, 13) - \
     datetime.datetime.today() 
+import logging
+
+bot = logging.getLogger(__name__)
 
 class Fun(commands.Cog):   
     

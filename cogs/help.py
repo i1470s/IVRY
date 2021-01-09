@@ -3,6 +3,9 @@ import discord
 import math
 from discord.ext import commands
 from data import config
+import logging
+
+bot = logging.getLogger(__name__)
 
 class Help(commands.Cog):   
     
