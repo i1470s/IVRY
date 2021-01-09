@@ -108,44 +108,134 @@ class Events(commands.Cog):
                 #BOT ERROR MESSAGES
 
                 elif isinstance(error, commands.CommandError):
-                        await ctx.send(f'**[WARNING]** A Fatal internal `Command Error` occured in execution of `{ctx.command}`')
-                        print(f'[WARNING] A Fatal internal `Command Error` occured in execution of `{ctx.command}`')
+                        embed = discord.Embed(title=f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
+
+                        embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
+                        embed.add_field(name = "Error", value="`Internal Command Error`", inline=True)
+                        embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
+                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.set_footer(text=f"{config.version} | {config.shards}")
+                        
+                        await ctx.send(embed=embed)
+                        print(f'[WARNING] A Fatal internal Command Error occured in execution of {ctx.command}')
+                        print(f'[ERROR] {error}')
 
                 elif isinstance(error, commands.ConversionError):
-                        await ctx.send(f'**[WARNING]** A Fatal internal `Conversion Error` occured in execution of `{ctx.command}`')
-                        print(f'[WARNING] A Fatal internal `Conversion Error` occured in execution of `{ctx.command}`')
+                        embed = discord.Embed(title = f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
+
+                        embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
+                        embed.add_field(name = "Error", value="`Internal Command Conversion Error`", inline=True)
+                        embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
+                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.set_footer(text=f"{config.version} | {config.shards}")
+                        
+                        await ctx.send(embed=embed)
+                        print(f'[WARNING] A Fatal internal Conversion Error occured in execution of {ctx.command}')
+                        print(f'[ERROR] {error}')
 
                 elif isinstance(error, commands.CheckFailure):
-                        await ctx.send(f'**[WARNING]** A Fatal internal `Check Failure Error` occured in execution of `{ctx.command}`')
-                        print(f'[WARNING] A Fatal internal `Check Failure Error` occured in execution of `{ctx.command}`')
+                        embed = discord.Embed(title = f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
+
+                        embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
+                        embed.add_field(name = "Error", value="`Internal Command Check Failure Error`", inline=True)
+                        embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
+                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.set_footer(text=f"{config.version} | {config.shards}")
+                        
+                        await ctx.send(embed=embed)
+                        print(f'[WARNING] A Fatal internal Check Failure Error occured in execution of {ctx.command}')
+                        print(f'[ERROR] {error}')
 
                 elif isinstance(error, commands.CheckAnyFailure):
-                        await ctx.send(f'**[WARNING]** A Fatal internal `Check Any Failure Error` occured in execution of `{ctx.command}`')
-                        print(f'[WARNING] A Fatal internal `Check Any Failure Error` occured in execution of `{ctx.command}`')
+                        embed = discord.Embed(title = f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
+
+                        embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
+                        embed.add_field(name = "Error", value="`Internal Check Any Failure Error`", inline=True)
+                        embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
+                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.set_footer(text=f"{config.version} | {config.shards}")
+                        
+                        await ctx.send(embed=embed)
+                        print(f'[WARNING] A Fatal internal Check Any Failure Error occured in execution of {ctx.command}')
+                        print(f'[ERROR] {error}')
 
                 elif isinstance(error, commands.BadBoolArgument):
-                        await ctx.send(f'**[WARNING]** A Fatal internal `Bad Bool Arg Error` occured in execution of `{ctx.command}`')
-                        print(f'[WARNING] A Fatal internal `Bad Bool Arg Error` occured in execution of `{ctx.command}`')
+                        embed = discord.Embed(title = f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
+
+                        embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
+                        embed.add_field(name = "Error", value="`Internal Bad Bool Arg Error`", inline=True)
+                        embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
+                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.set_footer(text=f"{config.version} | {config.shards}")
+                        
+                        await ctx.send(embed=embed)
+                        print(f'[WARNING] A Fatal internal Bad Bool Arg Error occured in execution of {ctx.command}')
+                        print(f'[ERROR] {error}')
 
                 elif isinstance(error, commands.ExtensionAlreadyLoaded):
-                        await ctx.send(f'**[WARNING]** A Fatal internal `Extension Already Loaded Error` occured in execution of `{ctx.command}`')
-                        print(f'[WARNING] A Fatal internal `Extension Already Loaded Error` occured in execution of `{ctx.command}`')
+                        embed = discord.Embed(title = f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
+
+                        embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
+                        embed.add_field(name = "Error", value="`Internal EXT Already Loaded Error`", inline=True)
+                        embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
+                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.set_footer(text=f"{config.version} | {config.shards}")
+                        
+                        await ctx.send(embed=embed)
+                        print(f'[WARNING] A Fatal internal Extension Already Loaded Error occured in execution of {ctx.command}')
+                        print(f'[ERROR] {error}')
 
                 elif isinstance(error, commands.ExtensionNotLoaded):
-                        await ctx.send(f'**[WARNING]** A Fatal internal `Extension Not Loaded Error` occured in execution of `{ctx.command}`')
-                        print(f'[WARNING] A Fatal internal `Extension Not Loaded Error` occured in execution of `{ctx.command}`')
+                        embed = discord.Embed(title = f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
+
+                        embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
+                        embed.add_field(name = "Error", value="`Internal EXT Not Loaded Error`", inline=True)
+                        embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
+                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.set_footer(text=f"{config.version} | {config.shards}")
+                        
+                        await ctx.send(embed=embed)
+                        print(f'[WARNING] A Fatal internal Extension Not Loaded Error occured in execution of {ctx.command}')
+                        print(f'[ERROR] {error}')
 
                 elif isinstance(error, commands.NoEntryPointError):
-                        await ctx.send(f'**[WARNING]** A Fatal internal `No Entrypoint Error` occured in execution of `{ctx.command}`')
-                        print(f'[WARNING] A Fatal internal `No Entrypoint Error` occured in execution of `{ctx.command}`')
+                        embed = discord.Embed(title = f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
+
+                        embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
+                        embed.add_field(name = "Error", value="`Internal No Entry Point Error`", inline=True)
+                        embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
+                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.set_footer(text=f"{config.version} | {config.shards}")
+                        
+                        await ctx.send(embed=embed)
+                        print(f'[WARNING] A Fatal internal No Entrypoint Error occured in execution of {ctx.command}')
+                        print(f'[ERROR] {error}')
 
                 elif isinstance(error, commands.ExtensionFailed):
-                        await ctx.send(f'**[WARNING]** A Fatal internal `Extension Failed Error` occured in execution of `{ctx.command}`')
-                        print(f'[WARNING] A Fatal internal `Extension Failed Error` occured in execution of `{ctx.command}`')
+                        embed = discord.Embed(title = f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
+
+                        embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
+                        embed.add_field(name = "Error", value="`Internal EXT Failed Error`", inline=True)
+                        embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
+                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.set_footer(text=f"{config.version} | {config.shards}")
+                        
+                        await ctx.send(embed=embed)
+                        print(f'[WARNING] A Fatal internal Extension Failed Error occured in execution of {ctx.command}')
+                        print(f'[ERROR] {error}')
 
                 elif isinstance(error, commands.CommandRegistrationError):
-                        await ctx.send(f'**[WARNING]** A Fatal internal `Command Registration Error` occured in execution of `{ctx.command}`')
-                        print(f'[WARNING] A Fatal internal `Command Registration Error` occured in execution of `{ctx.command}`')
+                        embed = discord.Embed(title = f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
+
+                        embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
+                        embed.add_field(name = "Error", value="`Internal Command Registration Error`", inline=True)
+                        embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
+                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.set_footer(text=f"{config.version} | {config.shards}")
+                        
+                        await ctx.send(embed=embed)
+                        print(f'[WARNING] A Fatal internal Command Registration Error occured in execution of {ctx.command}')
+                        print(f'[ERROR] {error}')
 
                 else:
                         print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)

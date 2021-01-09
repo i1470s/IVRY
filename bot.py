@@ -14,7 +14,7 @@ client.remove_command('help')
 for ext in os.listdir("./cogs/"):
     if ext.endswith(".py") and not ext.startswith("_"):
         try: client.load_extension(f"cogs.{ext[:-3]}") 
-        except Exception as e: print('{CRIT WARN} FATAL ERROR OCCURED LOADING A COG!')
+        except Exception as e: print(f'[WARNING] A Fatal internal error occured loading the {ext} cog')
 
 async def status():
     while True:
