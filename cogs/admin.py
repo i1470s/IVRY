@@ -207,12 +207,14 @@ class Admin(commands.Cog):
         @logs.command()
         async def bot(self, ctx):
                 await ctx.send(file=discord.File(r'./data/logs/bot.json'))
+                logger3.debug(f"[INFO] SOMEONE IS USING {ctx.command}")
 
         #DISCORD SUB COMMAND
 
         @logs.command()
         async def discord(self, ctx):
                 await ctx.send(file=discord.File(r'./data/logs/discord.json'))
+                logger3.debug(f"[INFO] SOMEONE IS USING {ctx.command}")
 
         #ANTI SWEAR AND FILE    
 
