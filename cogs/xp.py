@@ -63,7 +63,7 @@ class xp(commands.Cog):
     #LEVEL
 
     @commands.group(invoke_without_command=True)
-    async def level(self, guild, ctx, member: discord.Member = None):
+    async def level(self, ctx, member: discord.Member = None):
         member = ctx.author if not member else member
         member_id = str(member.id)
 
@@ -83,11 +83,11 @@ class xp(commands.Cog):
     #LEVEL TOP - FIX ME BY V.3.0
 
     @level.command()
-    async def top(self, guild, ctx, member: discord.Member = None):
-        member = ctx.guild.members if not member else member
+    async def top(self, ctx, member: discord.Member = None):
+        member = ctx.author if not member else member
         member_id = str(member.id)
         try:
-            embed = discord.Embed(title=f"`{guild.name}`s Top 10 Members",color=0x9B59B6, timestamp=ctx.message.created_at)
+            embed = discord.Embed(title=f"`{ctx.guild.name}`'s Top 10 Members",color=0x9B59B6, timestamp=ctx.message.created_at)
 
             embed.set_author(name=f"IVRY Level", icon_url=self.client.user.avatar_url)
 
