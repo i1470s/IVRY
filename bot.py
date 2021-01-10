@@ -16,7 +16,7 @@ for ext in os.listdir("./cogs/"):
         try: client.load_extension(f"cogs.{ext[:-3]}") 
         except Exception as e: 
             print(f'[WARNING] A Fatal internal error occured loading the {ext} cog')
-            logger3.debug(f"[ERROR] {ext}")
+            logger3.debug(f"[ERROR] Loading {ext}")
 
 async def status():
     while True:

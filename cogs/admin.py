@@ -90,6 +90,7 @@ class Admin(commands.Cog):
         @commands.is_owner()
         async def restart(self, ctx):  
                 await ctx.send(f'Restarting...')
+                logger3.debug(f"[INFO] SOMONE IS USING {ctx.command}")
                 sys.exit()
 
         #RELOAD 
@@ -122,6 +123,7 @@ class Admin(commands.Cog):
                                                         )
                                         await asyncio.sleep(0.5)
                                 await ctx.send(embed=embed)
+                                logger3.debug(f"[INFO] SOMONE IS USING {ctx.command}")
                 else:
                         async with ctx.typing():
                                 embed = discord.Embed(
@@ -153,6 +155,7 @@ class Admin(commands.Cog):
                                                         value=desired_trace
                                                 )
                                 await ctx.send(embed=embed)
+                                logger3.debug(f"[INFO] SOMONE IS USING {ctx.command}")
 
         #EVAL
 
@@ -162,9 +165,11 @@ class Admin(commands.Cog):
                 try:
                         eval(cmd)
                         await ctx.send(f'Command exectued succsessfuly --> `{cmd}`')
+                        logger3.debug(f"[INFO] SOMONE IS USING {ctx.command}")
                 except:
                         print(f'`{cmd}` is an invalid command')
                         await ctx.send(f'Could not execute an invalid command --> `{cmd}`')
+                        logger3.debug(f"[INFO] SOMONE IS USING {ctx.command}")
 
         #LEAVE SERVER
 
@@ -195,7 +200,7 @@ class Admin(commands.Cog):
                 embed.set_footer(text=f"{config.version} | {config.shards}")
                         
                 await ctx.send(embed=embed)
-                logger3.debug(f"[WARNING] SOMEONE HAS REQUESTED LOGS")
+                logger3.debug(f"[INFO] SOMEONE IS USING {ctx.command}")
 
         #BOT SUB COMMAND
 
