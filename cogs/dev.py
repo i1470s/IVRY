@@ -124,7 +124,7 @@ class Dev(commands.Cog):
                 embed = discord.Embed(color=0x9B59B6)
 
                 embed.set_author(name="IVRY Log", icon_url=self.client.user.avatar_url)
-                embed.add_field(name = "Avalible Logs", value=f"\n `bot`- Bot errors / data logs \n `discord`- Discord API logs \n `xp`- User xp database", inline=True)
+                embed.add_field(name = "Avalible Logs", value=f"\n `bot`- Bot errors / data logs \n `discord`- Discord API logs \n `xp`- User xp database \n `settings`- Guild Settings Database", inline=True)
                 embed.set_footer(text=f"{config.version} | {config.shards}")
                         
                 await ctx.send(embed=embed)
