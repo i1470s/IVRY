@@ -86,7 +86,7 @@ class Help(commands.Cog):
             embed.set_thumbnail(url=ctx.bot.user.avatar_url)
             embed.set_footer(text=f"{config.version} | {config.shards}")
 
-            embed.add_field(name = "Commands", value = "\n `ban`- Ban members \n `kick`- Kick members \n `mute`- Mute members \n `unban`- Unban members \n `unmute`- Unmute members \n `clear`- Clear messages \n `leaveserver`- Leave a server \n `eval`- Compile code \n `reload`- Reload cogs \n `restart`- Restart bot \n `logs`- Bot logs", inline=False)
+            embed.add_field(name = "Commands", value = "\n `ban`- Ban members \n `kick`- Kick members \n `mute`- Mute members \n `unban`- Unban members \n `unmute`- Unmute members \n `clear`- Clear messages \n `leaveserver`- Leave a server \n `eval`- Compile code \n `reload`- Reload cogs \n `restart`- Restart bot \n `logs`- Readable logs \n 'logs bot'- Bot Related logs \n `logs discord`- Discord API logs \n `logs xp`- User xp logs", inline=False)
 
             await ctx.send(embed = embed)
 

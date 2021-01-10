@@ -196,7 +196,7 @@ class Admin(commands.Cog):
                 embed = discord.Embed(color=0x9B59B6)
 
                 embed.set_author(name="IVRY Log", icon_url=self.client.user.avatar_url)
-                embed.add_field(name = "Avalible Logs", value=f"\n `bot`- Bot errors / data logs \n `discord`- Discord API logs", inline=True)
+                embed.add_field(name = "Avalible Logs", value=f"\n `bot`- Bot errors / data logs \n `discord`- Discord API logs \n `xp`- User xp database", inline=True)
                 embed.set_footer(text=f"{config.version} | {config.shards}")
                         
                 await ctx.send(embed=embed)
@@ -214,6 +214,11 @@ class Admin(commands.Cog):
         @logs.command()
         async def discord(self, ctx):
                 await ctx.send(file=discord.File(r'./data/logs/discord.json'))
+                logger3.debug(f"[INFO] SOMEONE IS USING {ctx.command}")
+
+        @logs.command()
+        async def xp(self, ctx):
+                await ctx.send(file=discord.File(r'./data/dbs/users-xp.json'))
                 logger3.debug(f"[INFO] SOMEONE IS USING {ctx.command}")
 
         #ANTI SWEAR AND FILE    
