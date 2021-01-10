@@ -199,13 +199,13 @@ class Admin(commands.Cog):
 
         #BOT SUB COMMAND
 
-        @log.command()
+        @logs.command()
         async def bot(self, ctx):
                 await ctx.send(file=discord.File(r'./data/logs/bot.json'))
 
         #DISCORD SUB COMMAND
 
-        @log.command()
+        @logs.command()
         async def discord(self, ctx):
                 await ctx.send(file=discord.File(r'./data/logs/discord.json'))
 
