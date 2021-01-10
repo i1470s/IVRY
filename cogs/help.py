@@ -25,7 +25,8 @@ class Help(commands.Cog):
             embed.add_field(name = "Fun :tada:", value="`19` Fun Commands", inline=False)
             embed.add_field(name = "NSFW :x:", value="`10` NSFW Commands", inline=False)
             embed.add_field(name = "Music :musical_note:", value="`10` Music Player Commands", inline=False)
-            embed.add_field(name = "Admin :hammer:", value="`14` Admin Commands", inline=False)
+            embed.add_field(name = "Admin :hammer:", value="`6` Admin Commands", inline=False)
+            embed.add_field(name = "Dev :tools:", value="`9` Dev Commands", inline=False)
             embed.add_field(name = "Additional Resources", value=":video_game: [IVRY Server](https://discord.gg/ppn2u99)\n:iphone: [Website](https://ivry.tk)", inline=False)
 
             await ctx.send(embed = embed)
@@ -74,7 +75,7 @@ class Help(commands.Cog):
             embed.set_thumbnail(url=ctx.bot.user.avatar_url)
             embed.set_footer(text=f"{config.version} | {config.shards}")
 
-            embed.add_field(name = "Commands", value = "\n`join`- Join VC \n `leave`- Leave VC \n `play`- Play a song \n `skip`- Skip a song \n `queue`- Current song queue \n `shuffle`- Shuffle queue \n `remove`- Remove from queue \n `loop`- Loop song \n `now`- Currently playing \n `lyrics`- Search lyrics", inline=False)
+            embed.add_field(name = "Commands", value = "\n `join`- Join VC \n `leave`- Leave VC \n `play`- Play a song \n `skip`- Skip a song \n `queue`- Current song queue \n `shuffle`- Shuffle queue \n `remove`- Remove from queue \n `loop`- Loop song \n `now`- Currently playing \n `lyrics`- Search lyrics", inline=False)
 
             await ctx.send(embed = embed)
 
@@ -86,7 +87,19 @@ class Help(commands.Cog):
             embed.set_thumbnail(url=ctx.bot.user.avatar_url)
             embed.set_footer(text=f"{config.version} | {config.shards}")
 
-            embed.add_field(name = "Commands", value = "\n `ban`- Ban members \n `kick`- Kick members \n `mute`- Mute members \n `unban`- Unban members \n `unmute`- Unmute members \n `clear`- Clear messages \n `leaveserver`- Leave a server \n `eval`- Compile code \n `reload`- Reload cogs \n `restart`- Restart bot \n `logs`- Readable logs \n `logs bot`- Bot Related logs \n `logs discord`- Discord API logs \n `logs xp`- User xp logs", inline=False)
+            embed.add_field(name = "Commands", value = "\n `ban`- Ban members \n `kick`- Kick members \n `mute`- Mute members \n `unban`- Unban members \n `unmute`- Unmute members \n `clear`- Clear messages", inline=False)
+
+            await ctx.send(embed = embed)
+
+        #DEV SUB COMMAND
+
+        @help.command()
+        async def dev(self, ctx):
+            embed = discord.Embed(title = "IVRY Help - Dev :tools:", description = f"Prefix {config.prefix}", colour = 0x9B59B6)
+            embed.set_thumbnail(url=ctx.bot.user.avatar_url)
+            embed.set_footer(text=f"{config.version} | {config.shards}")
+
+            embed.add_field(name = "Commands", value = "\n `leaveserver`- Leave a server \n `eval`- Compile code \n `reload`- Reload cogs \n `restart`- Restart bot \n `logs`- Readable logs \n `logs bot`- Bot Related logs \n `logs discord`- Discord API logs \n `logs xp`- User xp logs \n `logs settings`- Guild settings logs", inline=False)
 
             await ctx.send(embed = embed)
 
