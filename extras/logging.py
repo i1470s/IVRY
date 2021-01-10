@@ -7,7 +7,7 @@ from cogs import admin, music, general, fun, help, events, xp, nsfw
 
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
-handler = RotatingFileHandler(filename='./data/logs/discord.json', encoding='utf-8', mode='w', maxBytes=937500, backupCount=5)
+handler = RotatingFileHandler(filename='./data/logs/discord.json', encoding='utf-8', mode='w', maxBytes=937500, backupCount=0)
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 logger.addHandler(handler)
 
@@ -15,6 +15,6 @@ logger.addHandler(handler)
 
 logger2 = logging.getLogger('ivry')
 logger2.setLevel(logging.DEBUG)
-handler = RotatingFileHandler(filename='./data/logs/bot.json', encoding='utf-8', mode='w', maxBytes=937500, backupCount=5)
+handler = RotatingFileHandler(filename='./data/logs/bot.json', encoding='utf-8', mode='w', maxBytes=937500, backupCount=0)
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 logger2.addHandler(handler)
