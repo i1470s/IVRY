@@ -5,8 +5,8 @@ import time
 import math
 from data import config
 import logging
-
-bot = logging.getLogger(__name__)
+logger3 = logging.getLogger("ivry")
+logger3.debug("general.py Started")
 
 class General(commands.Cog):   
     

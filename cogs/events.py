@@ -9,8 +9,8 @@ from discord.ext import commands
 import json
 from data import config
 import logging
-
-bot = logging.getLogger(__name__)
+logger3 = logging.getLogger("ivry")
+logger3.debug("events.py Started")
 
 class Events(commands.Cog):   
     
@@ -118,7 +118,7 @@ class Events(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Command Error occured in execution of {ctx.command}')
-                        print(f'[ERROR] {error}')
+                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
 
                 elif isinstance(error, commands.ConversionError):
                         embed = discord.Embed(title = f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
@@ -131,7 +131,7 @@ class Events(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Conversion Error occured in execution of {ctx.command}')
-                        print(f'[ERROR] {error}')
+                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
 
                 elif isinstance(error, commands.CheckFailure):
                         embed = discord.Embed(title = f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
@@ -144,7 +144,7 @@ class Events(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Check Failure Error occured in execution of {ctx.command}')
-                        print(f'[ERROR] {error}')
+                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
 
                 elif isinstance(error, commands.CheckAnyFailure):
                         embed = discord.Embed(title = f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
@@ -157,7 +157,7 @@ class Events(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Check Any Failure Error occured in execution of {ctx.command}')
-                        print(f'[ERROR] {error}')
+                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
 
                 elif isinstance(error, commands.BadBoolArgument):
                         embed = discord.Embed(title = f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
@@ -170,7 +170,7 @@ class Events(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Bad Bool Arg Error occured in execution of {ctx.command}')
-                        print(f'[ERROR] {error}')
+                        logger3.debug(f"[ERROR] {ctx.command} | {error}")                        
 
                 elif isinstance(error, commands.ExtensionAlreadyLoaded):
                         embed = discord.Embed(title = f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
@@ -183,7 +183,7 @@ class Events(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Extension Already Loaded Error occured in execution of {ctx.command}')
-                        print(f'[ERROR] {error}')
+                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
 
                 elif isinstance(error, commands.ExtensionNotLoaded):
                         embed = discord.Embed(title = f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
@@ -196,7 +196,7 @@ class Events(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Extension Not Loaded Error occured in execution of {ctx.command}')
-                        print(f'[ERROR] {error}')
+                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
 
                 elif isinstance(error, commands.NoEntryPointError):
                         embed = discord.Embed(title = f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
@@ -209,7 +209,7 @@ class Events(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal No Entrypoint Error occured in execution of {ctx.command}')
-                        print(f'[ERROR] {error}')
+                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
 
                 elif isinstance(error, commands.ExtensionFailed):
                         embed = discord.Embed(title = f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
@@ -222,7 +222,7 @@ class Events(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Extension Failed Error occured in execution of {ctx.command}')
-                        print(f'[ERROR] {error}')
+                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
 
                 elif isinstance(error, commands.CommandRegistrationError):
                         embed = discord.Embed(title = f"Type = `Fatal`",color=0x9B59B6, timestamp=ctx.message.created_at)
@@ -235,7 +235,7 @@ class Events(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Command Registration Error occured in execution of {ctx.command}')
-                        print(f'[ERROR] {error}')
+                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
 
                 else:
                         print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)

@@ -7,8 +7,8 @@ from random import randint
 from data import config
 import asyncio
 import logging
-
-bot = logging.getLogger(__name__)
+logger3 = logging.getLogger("ivry")
+logger3.debug("xp.py Started")
 
 epoch = datetime.datetime.utcfromtimestamp(0)
 time_diff = round((datetime.datetime.utcnow() - epoch).total_seconds())

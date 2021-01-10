@@ -5,8 +5,8 @@ from aiohttp import request
 import praw
 r = praw.Reddit(client_id="7oE7yB5GJJua2Q", client_secret="ooidPB-ETJxbRflpja6a65KX03g", user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36', username="PhantomVipermon")
 import logging
-
-bot = logging.getLogger(__name__)
+logger3 = logging.getLogger("ivry")
+logger3.debug("nsfw.py Started")
 
 class NSFW(commands.Cog):   
     

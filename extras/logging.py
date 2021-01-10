@@ -4,17 +4,21 @@ from cogs import admin, music, general, fun, help, events, xp, nsfw
 
 #LOGGER - DISCORD API
 
-discord = logging.getLogger('discord')
-discord.setLevel(logging.DEBUG)
+logger2 = logging.getLogger('discord')
+logger2.setLevel(logging.DEBUG)
 handler = logging.FileHandler(filename='./data/logs/discord.json', encoding='utf-8', mode='w')
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
-discord.addHandler(handler)
+logger2.addHandler(handler)
 
-#FINISH FOR V.3.0
+#LOGGER - BOT / COGS
 
-#LOGGER - BOT
-
-bot = logging.getLogger('bot')
-bot.setLevel(logging.DEBUG)
+logger3 = logging.getLogger('ivry')
+logger3.setLevel(logging.DEBUG)
 handler = logging.FileHandler(filename='./data/logs/bot.json', encoding='utf-8', mode='w')
-bot.addHandler(handler)
+handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
+logger3.addHandler(handler)
+
+
+
+
+

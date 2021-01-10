@@ -9,8 +9,8 @@ from asyncio import sleep
 import math
 from data import config, wordlist
 import logging
-
-bot = logging.getLogger(__name__)
+logger3 = logging.getLogger("ivry")
+logger3.debug("admin.py Started")
 
 class Admin(commands.Cog):   
     
@@ -182,6 +182,32 @@ class Admin(commands.Cog):
                 else:
                         msg = ':x: Could not find that server id!'
                 await ctx.send(msg)
+
+        #LOGS
+
+        @commands.group(invoke_without_command=True)
+        @commands.is_owner()
+        async def logs(self, ctx):
+                embed = discord.Embed(color=0x9B59B6)
+
+                embed.set_author(name="IVRY Log", icon_url=self.client.user.avatar_url)
+                embed.add_field(name = "Avalible Logs", value=f"\n `bot`- Bot errors / data logs \n `discord`- Discord API logs", inline=True)
+                embed.set_footer(text=f"{config.version} | {config.shards}")
+                        
+                await ctx.send(embed=embed)
+                logger3.debug(f"[WARNING] SOMEONE HAS REQUESTED LOGS")
+
+        #BOT SUB COMMAND
+
+        @log.command()
+        async def bot(self, ctx):
+                await ctx.send(file=discord.File(r'./data/logs/bot.json'))
+
+        #DISCORD SUB COMMAND
+
+        @log.command()
+        async def discord(self, ctx):
+                await ctx.send(file=discord.File(r'./data/logs/discord.json'))
 
         #ANTI SWEAR AND FILE    
 

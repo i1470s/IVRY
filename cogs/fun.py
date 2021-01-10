@@ -19,8 +19,8 @@ diff3 = datetime.datetime(now.year, 2, 14) - \
 diff4 = datetime.datetime(now.year, 7, 13) - \
     datetime.datetime.today() 
 import logging
-
-bot = logging.getLogger(__name__)
+logger3 = logging.getLogger("ivry")
+logger3.debug("fun.py Started")
 
 class Fun(commands.Cog):   
     

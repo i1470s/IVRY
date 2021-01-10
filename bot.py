@@ -6,15 +6,17 @@ from asyncio import sleep
 from extras import logging
 from data import config
 import logging
-
-bot = logging.getLogger(__name__)
+logger3 = logging.getLogger("ivry")
+logger3.debug("bot.py Started")
 
 client = commands.AutoShardedBot(command_prefix=config.default_prefix, shard_count=1, case_insensitive=True, intents=discord.Intents.all())
 client.remove_command('help')
 for ext in os.listdir("./cogs/"):
     if ext.endswith(".py") and not ext.startswith("_"):
         try: client.load_extension(f"cogs.{ext[:-3]}") 
-        except Exception as e: print(f'[WARNING] A Fatal internal error occured loading the {ext} cog')
+        except Exception as e: 
+            print(f'[WARNING] A Fatal internal error occured loading the {ext} cog')
+            logger3.debug(f"[ERROR] {ext}")
 
 async def status():
     while True:
