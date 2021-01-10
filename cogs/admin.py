@@ -90,7 +90,6 @@ class Admin(commands.Cog):
         @commands.is_owner()
         async def restart(self, ctx):  
                 await ctx.send(f'Restarting...')
-                await client.close()
                 sys.exit()
 
         #RELOAD 

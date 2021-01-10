@@ -113,7 +113,7 @@ class Events(commands.Cog):
                         embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
                         embed.add_field(name = "Error", value="`Internal Command Error`", inline=True)
                         embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
-                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.add_field(name = "Trace Back", value=f"```CSS\n{error}```", inline=False)
                         embed.set_footer(text=f"{config.version} | {config.shards}")
                         
                         await ctx.send(embed=embed)
@@ -126,7 +126,7 @@ class Events(commands.Cog):
                         embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
                         embed.add_field(name = "Error", value="`Internal Command Conversion Error`", inline=True)
                         embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
-                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.add_field(name = "Trace Back", value=f"```CSS\n{error}```", inline=False)
                         embed.set_footer(text=f"{config.version} | {config.shards}")
                         
                         await ctx.send(embed=embed)
@@ -139,7 +139,7 @@ class Events(commands.Cog):
                         embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
                         embed.add_field(name = "Error", value="`Internal Command Check Failure Error`", inline=True)
                         embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
-                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.add_field(name = "Trace Back", value=f"```CSS\n{error}```", inline=False)
                         embed.set_footer(text=f"{config.version} | {config.shards}")
                         
                         await ctx.send(embed=embed)
@@ -152,7 +152,7 @@ class Events(commands.Cog):
                         embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
                         embed.add_field(name = "Error", value="`Internal Check Any Failure Error`", inline=True)
                         embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
-                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.add_field(name = "Trace Back", value=f"```CSS\n{error}```", inline=False)
                         embed.set_footer(text=f"{config.version} | {config.shards}")
                         
                         await ctx.send(embed=embed)
@@ -165,7 +165,7 @@ class Events(commands.Cog):
                         embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
                         embed.add_field(name = "Error", value="`Internal Bad Bool Arg Error`", inline=True)
                         embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
-                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.add_field(name = "Trace Back", value=f"```CSS\n{error}```", inline=False)
                         embed.set_footer(text=f"{config.version} | {config.shards}")
                         
                         await ctx.send(embed=embed)
@@ -178,7 +178,7 @@ class Events(commands.Cog):
                         embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
                         embed.add_field(name = "Error", value="`Internal EXT Already Loaded Error`", inline=True)
                         embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
-                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.add_field(name = "Trace Back", value=f"```CSS\n{error}```", inline=False)
                         embed.set_footer(text=f"{config.version} | {config.shards}")
                         
                         await ctx.send(embed=embed)
@@ -191,7 +191,7 @@ class Events(commands.Cog):
                         embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
                         embed.add_field(name = "Error", value="`Internal EXT Not Loaded Error`", inline=True)
                         embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
-                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.add_field(name = "Trace Back", value=f"```CSS\n{error}```", inline=False)
                         embed.set_footer(text=f"{config.version} | {config.shards}")
                         
                         await ctx.send(embed=embed)
@@ -204,7 +204,7 @@ class Events(commands.Cog):
                         embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
                         embed.add_field(name = "Error", value="`Internal No Entry Point Error`", inline=True)
                         embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
-                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.add_field(name = "Trace Back", value=f"```CSS\n{error}```", inline=False)
                         embed.set_footer(text=f"{config.version} | {config.shards}")
                         
                         await ctx.send(embed=embed)
@@ -217,7 +217,7 @@ class Events(commands.Cog):
                         embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
                         embed.add_field(name = "Error", value="`Internal EXT Failed Error`", inline=True)
                         embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
-                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.add_field(name = "Trace Back", value=f"```CSS\n{error}```", inline=False)
                         embed.set_footer(text=f"{config.version} | {config.shards}")
                         
                         await ctx.send(embed=embed)
@@ -230,7 +230,7 @@ class Events(commands.Cog):
                         embed.set_author(name="IVRY Error", icon_url=self.client.user.avatar_url)
                         embed.add_field(name = "Error", value="`Internal Command Registration Error`", inline=True)
                         embed.add_field(name = "Error Point", value=f"`{ctx.command}`", inline=True)
-                        embed.add_field(name = "Trace Back", value=f"```{error}```", inline=False)
+                        embed.add_field(name = "Trace Back", value=f"```CSS\n{error}```", inline=False)
                         embed.set_footer(text=f"{config.version} | {config.shards}")
                         
                         await ctx.send(embed=embed)

@@ -63,7 +63,7 @@ class xp(commands.Cog):
     #LEVEL
 
     @commands.group(invoke_without_command=True)
-    async def level(self, ctx, member: discord.Member = None):
+    async def level(self, guild, ctx, member: discord.Member = None):
         member = ctx.author if not member else member
         member_id = str(member.id)
 
@@ -72,7 +72,7 @@ class xp(commands.Cog):
         else:
             embed = discord.Embed(title=f"{member} Stats",color=0x9B59B6, timestamp=ctx.message.created_at)
 
-            embed.set_author(name=f"IVRY Levels", icon_url=self.client.user.avatar_url)
+            embed.set_author(name=f"IVRY Level", icon_url=self.client.user.avatar_url)
 
             embed.set_thumbnail(url=member.avatar_url)
             embed.add_field(name="Level", value=self.users[member_id]["level"])
@@ -80,16 +80,16 @@ class xp(commands.Cog):
 
             await ctx.send(embed=embed)
     
-    #TOP - FIX ME BY V.3.0
+    #LEVEL TOP - FIX ME BY V.3.0
 
     @level.command()
-    async def top(self, ctx, guild, member: discord.Member = None):
+    async def top(self, guild, ctx, member: discord.Member = None):
         member = ctx.guild.members if not member else member
         member_id = str(member.id)
         try:
             embed = discord.Embed(title=f"`{guild.name}`s Top 10 Members",color=0x9B59B6, timestamp=ctx.message.created_at)
 
-            embed.set_author(name=f"IVRY Levels", icon_url=self.client.user.avatar_url)
+            embed.set_author(name=f"IVRY Level", icon_url=self.client.user.avatar_url)
 
             embed.set_thumbnail(url=self.client.user.avatar_url)
             embed.add_field(name="Coming Soon", value="This just shows your stats for now i am currently working on this!")

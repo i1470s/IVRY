@@ -27,7 +27,7 @@ class General(commands.Cog):
 
                         embed.add_field(name='Created by', value=f'[i1470s#0396](https://github.com/i1470s)', inline=False)
 
-                        embed.add_field(name='Status', value=f'{config.version} Online 🟢', inline=False)
+                        embed.add_field(name='Status', value=f'{config.version} | Online 🟢', inline=False)
                         
                         embed.add_field(name='Discord Server', value=f'[Click Me](https://discord.gg/ppn2U99)', inline=False)
                         
@@ -109,7 +109,7 @@ class General(commands.Cog):
 
         @commands.command(name='servers', description="List of bot servers")
         async def servers(self, ctx):
-                msg = '```js\n'
+                msg = '```CSS\n'
                 msg += '{!s:19s} | {!s:>5s} | {}\n'.format('ID', 'Member', 'Name')
                 for guild in self.client.guilds:
                         msg += '{!s:19s} |{!s:>5s}   | {}\n'.format(guild.id, guild.member_count, guild.name)
