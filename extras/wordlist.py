@@ -1,0 +1,1 @@
+words = ['simp', 'SIMP', 'fag', 'FAG', 'faggot', 'FAGGOT', 'nigger', 'NIGGER']

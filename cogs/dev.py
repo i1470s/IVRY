@@ -7,7 +7,8 @@ import os
 import asyncio
 from asyncio import sleep
 import math
-from data import config, wordlist
+from data import config
+from extras import wordlist
 import logging
 logger3 = logging.getLogger("ivry")
 logger3.debug("dev.py Started")
