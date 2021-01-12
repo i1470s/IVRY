@@ -9,6 +9,8 @@ import asyncio
 import logging
 logger3 = logging.getLogger("ivry")
 logger3.debug("xp.py Started")
+logger3.debug(f"--------COMPLETE IVRY {config.version}-------")
+logger3.debug("")
 
 epoch = datetime.datetime.utcfromtimestamp(0)
 time_diff = round((datetime.datetime.utcnow() - epoch).total_seconds())
@@ -80,7 +82,7 @@ class xp(commands.Cog):
 
             await ctx.send(embed=embed)
     
-    #LEVEL TOP - FIX ME BY V.3.0
+    #LEVEL TOP SUB COMMAND - FIX ME BY V.3.0
 
     @level.command()
     async def top(self, ctx, member: discord.Member = None):

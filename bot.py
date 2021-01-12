@@ -7,7 +7,7 @@ from extras import logging
 from data import config
 import logging
 logger3 = logging.getLogger("ivry")
-logger3.debug(f"-------LOADING IVRY {config.version}-------")
+logger3.debug(f"--------LOADING IVRY {config.version}--------")
 logger3.debug("bot.py Started")
 
 client = commands.AutoShardedBot(command_prefix=config.default_prefix, shard_count=1, case_insensitive=True, intents=discord.Intents.all())
