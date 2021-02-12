@@ -179,6 +179,31 @@ class Dev(commands.Cog):
                                         await message.channel.send("This file type is not allowed in this server.")
                         else: 
                                 return
+                
+        #UPDATE
+
+        @commands.group(invoke_without_command=True)
+        @commands.is_owner()
+        async def update(self, ctx):
+                embed = discord.Embed(color=0x9B59B6)
+
+                embed.set_author(name="IVRY Update", icon_url=self.client.user.avatar_url)
+                embed.add_field(name = "Avalible Updates", value=f"\n `bot`- Bot Update \n `packages`- Bot Packages", inline=True)
+                embed.set_footer(text=f"{config.version} | {config.shards}")
+                        
+                await ctx.send(embed=embed)
+
+        #BOT SUB COMMAND
+
+        @update.command()
+        async def bot(self, ctx):
+                await ctx.send(file=discord.File(r'./data/logs/bot.json'))
+
+        #PACKAGES SUB COMMAND
+
+        @update.command()
+        async def packages(self, ctx):
+                await ctx.send(file=discord.File(r'./extras/package-updater.py'))
 
 def setup(client):
     client.add_cog(Dev(client))
