@@ -32,7 +32,7 @@ class General(commands.Cog):
                         embed.add_field(name='Discord Server', value=f'[Click Me](https://discord.gg/ppn2U99)', inline=False)
                         
                         embed.add_field(name='Website', value=f'[Click Me](https://ivry.tk)', inline=False)
-                        
+
                         embed.add_field(name='API', value=f'[Click Me](http://api-ivry.tk)', inline=False)
 
                         embed.add_field(name='Announcements', value=f'{config.announcements}', inline=False)
