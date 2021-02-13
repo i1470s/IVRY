@@ -3,9 +3,13 @@ while true
 do
 rm -rf /home/brayden/desktop/IVRYBot/IVRY-Discord-Bot
 git clone git@github.com:i1470s/IVRY-Discord-Bot.git 
-echo Starting Bot
-$ python -c 'import sys; print(sys.version_info[:])'
+echo 
+python3 -c 'import sys; print(sys.version_info[:])'
 (2, 6, 5, 'final', 0)
+echo
+python3 /extras/package-updater.py
+echo
+echo Starting Bot
 python3 bot.py
 echo Restarting Bot...
 done
