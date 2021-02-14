@@ -99,7 +99,7 @@ class Help(commands.Cog):
             embed.set_thumbnail(url=ctx.bot.user.avatar_url)
             embed.set_footer(text=f"{config.version} | {config.shards}")
 
-            embed.add_field(name = "Commands", value = "\n `leaveserver`- Leave a server \n `eval`- Compile code \n `reload`- Reload cogs \n `restart`- Restart bot \n 'update' - Update bot \n `logs`- Readable logs \n `logs bot`- Bot Related logs \n `logs discord`- Discord API logs \n `logs xp`- User xp database \n `logs settings`- Guild settings database", inline=False)
+            embed.add_field(name = "Commands", value = "\n `leaveserver`- Leave a server \n `eval`- Compile code \n `reload`- Reload cogs \n `restart`- Restart bot \n `update` - Update bot \n `logs`- Readable logs \n `logs bot`- Bot Related logs \n `logs discord`- Discord API logs \n `logs xp`- User xp database \n `logs settings`- Guild settings database", inline=False)
 
             await ctx.send(embed = embed)
 
