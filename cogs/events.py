@@ -62,12 +62,26 @@ class Events(commands.Cog):
 
         #BOT MENTION
 
+        #@commands.Cog.listener()
+        #async def on_message(self, message):
+        #        if self.client.user.mentioned_in(message):
+                        #embed = discord.Embed(title = f"Prefix {config.prefix}", description=f"Hey! my name is {self.client.user} im a [Discord Bot](https://support.discord.com/hc/en-us/articles/212889058-Discord-s-Official-API) you can check my commands list with {config.prefix}Help at anytime!",color=0x9B59B6,)
+
+                        #embed.set_author(name="IVRY Info", icon_url=self.client.user.avatar_url)
+                       # embed.set_thumbnail(url=self.client.user.avatar_url)
+                       # embed.set_footer(text=f"{config.version} | {config.shards}")
+                      #  embed.add_field(name = "Additional Resources", value=":video_game: [IVRY Server](https://discord.gg/ppn2u99)\n:iphone: [Website](https://ivry.tk)", inline=False)
+
+                       # await message.channel.send(embed=embed) 
+
+        #BOT MENTION (VDAY TEMP)
+
         @commands.Cog.listener()
         async def on_message(self, message):
                 if self.client.user.mentioned_in(message):
-                        embed = discord.Embed(title = f"Prefix {config.prefix}", description=f"Hey! my name is {self.client.user} im a [Discord Bot](https://support.discord.com/hc/en-us/articles/212889058-Discord-s-Official-API) you can check my commands list with {config.prefix}Help at anytime!",color=0x9B59B6,)
+                        embed = discord.Embed(title = f"Prefix {config.prefix}", description=f"Hey bubba so this was a slight pan in my ass to setup but anything for you :heart: ashlee i love you so much and you really have made this year a whole lot better for me and for that i thank you and im so damn happy that your in my life you've seriously made it so much better, and all the memories that weve already made im amazed and just to think there gonna get even better <3 like wow am i the luckiest guy alive, cause i really am you're the best girlfriend. your my best friend, your my favorite person, and most importantly your the person that i love most buba :heart:\n nowwwww go here for another suprise [CLICK ME BUBBA <3](https://ivry.tk/content/home/suprise)",color=0x9B59B6,)
 
-                        embed.set_author(name="IVRY Info", icon_url=self.client.user.avatar_url)
+                        embed.set_author(name="Hi Boo happy vday", icon_url=self.client.user.avatar_url)
                         embed.set_thumbnail(url=self.client.user.avatar_url)
                         embed.set_footer(text=f"{config.version} | {config.shards}")
                         embed.add_field(name = "Additional Resources", value=":video_game: [IVRY Server](https://discord.gg/ppn2u99)\n:iphone: [Website](https://ivry.tk)", inline=False)
