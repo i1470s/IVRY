@@ -1,4 +1,3 @@
-import random
 import discord
 from discord.ext import commands
 import sys
@@ -177,7 +176,7 @@ class Dev(commands.Cog):
                         for word in word_list:
                                 if word in messageContent:
                                         await message.delete()
-                                        await message.channel.send(f'`{message.content}` Is in our banned words list, Please refrain from using it!')
+                                        await message.channel.send(f'You used a word in our banned word list, Please refrain from using it! you can check all banned words here \n ||https://github.com/i1470s/IVRY-Discord-Bot/blob/main/extras/wordlist.py||')
                         
                 messageattachments = message.attachments
                 if len(messageattachments) > 0:

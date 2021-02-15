@@ -1,4 +1,3 @@
-import random
 import discord
 import math
 from discord.ext import commands

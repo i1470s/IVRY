@@ -1,7 +1,6 @@
 import discord
 import logging
 from logging.handlers import RotatingFileHandler
-from cogs import admin, music, general, fun, help, events, xp, nsfw
 
 #LOGGER - DISCORD API
 
