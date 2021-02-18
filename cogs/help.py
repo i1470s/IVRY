@@ -99,7 +99,7 @@ class Help(commands.Cog):
             embed.set_thumbnail(url=ctx.bot.user.avatar_url)
             embed.set_footer(text=f"{config.version} | {config.shards}")
 
-            embed.add_field(name = "Commands", value = "\n ", inline=False)
+            embed.add_field(name = "Commands", value = "\n 'Coming soon!' - SOON!", inline=False)
 
             await ctx.send(embed = embed)
 
