@@ -29,8 +29,24 @@ async def status():
         await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f'{config.shards} | {config.default_prefix}Help'))
         await sleep(10)
 
+#BOT INIT
+
 @client.event
 async def on_ready():
-    print(f'Starting IVRY on {config.version}')
+    print(f'''
+PUB(BUILD(28))
+ _____  ____   ____  _______   ____  ____   
+|_   _||_  _| |_  _||_   __ \ |_  _||_  _|  
+  | |    \ \   / /    | |__) |  \ \  / /    
+  | |     \ \ / /     |  __ /    \ \/ /     
+ _| |_     \ ' /     _| |  \ \_  _|  |_     
+|_____|     \_/     |____| |___||______| 
+----------------------------------------   
+| Starting On {config.version}            |‎
+| Created By i1470s#0396               |
+----------------------------------------
+        ~IVRY All Rights Reserved~
+
+--------------ERROR OUTPUT--------------''')
 client.loop.create_task(status())
 client.run(config.token)

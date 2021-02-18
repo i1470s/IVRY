@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-import time
+import time, datetime
 import math
 from data import config
 import logging
@@ -16,6 +16,7 @@ class General(commands.Cog):
 
         @commands.command(name='about', description="About the bot")
         async def about(self, ctx):
+                start_time = (time.strftime(format('%I:%M %p %B %#d')))
                 try:
                          
                         embed = discord.Embed(title = f"Prefix {config.prefix}",
@@ -26,7 +27,7 @@ class General(commands.Cog):
 
                         embed.add_field(name='Created by', value=f'[i1470s#0396](https://github.com/i1470s)', inline=False)
 
-                        embed.add_field(name='Status', value=f'{config.version} | Online 🟢', inline=False)
+                        embed.add_field(name='Status', value=f'Online 🟢 | Last Restart {start_time} | {config.version}', inline=False)
                         
                         embed.add_field(name='Discord Server', value=f'[Click Me](https://discord.gg/ppn2U99)', inline=False)
                         
