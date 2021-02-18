@@ -27,7 +27,7 @@ class Events(commands.Cog):
                         embed.set_author(name="IVRY Info", icon_url=guild.me.avatar_url)
                         embed.set_thumbnail(url=guild.me.avatar_url)
                         embed.set_footer(text=f"{config.version} | {config.shards}")
-                        embed.add_field(name = "Additional Resources", value=":video_game: [IVRY Server](https://discord.gg/ppn2u99)\n:iphone: [Website](https://ivry.tk)", inline=False)
+                        embed.add_field(name = "Additional Resources", value=":video_game: [IVRY Discord Server](https://discord.gg/ppn2u99)\n:iphone: [IVRY Website](https://ivry.tk)", inline=False)
 
                         await channel.send(embed=embed)
 
@@ -69,7 +69,7 @@ class Events(commands.Cog):
                         embed.set_author(name="IVRY Info", icon_url=self.client.user.avatar_url)
                         embed.set_thumbnail(url=self.client.user.avatar_url)
                         embed.set_footer(text=f"{config.version} | {config.shards}")
-                        embed.add_field(name = "Additional Resources", value=":video_game: [IVRY Server](https://discord.gg/ppn2u99)\n:iphone: [Website](https://ivry.tk)", inline=False)
+                        embed.add_field(name = "Additional Resources", value=":video_game: [IVRY Discord Server](https://discord.gg/ppn2u99)\n:iphone: [IVRY Website](https://ivry.tk)", inline=False)
 
                         await message.channel.send(embed=embed) 
 

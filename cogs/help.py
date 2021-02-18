@@ -25,8 +25,9 @@ class Help(commands.Cog):
             embed.add_field(name = "NSFW :x:", value="`10` NSFW Commands", inline=False)
             embed.add_field(name = "Music :musical_note:", value="`10` Music Player Commands", inline=False)
             embed.add_field(name = "Admin :hammer:", value="`6` Admin Commands", inline=False)
+            embed.add_field(name = "Misc :question:", value="`0` Misc Commands", inline=False)
             embed.add_field(name = "Dev :tools:", value="`10` Dev Commands", inline=False)
-            embed.add_field(name = "Additional Resources", value=":video_game: [IVRY Server](https://discord.gg/ppn2u99)\n:iphone: [Website](https://ivry.tk)", inline=False)
+            embed.add_field(name = "Additional Resources", value=":video_game: [IVRY Discord Server](https://discord.gg/ppn2u99)\n:iphone: [IVRY Website](https://ivry.tk)", inline=False)
 
             await ctx.send(embed = embed)
 
@@ -87,6 +88,18 @@ class Help(commands.Cog):
             embed.set_footer(text=f"{config.version} | {config.shards}")
 
             embed.add_field(name = "Commands", value = "\n `ban`- Ban members \n `kick`- Kick members \n `mute`- Mute members \n `unban`- Unban members \n `unmute`- Unmute members \n `clear`- Clear messages", inline=False)
+
+            await ctx.send(embed = embed)
+
+        #MISC SUB COMMAND
+
+        @help.command()
+        async def misc(self, ctx):
+            embed = discord.Embed(title = "IVRY Help - Misc :question:", description = f"Prefix {config.prefix}", colour = 0x9B59B6)
+            embed.set_thumbnail(url=ctx.bot.user.avatar_url)
+            embed.set_footer(text=f"{config.version} | {config.shards}")
+
+            embed.add_field(name = "Commands", value = "\n ", inline=False)
 
             await ctx.send(embed = embed)
 
