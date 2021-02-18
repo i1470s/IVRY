@@ -6,6 +6,7 @@ import discord, time, datetime, logging, math
 
 from discord.ext import commands
 from data import config
+start_time = (time.strftime(format('%I:%M %p %B %#d')))
 
 #LOGGING
 
@@ -21,7 +22,6 @@ class General(commands.Cog):
 
         @commands.command(name='about', description="About the bot")
         async def about(self, ctx):
-                start_time = (time.strftime(format('%I:%M %p %B %#d')))
                 try:
                          
                         embed = discord.Embed(title = f"Prefix {config.prefix}",
