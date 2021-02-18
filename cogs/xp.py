@@ -2,10 +2,10 @@ import discord, json, os, datetime, asyncio, logging
 from discord.ext import commands, tasks
 from random import randint
 from data import config
-logger3 = logging.getLogger("ivry")
-logger3.debug("xp.py Started")
-logger3.debug(f"--------COMPLETE IVRY {config.version}-------")
-logger3.debug("")
+logger = logging.getLogger("ivry")
+logger.debug("xp.py Started")
+logger.debug(f"--------COMPLETE IVRY {config.version}-------")
+logger.debug("")
 
 epoch = datetime.datetime.utcfromtimestamp(0)
 time_diff = round((datetime.datetime.utcnow() - epoch).total_seconds())

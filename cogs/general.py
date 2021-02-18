@@ -1,8 +1,8 @@
 import discord, time, datetime, logging, math
 from discord.ext import commands
 from data import config
-logger3 = logging.getLogger("ivry")
-logger3.debug("general.py Started")
+logger = logging.getLogger("ivry")
+logger.debug("general.py Started")
 
 class General(commands.Cog):   
     

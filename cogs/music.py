@@ -4,8 +4,8 @@ from discord.ext import commands
 from urllib.request import urlopen
 from async_timeout import timeout
 from discord.ext import commands
-logger3 = logging.getLogger("ivry")
-logger3.debug("music.py Started")
+logger = logging.getLogger("ivry")
+logger.debug("music.py Started")
 
 class Music(commands.Cog):   
     def __init__(self, client):

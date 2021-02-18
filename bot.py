@@ -1,11 +1,12 @@
 import discord, os, logging
+
 from discord.ext import commands
 from discord.ext.commands import AutoShardedBot
 from asyncio import sleep
 from data import config
-logger3 = logging.getLogger("ivry")
-logger3.debug(f"--------LOADING IVRY {config.version}--------")
-logger3.debug("bot.py Started")
+logger = logging.getLogger("ivry")
+logger.debug(f"--------LOADING IVRY {config.version}--------")
+logger.debug("bot.py Started")
 print(f'''
 PUB(BUILD(28))
  _____  ____   ____  _______   ____  ____   
@@ -29,7 +30,7 @@ for ext in os.listdir("./cogs/"):
         try: client.load_extension(f"cogs.{ext[:-3]}") 
         except Exception as e: 
             print(f'[WARNING] A Fatal internal error occured loading the {ext} cog')
-            logger3.debug(f"[ERROR] Loading {ext}")
+            logger.debug(f"[ERROR] Loading {ext}")
 
 async def status():
     while True:

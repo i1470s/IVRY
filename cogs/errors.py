@@ -2,8 +2,8 @@ import discord, os, datetime, sys, json, traceback, logging
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from discord.ext import commands
 from data import config
-logger3 = logging.getLogger("ivry")
-logger3.debug("errors.py Started")
+logger = logging.getLogger("ivry")
+logger.debug("errors.py Started")
 
 class Errors(commands.Cog):   
     
@@ -43,7 +43,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Command Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
 
         #CONVERSION ERROR
 
@@ -58,7 +58,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Conversion Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
         
         #USER INPUT ERROR
 
@@ -73,7 +73,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal User Input Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
 
         #MISSING REQUIRED ARGUMENT
                 
@@ -88,7 +88,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Conversion Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
 
         #TOO MANY ARGUMENTS
                 elif isinstance(error, commands.TooManyArguments):
@@ -102,7 +102,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Conversion Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
 
         #BAD ARGUMENT
 
@@ -117,7 +117,7 @@ class Errors(commands.Cog):
                                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Bad Argument Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")     
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")     
 
                 #MESSAGE NOT FOUND
 
@@ -132,7 +132,7 @@ class Errors(commands.Cog):
                                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Message Not Found Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")     
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")     
 
                 #MEMBER NOT FOUND
 
@@ -147,7 +147,7 @@ class Errors(commands.Cog):
                                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Bad Member Not Found occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")    
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")    
 
                 #USER NOT FOUND
 
@@ -162,7 +162,7 @@ class Errors(commands.Cog):
                                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal User Not Found Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")  
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")  
 
                 #CHANNEL NOT FOUND
 
@@ -177,7 +177,7 @@ class Errors(commands.Cog):
                                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Channel Not Found Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")  
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")  
 
                 #CHANNEL NOT READABLE
 
@@ -192,7 +192,7 @@ class Errors(commands.Cog):
                                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Channel Not Readable Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")  
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")  
 
                 #BAD COLOR ARGUMENT
 
@@ -207,7 +207,7 @@ class Errors(commands.Cog):
                                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Bad Colour Argument Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}") 
+                        logger.debug(f"[ERROR] {ctx.command} | {error}") 
 
                 #ROLE NOT FOUND
 
@@ -222,7 +222,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Role Not Found Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
 
                 #BAD INVITE ARGUMENT
                 
@@ -237,7 +237,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Conversion Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
 
                 #EMOJI NOT FOUND
 
@@ -252,7 +252,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Emoji Not Found Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
 
                 #PARTIAL EMOJI CONVERSION FAILURE
 
@@ -267,7 +267,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Partial Emoji Conversion Failure Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
 
                 #BAD BOOL ARGUMENT
 
@@ -282,7 +282,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Bad Bool Argument Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")  
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")  
 
                 #BAD UNION ARGUMENT
 
@@ -297,7 +297,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Bad Union Argument Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")  
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")  
 
                 #ARGUMENT PARSING ERROR
 
@@ -312,7 +312,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Argument Parsing Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")  
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")  
 
                 #UNEXPECTED QUOTE ERROR
 
@@ -327,7 +327,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Unexpected Quote Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")  
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")  
 
                 #INVALID END OF QUOTED STRING 
 
@@ -342,7 +342,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Invalid End Of Quoted String Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
 
                 #EXPECTED CLOSING QUOTE ERROR
 
@@ -357,7 +357,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Expected Closing Quote Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
                 
         #COMMAND NOT FOUND
 
@@ -372,7 +372,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Command Not Found Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")  
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")  
 
         #CHECK FAILURE
 
@@ -387,7 +387,7 @@ class Errors(commands.Cog):
                                 
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Check Failure Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
 
                 #CHECK ANY FAILURE
 
@@ -402,7 +402,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Check Any Failure Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")              
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")              
 
                 #PRIVATE MESSAGE ONLY
 
@@ -417,7 +417,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Private Message Only Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")      
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")      
 
                 #NO PRIVATE MESSAGE
 
@@ -432,7 +432,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal No Private Message Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")      
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")      
 
                 #NOT OWNER
 
@@ -447,7 +447,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Not Owner Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")      
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")      
 
                 #MISSING PERMISSIONS
 
@@ -462,7 +462,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Missing Permissions Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")      
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")      
                 
                 #MISSING ROLE
 
@@ -477,7 +477,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Missing Role Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")      
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")      
 
                 #BOT MISSING ROLE
 
@@ -492,7 +492,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Bot Missing Role Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")      
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")      
 
                 #MISSING ANY ROLE
 
@@ -507,7 +507,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Missing Any Role Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")      
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")      
 
                 #BOT MISSING ANY ROLE
 
@@ -522,7 +522,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Bot Missing Any Role Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")   
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")   
 
                 #NSFW CHANNEL REQUIRED
 
@@ -537,7 +537,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal NSFW Channel Required Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")      
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")      
    
                 #DISABLED COMMAND
 
@@ -552,7 +552,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Disabled Command Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")  
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")  
 
                 #COMMAND INVOKE ERROR
 
@@ -567,7 +567,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Command Invoke Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")  
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")  
 
                 #COMMAND ON COOLDOWN
 
@@ -582,7 +582,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Command On Cooldown Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")  
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")  
 
                 #MAX CONCURRENCY REACHED    
 
@@ -597,7 +597,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Max Concurrency Reached Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")                     
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")                     
 
         #EXTENSION ERROR
 
@@ -612,7 +612,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Extension Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
 
 
                 #EXTENSION ALREADY LOADED
@@ -628,7 +628,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Extension Already Loaded Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
 
                 #EXTENSION NOT LOADED
 
@@ -643,7 +643,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Extension Not Loaded Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
 
                 #NO ENTRY POINT ERROR
 
@@ -658,7 +658,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal No Entrypoint Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
 
                 #EXTENSION FAILED
 
@@ -673,7 +673,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Extension Failed Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
 
                 #EXTENSION NOT FOUND
 
@@ -688,7 +688,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Extension Not Found Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
 
         #CLIENT EXCEPTION
 
@@ -705,7 +705,7 @@ class Errors(commands.Cog):
                         
                         await ctx.send(embed=embed)
                         print(f'[WARNING] A Fatal internal Command Registration Error occured in execution of {ctx.command}')
-                        logger3.debug(f"[ERROR] {ctx.command} | {error}")
+                        logger.debug(f"[ERROR] {ctx.command} | {error}")
                 
                 else:
                         print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)

@@ -1,8 +1,8 @@
 import discord, logging
 from discord.ext import commands
 from data import config
-logger3 = logging.getLogger("ivry")
-logger3.debug("help.py Started")
+logger = logging.getLogger("ivry")
+logger.debug("help.py Started")
 
 class Help(commands.Cog):   
     

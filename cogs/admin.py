@@ -2,8 +2,8 @@ import discord, sys, os, traceback, math, asyncio, logging
 from discord.ext import commands
 from asyncio import sleep
 from data import config
-logger3 = logging.getLogger("ivry")
-logger3.debug("admin.py Started")
+logger = logging.getLogger("ivry")
+logger.debug("admin.py Started")
 
 class Admin(commands.Cog):   
     
