@@ -2,7 +2,6 @@ import discord, os, logging
 from discord.ext import commands
 from discord.ext.commands import AutoShardedBot
 from asyncio import sleep
-from extras import logging
 from data import config
 logger3 = logging.getLogger("ivry")
 logger3.debug(f"--------LOADING IVRY {config.version}--------")
