@@ -1,9 +1,10 @@
-import discord, asyncio, functools, itertools, random, requests, typing, aiohttp, math, youtube_dl, urllib, logging
+import discord, asyncio, functools, itertools, random, requests, typing, aiohttp, math, youtube_dl, urllib
 from bs4 import BeautifulSoup as bs
 from discord.ext import commands
 from urllib.request import urlopen
 from async_timeout import timeout
 from discord.ext import commands
+import logging
 logger = logging.getLogger("ivry")
 logger.debug("music.py Started")
 

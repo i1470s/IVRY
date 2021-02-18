@@ -1,8 +1,9 @@
-import discord, sys, traceback, os, asyncio, math, logging
+import discord, sys, traceback, os, asyncio, math
 from discord.ext import commands
 from asyncio import sleep
 from data import config
 from extras import wordlist
+import logging
 logger = logging.getLogger("ivry")
 logger.debug("dev.py Started")
 

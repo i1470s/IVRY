@@ -1,6 +1,7 @@
-import discord, time, datetime, logging, math
+import discord, time, datetime, math
 from discord.ext import commands
 from data import config
+import logging
 logger = logging.getLogger("ivry")
 logger.debug("general.py Started")
 
