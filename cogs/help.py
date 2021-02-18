@@ -31,7 +31,7 @@ class Help(commands.Cog):
             embed.add_field(name = "NSFW :x:", value="`10` NSFW Commands", inline=False)
             embed.add_field(name = "Music :musical_note:", value="`10` Music Player Commands", inline=False)
             embed.add_field(name = "Admin :hammer:", value="`6` Admin Commands", inline=False)
-            embed.add_field(name = "Misc :question:", value="`0` Misc Commands", inline=False)
+            embed.add_field(name = "Misc :question:", value="`7` Misc Commands", inline=False)
             embed.add_field(name = "Dev :tools:", value="`10` Dev Commands", inline=False)
             embed.add_field(name = "Additional Resources", value=":video_game: [IVRY Discord Server](https://discord.gg/ppn2u99)\n:iphone: [IVRY Website](https://ivry.tk)", inline=False)
 
@@ -105,7 +105,7 @@ class Help(commands.Cog):
             embed.set_thumbnail(url=ctx.bot.user.avatar_url)
             embed.set_footer(text=f"{config.version} | {config.shards}")
 
-            embed.add_field(name = "Commands", value = "\n 'Coming soon!' - SOON!", inline=False)
+            embed.add_field(name = "Commands", value = "\n `encode/decode` - Avaliable encryption types \n `encode/decode base32` - UTF-8 \n `encode/decode base64` - UTF-8 \n `encode/decode base85` - UTF-8 \n `encode/decode rot13` - UTF-8 \n `encode/decode hex` - UTF-8 \n `encode/decode ascii85` - UTF-8", inline=False)
 
             await ctx.send(embed = embed)
 
