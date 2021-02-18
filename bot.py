@@ -9,6 +9,21 @@ import logging
 logger3 = logging.getLogger("ivry")
 logger3.debug(f"--------LOADING IVRY {config.version}--------")
 logger3.debug("bot.py Started")
+print(f'''
+PUB(BUILD(28))
+ _____  ____   ____  _______   ____  ____   
+|_   _||_  _| |_  _||_   __ \ |_  _||_  _|  
+  | |    \ \   / /    | |__) |  \ \  / /    
+  | |     \ \ / /     |  __ /    \ \/ /     
+ _| |_     \ ' /     _| |  \ \_  _|  |_     
+|_____|     \_/     |____| |___||______| 
+----------------------------------------   
+| Starting On {config.version}            |‎
+| Created By i1470s#0396               |
+----------------------------------------
+        ~IVRY All Rights Reserved~
+
+--------------ERROR OUTPUT--------------''')
 
 client = commands.AutoShardedBot(command_prefix=config.default_prefix, shard_count=1, case_insensitive=True, intents=discord.Intents.all())
 client.remove_command('help')
@@ -33,20 +48,5 @@ async def status():
 
 @client.event
 async def on_ready():
-    print(f'''
-PUB(BUILD(28))
- _____  ____   ____  _______   ____  ____   
-|_   _||_  _| |_  _||_   __ \ |_  _||_  _|  
-  | |    \ \   / /    | |__) |  \ \  / /    
-  | |     \ \ / /     |  __ /    \ \/ /     
- _| |_     \ ' /     _| |  \ \_  _|  |_     
-|_____|     \_/     |____| |___||______| 
-----------------------------------------   
-| Starting On {config.version}            |‎
-| Created By i1470s#0396               |
-----------------------------------------
-        ~IVRY All Rights Reserved~
-
---------------ERROR OUTPUT--------------''')
-client.loop.create_task(status())
+    client.loop.create_task(status())
 client.run(config.token)
