@@ -1,4 +1,9 @@
+#PRIMARY IMPORTS
+
 import discord, logging
+
+#SECONDARY IMPORTS
+
 from logging.handlers import RotatingFileHandler
 
 #LOGGER - DISCORD API
