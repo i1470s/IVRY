@@ -1,8 +1,6 @@
-import discord
-import math
+import discord, logging
 from discord.ext import commands
 from data import config
-import logging
 logger3 = logging.getLogger("ivry")
 logger3.debug("help.py Started")
 

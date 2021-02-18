@@ -1,5 +1,4 @@
-import discord
-import logging
+import discord, logging
 from logging.handlers import RotatingFileHandler
 
 #LOGGER - DISCORD API

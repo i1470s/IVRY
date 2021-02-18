@@ -1,14 +1,9 @@
-import random
-import math
+import discord, random, math, aiohttp, datetime, logging
 from random import choice, randint
 from typing import Optional
-import discord
 from discord.ext import commands
 from discord.ext.commands import cooldown
-import aiohttp
 from aiohttp import request
-import pyfiglet
-import datetime
 now = datetime.datetime.now()
 diff = datetime.datetime(now.year, 12, 25) - \
     datetime.datetime.today() 
@@ -18,7 +13,6 @@ diff3 = datetime.datetime(now.year, 2, 14) - \
     datetime.datetime.today() 
 diff4 = datetime.datetime(now.year, 7, 13) - \
     datetime.datetime.today() 
-import logging
 logger3 = logging.getLogger("ivry")
 logger3.debug("fun.py Started")
 

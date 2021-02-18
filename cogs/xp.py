@@ -1,12 +1,7 @@
-import discord
+import discord, json, os, datetime, asyncio, logging
 from discord.ext import commands, tasks
-import json
-import os
-import datetime
 from random import randint
 from data import config
-import asyncio
-import logging
 logger3 = logging.getLogger("ivry")
 logger3.debug("xp.py Started")
 logger3.debug(f"--------COMPLETE IVRY {config.version}-------")

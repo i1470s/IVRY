@@ -1,22 +1,9 @@
-import asyncio
-import functools
-import itertools
-import random
-import requests
-import typing
-import aiohttp
-import math
-import discord
-import requests
+import discord, asyncio, functools, itertools, random, requests, typing, aiohttp, math, youtube_dl, urllib, logging
 from bs4 import BeautifulSoup as bs
 from discord.ext import commands
-import urllib
 from urllib.request import urlopen
-import discord
-import youtube_dl
 from async_timeout import timeout
 from discord.ext import commands
-import logging
 logger3 = logging.getLogger("ivry")
 logger3.debug("music.py Started")
 
