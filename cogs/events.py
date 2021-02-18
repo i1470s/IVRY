@@ -1,10 +1,16 @@
-import discord
-import logging
-import datetime
+#PRIMARY IMPORTS
+
+import discord, datetime, logging
+
+#SECONDARY IMPORTS
+
 from discord.ext import commands
 from data import config
-logger = logging.getLogger("ivry")
-logger.debug("events.py Started")
+
+#LOGGING
+
+logger3 = logging.getLogger("ivry")
+logger3.debug("events.py Started")
 
 class Events(commands.Cog):   
     

@@ -1,7 +1,14 @@
-import discord
-import logging
+#PRIMARY IMPORTS
+
+import discord, logging
+
+#SECONDARY IMPORTS
+
 from discord.ext import commands
 from data import config
+
+#LOGGING
+
 logger = logging.getLogger("ivry")
 logger.debug("help.py Started")
 

@@ -1,9 +1,9 @@
-import discord
-import logging
-import random
-import math
-import aiohttp
-import datetime
+#PRIMARY IMPORTS
+
+import discord, random, math, aiohttp, datetime, logging
+
+#SECONDARY IMPORTS
+
 from random import choice, randint
 from typing import Optional
 from discord.ext import commands
@@ -18,6 +18,9 @@ diff3 = datetime.datetime(now.year, 2, 14) - \
     datetime.datetime.today() 
 diff4 = datetime.datetime(now.year, 7, 13) - \
     datetime.datetime.today() 
+
+#LOGGING
+
 logger = logging.getLogger("ivry")
 logger.debug("fun.py Started")
 

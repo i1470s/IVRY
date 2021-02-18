@@ -1,14 +1,13 @@
-import logging
-import discord
+import discord, logging
 from logging.handlers import RotatingFileHandler
 
 #LOGGER - DISCORD API
 
-logger0 = logging.getLogger('discord')
-logger0.setLevel(logging.DEBUG)
+logger = logging.getLogger('discord')
+logger.setLevel(logging.DEBUG)
 handler = RotatingFileHandler(filename='./data/logs/discord.json', encoding='utf-8', mode='w+', maxBytes=2097152, backupCount=1)
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
-logger0.addHandler(handler)
+logger.addHandler(handler)
 
 #LOGGER - BOT / COGS
 

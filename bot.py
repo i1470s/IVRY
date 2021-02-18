@@ -1,10 +1,18 @@
-import discord
-import logging
-import os
+#PRIMARY IMPORTS
+
+import discord, os
+
+#SECONDARY IMPORTS
+
 from discord.ext import commands
 from discord.ext.commands import AutoShardedBot
 from asyncio import sleep
+from extras import logging
 from data import config
+
+#LOGGING
+
+import logging
 logger = logging.getLogger("ivry")
 logger.debug(f"--------LOADING IVRY {config.version}--------")
 logger.debug("bot.py Started")

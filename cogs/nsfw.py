@@ -1,10 +1,15 @@
-import discord
-import logging
-import praw
-import aiohttp
+#PRIMARY IMPORTS
+
+import discord, aiohttp, praw, logging
+
+#SECONDARY IMPORTS
+
 from discord.ext import commands
 from aiohttp import request
 r = praw.Reddit(client_id="7oE7yB5GJJua2Q", client_secret="ooidPB-ETJxbRflpja6a65KX03g", user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36', username="PhantomVipermon")
+
+#LOGGING
+
 logger = logging.getLogger("ivry")
 logger.debug("nsfw.py Started")
 

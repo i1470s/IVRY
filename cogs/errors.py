@@ -1,13 +1,15 @@
-import discord
-import logging
-import os 
-import datetime
-import sys
-import json
-import traceback
+#PRIMARY IMPORTS
+
+import discord, os, datetime, sys, json, traceback, logging
+
+#SECONDARY IMPORTS
+
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from discord.ext import commands
 from data import config
+
+#LOGGING
+
 logger = logging.getLogger("ivry")
 logger.debug("errors.py Started")
 
