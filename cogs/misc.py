@@ -27,7 +27,7 @@ class Misc(commands.Cog):
                 embed = discord.Embed(color=0x9B59B6)
 
                 embed.set_author(name="IVRY Encrypt", icon_url=self.client.user.avatar_url)
-                embed.add_field(name = "Avalible Encoders", value=f"\n `base32` \n `base64` \n `base85` \n `rot13` \n `hex` \n `ascii85`", inline=True)
+                embed.add_field(name = "Avalible Encoders", value=f"\n `base32`- UTF-8 \n `base64`- UTF-8 \n `base85`- UTF-8 \n `rot13`- UTF-8 \n `hex`- UTF-8 \n `ascii85`- UTF-8", inline=True)
                 embed.set_footer(text=f"{config.version} | {config.shards}")
                 await ctx.send(embed=embed)
 
@@ -39,7 +39,7 @@ class Misc(commands.Cog):
                 embed = discord.Embed(color=0x9B59B6)
 
                 embed.set_author(name="IVRY Encrypt", icon_url=self.client.user.avatar_url)
-                embed.add_field(name = "Avalible Decoders", value=f"\n `base32` \n `base64` \n `base85` \n `rot13` \n `hex` \n `ascii85`", inline=True)
+                embed.add_field(name = "Avalible Decoders", value=f"\n `base32`- UTF-8 \n `base64`- UTF-8 \n `base85`- UTF-8 \n `rot13`- UTF-8 \n `hex`- UTF-8 \n `ascii85`- UTF-8", inline=True)
                 embed.set_footer(text=f"{config.version} | {config.shards}")
                 await ctx.send(embed=embed)
 
