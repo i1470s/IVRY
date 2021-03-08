@@ -21,7 +21,7 @@ echo
 echo ---PACKAGE UPDATER---
 echo
 sleep 5
-pip3 install -r requirements.txt --upgrade
+pip3 install -r extras/requirements.txt --upgrade
 echo
 echo ---BOT INIT---
 echo
