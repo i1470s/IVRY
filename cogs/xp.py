@@ -84,26 +84,6 @@ class xp(commands.Cog):
             embed.add_field(name="XP", value=self.users[member_id]["exp"])
 
             await ctx.send(embed=embed)
-    
-    #LEVEL TOP SUB COMMAND - FIX ME BY V.3.0
-
-    @level.command()
-    async def top(self, ctx, member: discord.Member = None):
-        member = ctx.author if not member else member
-        member_id = str(member.id)
-        try:
-            embed = discord.Embed(title=f"`{ctx.guild.name}`'s Top 10 Members",color=0x9B59B6, timestamp=ctx.message.created_at)
-
-            embed.set_author(name=f"IVRY Level", icon_url=self.client.user.avatar_url)
-
-            embed.set_thumbnail(url=self.client.user.avatar_url)
-            embed.add_field(name="Coming Soon", value="This just shows your stats for now i am currently working on this!")
-            embed.add_field(name="Level", value=self.users[member_id]["level"])
-            embed.add_field(name="XP", value=self.users[member_id]["exp"])
-
-            await ctx.send(embed=embed)
-        except Exception as e:
-            await ctx.send(f'{e}')
 
 def setup(client):
     client.add_cog(xp(client))

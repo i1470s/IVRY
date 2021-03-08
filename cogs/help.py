@@ -45,7 +45,7 @@ class Help(commands.Cog):
             embed.set_thumbnail(url=ctx.bot.user.avatar_url)
             embed.set_footer(text=f"{config.version} | {config.shards}")
 
-            embed.add_field(name = "Commands", value = "\n `about`- Bot info \n `credits`- Bot credits \n `donate`- Bot donations \n `invite`- Bot invite link \n `ping`- Bot ping \n `servers`- Bot server list \n `serverinfo`- Current serverinfo \n `userinfo`- Get user info \n `level`- Check your XP level \n `level top`- Top 10", inline=False)
+            embed.add_field(name = "Commands", value = "\n `about`- Bot info \n `credits`- Bot credits \n `donate`- Bot donations \n `invite`- Bot invite link \n `ping`- Bot ping \n `servers`- Bot server list \n `serverinfo`- Current serverinfo \n `userinfo`- Get user info \n `level`- Check your XP level", inline=False)
 
             await ctx.send(embed = embed)
 

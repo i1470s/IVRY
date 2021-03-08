@@ -17,7 +17,7 @@ logger = logging.getLogger("ivry")
 logger.debug(f"--------LOADING IVRY {config.version}--------")
 logger.debug("bot.py Started")
 print(f'''
-PUB(BUILD(29.7))
+PUB(BUILD(30))
  _____  ____   ____  _______   ____  ____   
 |_   _||_  _| |_  _||_   __ \ |_  _||_  _|  
   | |    \ \   / /    | |__) |  \ \  / /    
