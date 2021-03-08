@@ -8,6 +8,7 @@ from discord.ext import commands
 from asyncio import sleep
 from data import config
 from extras import wordlist
+from extras import http
 
 #LOGGING
 
